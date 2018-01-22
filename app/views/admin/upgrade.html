@@ -1,0 +1,51 @@
+{% extends "layout.html" %} {% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+      Upgrade plans
+    </h1>
+
+    <form action="/admin/upgrade-plans" method="get" class="form">
+
+      <div class="form-group">
+        <label class="form-label" for="select-box">Upgrade from</label>
+        <select class="form-control form-control-3-4" id="select-box" name="upgradefrom">
+          <option>UC JC 50_50 Version 1 [version: 1]</option>
+          <option>UC JC 50_50 Version 2 [version: 2]</option>
+          <option>UC JC 50_50 Version 3 [version: 3]</option>
+          <option>UC JC 50_50 Version 4 [version: 4]</option>
+          <option>UC JC 50_50 Version 5 [version: 5]</option>
+          <option>UC JC 50_50 Version 6 [version: 6]</option>
+          <option>UC JC 50_50 Version 7 [version: 7]</option>
+          <option>UC JC 50_50 Version 8 [version: 8]</option>
+          <option>UC JC 50_50 Version 9 [version: 9]</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="select-box2">Upgrade to</label>
+        <select class="form-control form-control-3-4" id="select-box2" name="upgradeto">
+          <option>UC JC 50_50 Version 1 [version: 1]</option>
+          <option>UC JC 50_50 Version 2 [version: 2]</option>
+          <option>UC JC 50_50 Version 3 [version: 3]</option>
+          <option>UC JC 50_50 Version 4 [version: 4]</option>
+          <option>UC JC 50_50 Version 5 [version: 5]</option>
+          <option>UC JC 50_50 Version 6 [version: 6]</option>
+          <option>UC JC 50_50 Version 7 [version: 7]</option>
+          <option>UC JC 50_50 Version 8 [version: 8]</option>
+          <option>UC JC 50_50 Version 9 [version: 9]</option>
+        </select>
+      </div>
+
+      <div class="form-group form-group-related">
+        <input type="submit" class="button" value="Continue">
+      </div>
+
+    </form>
+
+    <p>
+      or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+    </p>
+  </div>
+</div>
+{% endblock %}

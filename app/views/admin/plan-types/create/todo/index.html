@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+        Add a new to-do
+      </h1>
+
+      <form action="/admin/plan-types/create/todo/draft" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label-bold" for="todo-title">Title</label>
+          <input class="form-control" id="todo-title" name="todo-title" value="{{ data['todo-title'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend>
+              <span class="form-label-bold">
+                Number of weeks before the ‘go live’ date
+              </span>
+            </legend>
+
+            <div class="grid-row">
+              <div class="column-one-quarter">
+                <label class="form-label" for="todo-start">Start week</label>
+                <input class="form-control" id="todo-start" name="todo-start" value="{{ data['todo-start'] }}" type="number" pattern="[0-9]*" autocomplete="off">
+              </div>
+              <div class="column-one-quarter">
+                <label class="form-label" for="todo-end">End week</label>
+                <input class="form-control" id="todo-end" name="todo-end" value="{{ data['todo-end'] }}" type="number" pattern="[0-9]*" autocomplete="off">
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="priority">
+            Priority (optional)
+            <span class="form-hint">This is used when more than one to-do has the same start and end week. Enter a number (1 is the highest priority)</span>
+          </label>
+          <input class="form-control form-control-1-8" id="priority" name="priority" value="{{ data['priority'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group form-group-related">
+          <input type="submit" class="button" value="Save and continue">
+        </div>
+
+      </form>
+
+      <p>
+        or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+      </p>
+
+      <ul class="list list-bullet">
+        <li><a href="/admin/plan-types/create/todo/tasklist">Version 2 – task list</a></li>
+        <li><a href="/admin/plan-types/create/todo/stepped/main-content">Version 3 – stepped</a></li>
+      </ul>
+  </div>
+</div>
+{% endblock %}

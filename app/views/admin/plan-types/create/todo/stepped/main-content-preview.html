@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+      Preview main content
+    </h1>
+
+    <div class="preview">
+      <p class="lede">
+        {{ data['todo-main-lede'] if data['todo-main-lede'] else "Example lead paragraph" }}
+      </p>
+
+      <p>
+        {{ data['todoRendered'] | safe if data['todoRendered'] else "Example main content" }}
+
+      </p>
+    </div>
+    <p>
+      <a href="/admin/plan-types/create/todo/main-content">Edit main content</a>
+    </p>
+
+    <p>
+      <a class="button" href="/admin/plan-types/create/todo/stepped/tasks" role="button">Continue</a>
+    </p>
+
+    <p>
+      or <a href="/admin/plan-types/create/todo">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}

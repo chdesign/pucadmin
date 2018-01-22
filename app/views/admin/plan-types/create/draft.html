@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+        Plan template:<br>
+        {{ data['pt-name'] if data['pt-name'] else "Example" }}
+        <span class="heading-secondary">Version 1 (draft)</span>
+      </h1>
+
+    <p>{{ data['pt-desc'] if data['pt-desc'] else "Example description" }}</p>
+    <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "undefined" }}/{{ data['pt-level2'] if data['pt-level2'] else "undefined" }}/{{ data['pt-level3'] if data['pt-level3'] else "undefined" }}</p>
+
+    <p class="mt-30">
+      <a href="/admin/plan-types/create">Edit plan information</a>
+    </p>
+
+    <hr>
+
+    <h2 class="heading-medium">
+      To-dos
+    </h2>
+
+    <p>No to-dos yet</p>
+
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo">Add a to-do</a>
+    </p>
+
+    <hr>
+
+    <p>
+      <a class="button mt-30" href="#0" role="button">Save plan type</a>
+    </p>
+    <p>
+      or <a href="javascript:history.back()">delete draft plan type</a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}

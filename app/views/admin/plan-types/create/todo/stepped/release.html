@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+      Add release note
+    </h1>
+
+    <form action="/admin/plan-types/create/todo/stepped/confirm" method="post" class="form">
+
+      <div class="form-group">
+        <label class="form-label" for="todo-main-content">
+          Main content
+          <span class="form-hint">
+            Styling with Markdown is supported
+          </span>
+        </label>
+        <textarea class="form-control form-control-100" id="todo-main-content" name="todo-main-content" rows="15" autocomplete="off">{{ data['todo-main-content'] }}</textarea>
+      </div>
+
+      <div class="form-group form-group-related">
+        <input type="submit" class="button" value="Continue">
+      </div>
+
+    </form>
+
+    <p>
+      or <a href="/admin/plan-types/create/todo/draft">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+    </p>
+
+  </div>
+
+  <div class="column-one-third">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Markdown formatting</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall">
+          <li>
+            For a link:
+            <br>
+            <pre><code class="language-markdown">[Link](http://a.com)</code></pre>
+          </li>
+          <li>
+            For a bulleted list:
+            <br>
+            <pre><code class="language-markdown">* List
+* List
+* List</code></pre>
+          </li>
+          <li>
+            For a numbered list:
+            <br>
+            <pre><code class="language-markdown">1. One
+2. Two
+3. Three</code></pre>
+          </li>
+          <li>For more information on using markdown, use the <a href="http://commonmark.org/help/">markdown guide</a>.</li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+{% endblock %}
