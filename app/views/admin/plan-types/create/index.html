@@ -1,21 +1,30 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
-        Create a new plan type
+    <h1 class="heading-large">
+        Create a new plan
       </h1>
 
-      <p>This information will be used to organise the plan type. It won’t be shown to the user of the plan type.</p>
+      <p>This information will be used to organise the plan. It won’t be shown to the user of the plan.</p>
 
       <form action="/admin/plan-types/create/draft" method="get" class="form">
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-name">Plan type name</label>
+          <label class="form-label-bold" for="pt-name">Plan name</label>
           <input class="form-control" id="pt-name" name="pt-name" value="{{ data['pt-name'] }}" type="text" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-desc">Plan type description (optional)</label>
+          <label class="form-label-bold" for="pt-desc">Plan description (optional)</label>
           <textarea class="form-control form-control-3-4" id="pt-desc" name="pt-desc" rows="5" autocomplete="off">{{ data['pt-desc'] }}</textarea>
         </div>
 
@@ -56,7 +65,7 @@
       </form>
 
       <p>
-        or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+        or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan</span></a>
       </p>
   </div>
 </div>

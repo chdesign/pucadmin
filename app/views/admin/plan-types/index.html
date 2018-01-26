@@ -1,28 +1,42 @@
-{% extends "layout.html" %} {% block content %}
-<div class="grid-row">
-  <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
-        Plan types
-      </h1>
-  </div>
-</div>
+{% extends "layout.html" %}
+{% set active = "plans" %}
 
+{% block content %}
 <div class="grid-row">
   <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Plans
+    </h1>
+
+    <a class="button" href="/admin/plan-types/create" role="button">
+      Create a new plan
+    </a>
+
+    <h2 class="heading-medium">
+      Current plans
+    </h2>
     <ul class="list">
-
+      {% if data['pt-name'] %}
       <li>
         <h3 class="heading-small">
-          <a href="/admin/plan-types/draft">UC JC 50_50 (version 1 - draft)</a>
-        </h3>
+            <a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1 - draft)</a>
+          </h3>
+        <p class="mb-10">Last edited: 26 January 2018 13:21</p>
+      </li>
+      <hr class="plan-types-line">
+      {% endif %}
+      <li>
+        <h3 class="heading-small">
+            <a href="/admin/plan-types/draft">UC JC 50_50 (version 1 - draft)</a>
+          </h3>
         <p class="mb-10">Last edited: 14 December 2017 10:46</p>
       </li>
       <hr class="plan-types-line">
 
       <li>
         <h3 class="heading-small">
-          <a href="/admin/plan-types/published">UC JC (version 5)</a>
-        </h3>
+            <a href="/admin/plan-types/published">UC JC (version 5)</a>
+          </h3>
         <p class="mb-10">Last edited: 14 December 2017 10:39</p>
 
         <details class="font-xsmall mb-10" role="group">
@@ -61,8 +75,8 @@
 
       <li>
         <h3 class="heading-small">
-          <a href="#0">UC (version 1)</a>
-        </h3>
+            <a href="#0">UC (version 1)</a>
+          </h3>
         <p class="mb-10">Published: 17 January 2018 11:27</p>
 
         <details class="font-xsmall mb-10" role="group">
@@ -94,7 +108,6 @@
 
       </li>
       <hr class="plan-types-line">
-
     </ul>
   </div>
 </div>

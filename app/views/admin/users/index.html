@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set active = "users" %}
+
+{% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Users
+    </h1>
+
+    <h2 class="heading-medium">New users</h2>
+    <ul class="list">
+      <li><a href="#0">Add a new user</a></li>
+      <li><a href="#0">Add multiple users and assign to a plan</a></li>
+    </ul>
+
+    <h2 class="heading-medium">Existing users</h2>
+    <ul class="list">
+      <li><a href="/admin/users/manage-users">Manage existing users</a></li>
+      <li><a href="#0">Re-issue user password</a></li>
+      <li><a href="#0">Send an email to all users</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

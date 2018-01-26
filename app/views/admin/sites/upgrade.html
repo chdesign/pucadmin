@@ -1,14 +1,23 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "sites" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/sites">Sites</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
-      Upgrade plans
+    <h1 class="heading-large">
+      Upgrade site to a newer version of a plan
     </h1>
 
-    <form action="/admin/upgrade-plans" method="get" class="form">
+    <form action="/admin/sites/upgrade-plans" method="get" class="form">
 
       <div class="form-group">
-        <label class="form-label" for="select-box">Upgrade from</label>
+        <label class="form-label" for="select-box">Select the plan you want to upgrade from</label>
         <select class="form-control form-control-3-4" id="select-box" name="upgradefrom">
           <option>UC JC 50_50 Version 1 [version: 1]</option>
           <option>UC JC 50_50 Version 2 [version: 2]</option>
@@ -23,7 +32,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="select-box2">Upgrade to</label>
+        <label class="form-label" for="select-box2">Select the plan you want to upgrade to</label>
         <select class="form-control form-control-3-4" id="select-box2" name="upgradeto">
           <option>UC JC 50_50 Version 1 [version: 1]</option>
           <option>UC JC 50_50 Version 2 [version: 2]</option>
@@ -44,7 +53,7 @@
     </form>
 
     <p>
-      or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+      or <a href="javascript:history.back()">cancel</a>
     </p>
   </div>
 </div>

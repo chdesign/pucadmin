@@ -1,13 +1,22 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
-        Plan template:<br>
-        {{ data['pt-name'] if data['pt-name'] else "Example" }}
+    <h1 class="heading-large">
+        Plan:<br>
+        {{ data['pt-name'] if data['pt-name'] else "Example plan" }}
         <span class="heading-secondary">Version 1 (draft)</span>
       </h1>
 
-    <p>{{ data['pt-desc'] if data['pt-desc'] else "Example description" }}</p>
+    <p>{{ data['pt-desc'] if data['pt-desc'] else "Example plan description" }}</p>
     <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "undefined" }}/{{ data['pt-level2'] if data['pt-level2'] else "undefined" }}/{{ data['pt-level3'] if data['pt-level3'] else "undefined" }}</p>
 
     <p class="mt-30">
@@ -20,7 +29,20 @@
       To-dos
     </h2>
 
+    {% if data['todo-title'] %}
+    <ol class="list">
+      <li>
+        <h3 class="heading-small">
+          <a href="/admin/plan-types/create/todo">{{ data['todo-title'] }}</a>
+        </h3>
+        <p>From week 3 to week 1 · Version 1 · draft</p>
+      </li>
+    </ol>
+    {% else %}
     <p>No to-dos yet</p>
+    {% endif %}
+
+
 
     <p class="mt-30">
       <a href="/admin/plan-types/create/todo">Add a to-do</a>
@@ -29,10 +51,10 @@
     <hr>
 
     <p>
-      <a class="button mt-30" href="#0" role="button">Save plan type</a>
+      <a class="button mt-30" href="/admin/plan-types" role="button">Save version 1 of this plan</a>
     </p>
     <p>
-      or <a href="javascript:history.back()">delete draft plan type</a>
+      or <a href="javascript:history.back()">delete draft of this plan</a>
     </p>
 
   </div>

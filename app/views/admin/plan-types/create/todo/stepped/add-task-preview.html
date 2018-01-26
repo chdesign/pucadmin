@@ -12,25 +12,22 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-      Preview main content
+      Preview task
     </h1>
 
     <div class="preview">
-      <p class="lede">
-        {{ data['todo-main-lede'] if data['todo-main-lede'] else "Example lead paragraph" }}
-      </p>
 
       <p>
-        {{ data['todoRendered'] | safe if data['todoRendered'] else "Example main content" }}
+        {{ data['taskRendered'] | safe if data['taskRendered'] else "Example task content" }}
 
       </p>
     </div>
     <p>
-      <a href="/admin/plan-types/create/todo/main-content">Edit main content</a>
+      <a href="/admin/plan-types/create/todo/main-content">Edit task</a>
     </p>
 
     <p>
-      <a class="button" href="/admin/plan-types/create/todo/stepped/add-task" role="button">Continue</a>
+      <a class="button" href="/admin/plan-types/create/todo/stepped/tasks" role="button">Continue</a>
     </p>
 
     <p>

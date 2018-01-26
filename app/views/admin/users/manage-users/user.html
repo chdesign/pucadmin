@@ -1,6 +1,13 @@
 {% extends "layout.html" %}
+{% set active = "users" %}
 
 {% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/users">Users</a></li>
+  </ol>
+</div>
+
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large mt-10 mb-15">
@@ -25,14 +32,14 @@
       <p><a href="#0">Edit user details</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#0">Reset password</a></p>
 
       <h2 class="heading-small">
-        Access to 3 plans
+        Access to 3 sites
       </h2>
       <ol class="list list-number">
         <li>Abergavenny</li>
         <li>Abertillery</li>
         <li>Aberystwyth</li>
       </ol>
-      <p><a href="#0">Assign user to another plan</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/manage-users/unassign">Unassign user from a plan</a></p>
+      <p><a href="#0">Assign user to another site</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/users/manage-users/unassign">Unassign user from a site</a></p>
 
     </div>
   </div>

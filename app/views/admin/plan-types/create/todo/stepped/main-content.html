@@ -1,11 +1,21 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
+    <h1 class="heading-large">
       Add main content
     </h1>
 
-    <form action="/admin/plan-types/create/todo/stepped/tasks" method="post" class="form">
+    <form action="/admin/plan-types/create/todo/stepped/main-content-preview" method="post" class="form">
 
       <div class="form-group">
         <label class="form-label" for="todo-main-lede">Lead paragraph <small>(optional)</small></label>
@@ -19,7 +29,7 @@
             Styling with Markdown is supported
           </span>
         </label>
-        <textarea class="form-control form-control-100" id="todo-main-content" name="todo-main-content" rows="15" autocomplete="off">{{ data['todo-main-content'] }}</textarea>
+        <textarea class="form-control form-control-100" id="todo-main-content" name="todo-main-content" rows="10" autocomplete="off">{{ data['todo-main-content'] }}</textarea>
       </div>
 
       <div class="form-group form-group-related">
@@ -29,7 +39,7 @@
     </form>
 
     <p>
-      or <a href="/admin/plan-types/create/todo/draft">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+      or <a href="/admin/plan-types/create/todo/draft">cancel</a>
     </p>
 
   </div>

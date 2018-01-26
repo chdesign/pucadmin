@@ -1,11 +1,33 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
+    <h1 class="heading-large">
       Add tasks
     </h1>
 
     <dl class="govuk-check-your-answers cya-questions-short">
+      {% if data['taskRendered'] %}
+      <div>
+        <dd class="cya-answer">
+          {{ data['taskRendered'] | safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="#">
+            Edit/delete
+          </a>
+        </dd>
+      </div>
+      {% endif %}
       <div>
         <dd class="cya-answer">
           Make a list of all of your local partners and stakeholders – your local authorities can help you do this.
@@ -48,7 +70,7 @@
     </p>
 
     <p>
-      or <a href="/admin/plan-types/create/todo/draft">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+      or <a href="/admin/plan-types/create/todo/draft">cancel</a>
     </p>
 
   </div>

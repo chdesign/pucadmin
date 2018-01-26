@@ -1,7 +1,17 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
+    <h1 class="heading-large">
       Supporting content
     </h1>
 
@@ -22,7 +32,7 @@
     </p>
 
     <p>
-      <a class="button" href="/admin/plan-types/create/todo/stepped/release" role="button">Continue</a>
+      <a class="button" href="/admin/plan-types/create/todo/stepped/tags" role="button">Continue</a>
     </p>
 
     <p>

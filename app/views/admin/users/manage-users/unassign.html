@@ -1,17 +1,25 @@
 {% extends "layout.html" %}
+{% set active = "users" %}
 
 {% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/users">Users</a></li>
+    <li><a href="/admin/users/manage-users/user">Example user</a></li>
+  </ol>
+</div>
+
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large mt-10 mb-15">
-        Unassign user from a plan(s)
+        Unassign user from a site(s)
       </h1>
 
       <form action="/admin/manage-users/user" method="get" class="form">
 
         <div class="form-group">
           <fieldset>
-            <legend class="form-label">Select the plans you want to unassign the user from</legend>
+            <legend class="form-label">Select the sites you want to unassign the user from</legend>
 
             <p><a href="0">Select all</a></p>
 

@@ -1,129 +1,117 @@
 {% extends "layout.html" %}
+{% set active = "plans" %}
 
 {% block content %}
-  <div class="grid-row">
-    <div class="column-two-thirds">
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
 
-      <h1 class="heading-large">
-        Check your answers and save to-do
-      </h1>
+<div class="grid-row">
+  <div class="column-two-thirds">
 
-      <h2 class="heading-medium">
-        To-do information
-      </h2>
-      <p class="heading-small">{{ data['todo-title'] if data['todo-title'] else "Example" }}</p>
-      <p>{{ data['pt-desc'] if data['pt-desc'] else "Example description" }}</p>
-      <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "undefined" }}/{{ data['pt-level2'] if data['pt-level2'] else "undefined" }}/{{ data['pt-level3'] if data['pt-level3'] else "undefined" }}</p>
-      <p class="mt-30">
-        <a href="/admin/plan-types/create/todo">Edit to-do information</a>
-      </p>
+    <h1 class="heading-large">
+      Check your answers and save to-do
+    </h1>
 
-
-
-
-
-
-      <h2 class="heading-medium">
-        Main content
-      </h2>
-      <div class="preview">
-        <p class="lede">
-          {{ data['todo-main-lede'] }}
-        </p>
-
-        <p>
-          {{ data['todoRendered'] | safe }}
-        </p>
-      </div>
-      <p class="mt-30">
-        <a href="/admin/plan-types/create/todo/main-content">Edit main content</a>
-      </p>
-
-
-
-
-      <h2 class="heading-medium">
-        Tasks
-      </h2>
-      <dl class="govuk-check-your-answers cya-questions-short">
-        <div>
-          <dd class="cya-answer">
-            Make a list of all of your local partners and stakeholders – your local authorities can help you do this.
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Edit/delete
-            </a>
-          </dd>
-        </div>
-
-        <div>
-          <dd class="cya-answer">
-            Plan an event to tell local partners and stakeholders about UC full service. You might need to host more than one event.
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Edit/delete
-            </a>
-          </dd>
-        </div>
-
-        <div>
-          <dd class="cya-answer">
-            Send invitations for your event.
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Edit/delete
-            </a>
-          </dd>
-        </div>
-      </dl>
-      <p class="mt-30">
-        <a href="/admin/plan-types/create/todo">Add a task</a> or <a href="#0">reorder tasks</a>
-      </p>
+    <h2 class="heading-medium">
+      To-do information
+    </h2>
+    <p class="heading-small">{{ data['todo-title'] if data['todo-title'] else "Example" }}</p>
+    <p>{{ data['pt-desc'] if data['pt-desc'] else "Example description" }}</p>
+    <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "undefined" }}/{{ data['pt-level2'] if data['pt-level2'] else "undefined" }}/{{ data['pt-level3'] if data['pt-level3'] else "undefined" }}</p>
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo/">Edit to-do information</a>
+    </p>
 
 
 
 
 
-      <h2 class="heading-medium">
-        Supporting content
-      </h2>
-      <dl class="govuk-check-your-answers cya-questions-short">
-        <div>
-          <dd class="cya-answer">
-            Security advice centre<br>http://intralink/1/corp/sites/security/security-advice-support-centre/index.asp
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Edit/delete
-            </a>
-          </dd>
-        </div>
-      </dl>
-      <p class="mt-30">
-        <a href="/admin/plan-types/create/todo">Add supporting content</a> or <a href="#0">reorder supporting content</a>
-      </p>
-
-
-
-
-
-      <h2 class="heading-medium">
-        Release note
-      </h2>
-      <p>Example release note.</p>
-      <p class="mt-30">
-        <a href="/admin/plan-types/create/todo/main-content">Edit release note</a>
-      </p>
-
-      <hr>
-
-      <div class="form-group mt-30">
-        <a href="/admin/plan-types/create/draft" class="button">Save to-do</a>
-      </div>
-
+    <h2 class="heading-medium">
+      Main content
+    </h2>
+    <div class="preview">
+      <p class="lede">{{ data['todo-main-lede'] }}</p>
+      <p>{{ data['todoRendered'] | safe }}</p>
     </div>
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo/stepped/main-content">Edit main content</a>
+    </p>
+
+
+
+
+
+    <h2 class="heading-medium">
+      Tasks
+    </h2>
+    <ul class="list list-bullet">
+      {% if data['taskRendered'] %}
+      <li>
+        {{ data['taskRendered'] | safe }}
+      </li>
+      {% endif %}
+      <li>Make a list of all of your local partners and stakeholders – your local authorities can help you do this.</li>
+      <li>Plan an event to tell local partners and stakeholders about UC full service. You might need to host more than one event.</li>
+      <li>Send invitations for your event.</li>
+    </ul>
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo/stepped/tasks">Edit tasks</a>
+    </p>
+
+
+
+
+
+    <h2 class="heading-medium">
+      Supporting content
+    </h2>
+    <ul class="list list-bullet">
+      <li>Security advice centre <br>http://intralink/1/corp/sites/security/security-advice-support-centre/index.asp</li>
+    </ul>
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo/stepped/supporting">Edit supporting content</a>
+    </p>
+
+
+
+
+
+    <h2 class="heading-medium">
+      Tags
+    </h2>
+    <ul class="list list-bullet">
+      <li>tag</li>
+    </ul>
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo/stepped/tags">Edit tags</a>
+    </p>
+
+
+
+
+
+    <h2 class="heading-medium">
+      Release note
+    </h2>
+    <p>Example release note.</p>
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo/stepped/release">Edit release note</a>
+    </p>
+
+    <hr>
+
+    <div class="form-group mt-30">
+      <a href="/admin/plan-types/create/draft" class="button">Save to-do</a>
+    </div>
+
+    <p>
+      or <a href="/admin/plan-types/create/draft">cancel</a>
+    </p>
+
   </div>
+</div>
 {% endblock %}

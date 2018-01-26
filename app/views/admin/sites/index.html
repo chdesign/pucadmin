@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% set active = "sites" %}
+
+{% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-large">
+      Sites
+    </h1>
+
+    <ul class="list">
+      <li><a href="#0">Add a site</a></li>
+      <li><a href="/admin/sites/upgrade">Upgrade a site to a newer version of their plan</a></li>
+      <li><a href="#0">Change a site&rsquo;s name</a></li>
+      <li><a href="#0">Change a site&rsquo;s go-live date</a></li>
+      <li><a href="#0">Remove a site</a></li>
+      <li><a href="#0">Restore a site</a></li>
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

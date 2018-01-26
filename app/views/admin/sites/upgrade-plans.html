@@ -1,172 +1,183 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% set active = "sites" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/sites">Sites</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large mt-10 mb-15">
-      Upgrade plans
+    <h1 class="heading-large">
+      Upgrade sites
       <span class="heading-secondary">from 'UC JC 50_50 Version 8 [version: 8]' to 'UC JC 50_50 Version 9 [version: 9]'</span>
     </h1>
 
     <div class="form-group">
       <fieldset>
-        <legend class="form-label-bold mb-10">Plans to upgrade</legend>
+        <legend class="form-label-bold mb-10">Sites to upgrade</legend>
+
+        <p><a href="0">Select all</a></p>
 
           <div class="multiple-choice">
-              <input data-ident="4" type="checkbox" name="plan_195973" value="Selected" id="plan_195973" checked="">
+              <input data-ident="4" type="checkbox" name="plan_195973" value="Selected" id="plan_195973">
               <label for="plan_195973">Kennington Park, go live: 28 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="15" type="checkbox" name="plan_195975" value="Selected" id="plan_195975" checked="">
+              <input data-ident="15" type="checkbox" name="plan_195975" value="Selected" id="plan_195975">
               <label for="plan_195975">Stockwell (February), go live: 28 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="14" type="checkbox" name="plan_195974" value="Selected" id="plan_195974" checked="">
+              <input data-ident="14" type="checkbox" name="plan_195974" value="Selected" id="plan_195974">
               <label for="plan_195974">Streatham (February), go live: 28 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="0" type="checkbox" name="plan_178050" value="Selected" id="plan_178050" checked="">
+              <input data-ident="0" type="checkbox" name="plan_178050" value="Selected" id="plan_178050">
               <label for="plan_178050">Erdington (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="7" type="checkbox" name="plan_178160" value="Selected" id="plan_178160" checked="">
+              <input data-ident="7" type="checkbox" name="plan_178160" value="Selected" id="plan_178160">
               <label for="plan_178160">Handsworth (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="2" type="checkbox" name="plan_178270" value="Selected" id="plan_178270" checked="">
+              <input data-ident="2" type="checkbox" name="plan_178270" value="Selected" id="plan_178270">
               <label for="plan_178270">Kings Heath (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="8" type="checkbox" name="plan_178380" value="Selected" id="plan_178380" checked="">
+              <input data-ident="8" type="checkbox" name="plan_178380" value="Selected" id="plan_178380">
               <label for="plan_178380">Perry Barr (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="9" type="checkbox" name="plan_178490" value="Selected" id="plan_178490" checked="">
+              <input data-ident="9" type="checkbox" name="plan_178490" value="Selected" id="plan_178490">
               <label for="plan_178490">Selly Oak (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="13" type="checkbox" name="plan_178624" value="Selected" id="plan_178624" checked="">
+              <input data-ident="13" type="checkbox" name="plan_178624" value="Selected" id="plan_178624">
               <label for="plan_178624">Sparkhill (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="1" type="checkbox" name="plan_178734" value="Selected" id="plan_178734" checked="">
+              <input data-ident="1" type="checkbox" name="plan_178734" value="Selected" id="plan_178734">
               <label for="plan_178734">Wolverhampton Chapel Court (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="5" type="checkbox" name="plan_178860" value="Selected" id="plan_178860" checked="">
+              <input data-ident="5" type="checkbox" name="plan_178860" value="Selected" id="plan_178860">
               <label for="plan_178860">Wolverhampton Molineux House (February), go live: 14 February 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="10" type="checkbox" name="plan_177059" value="Selected" id="plan_177059" checked="">
+              <input data-ident="10" type="checkbox" name="plan_177059" value="Selected" id="plan_177059">
               <label for="plan_177059">Birkenhead (January), go live: 24 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="3" type="checkbox" name="plan_175844" value="Selected" id="plan_175844" checked="">
+              <input data-ident="3" type="checkbox" name="plan_175844" value="Selected" id="plan_175844">
               <label for="plan_175844">Bootle (January), go live: 24 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="17" type="checkbox" name="plan_176507" value="Selected" id="plan_176507" checked="">
+              <input data-ident="17" type="checkbox" name="plan_176507" value="Selected" id="plan_176507">
               <label for="plan_176507">Enfield (January), go live: 24 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="6" type="checkbox" name="plan_176397" value="Selected" id="plan_176397" checked="">
+              <input data-ident="6" type="checkbox" name="plan_176397" value="Selected" id="plan_176397">
               <label for="plan_176397">Rusholme (January), go live: 24 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="11" type="checkbox" name="plan_177830" value="Selected" id="plan_177830" checked="">
+              <input data-ident="11" type="checkbox" name="plan_177830" value="Selected" id="plan_177830">
               <label for="plan_177830">Streatham (January), go live: 24 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="12" type="checkbox" name="plan_177940" value="Selected" id="plan_177940" checked="">
+              <input data-ident="12" type="checkbox" name="plan_177940" value="Selected" id="plan_177940">
               <label for="plan_177940">Watford (January), go live: 24 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="28" type="checkbox" name="plan_177170" value="Selected" id="plan_177170" checked="">
+              <input data-ident="28" type="checkbox" name="plan_177170" value="Selected" id="plan_177170">
               <label for="plan_177170">Bournemouth (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="30" type="checkbox" name="plan_177390" value="Selected" id="plan_177390" checked="">
+              <input data-ident="30" type="checkbox" name="plan_177390" value="Selected" id="plan_177390">
               <label for="plan_177390">Brighton (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="22" type="checkbox" name="plan_177610" value="Selected" id="plan_177610" checked="">
+              <input data-ident="22" type="checkbox" name="plan_177610" value="Selected" id="plan_177610">
               <label for="plan_177610">Cheltenham (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="23" type="checkbox" name="plan_177280" value="Selected" id="plan_177280" checked="">
+              <input data-ident="23" type="checkbox" name="plan_177280" value="Selected" id="plan_177280">
               <label for="plan_177280">Devonport (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="18" type="checkbox" name="plan_175954" value="Selected" id="plan_175954" checked="">
+              <input data-ident="18" type="checkbox" name="plan_175954" value="Selected" id="plan_175954">
               <label for="plan_175954">Eastbourne (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="16" type="checkbox" name="plan_175732" value="Selected" id="plan_175732" checked="">
+              <input data-ident="16" type="checkbox" name="plan_175732" value="Selected" id="plan_175732">
               <label for="plan_175732">Hove (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="24" type="checkbox" name="plan_176287" value="Selected" id="plan_176287" checked="">
+              <input data-ident="24" type="checkbox" name="plan_176287" value="Selected" id="plan_176287">
               <label for="plan_176287">Oxford (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="25" type="checkbox" name="plan_176177" value="Selected" id="plan_176177" checked="">
+              <input data-ident="25" type="checkbox" name="plan_176177" value="Selected" id="plan_176177">
               <label for="plan_176177">Plymouth (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="19" type="checkbox" name="plan_176067" value="Selected" id="plan_176067" checked="">
+              <input data-ident="19" type="checkbox" name="plan_176067" value="Selected" id="plan_176067">
               <label for="plan_176067">Poole (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="29" type="checkbox" name="plan_177720" value="Selected" id="plan_177720" checked="">
+              <input data-ident="29" type="checkbox" name="plan_177720" value="Selected" id="plan_177720">
               <label for="plan_177720">Reading (January), go live: 17 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="26" type="checkbox" name="plan_176728" value="Selected" id="plan_176728" checked="">
+              <input data-ident="26" type="checkbox" name="plan_176728" value="Selected" id="plan_176728">
               <label for="plan_176728">Birmingham City (January), go live: 10 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="27" type="checkbox" name="plan_176618" value="Selected" id="plan_176618" checked="">
+              <input data-ident="27" type="checkbox" name="plan_176618" value="Selected" id="plan_176618">
               <label for="plan_176618">Birmingham South West (January), go live: 10 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="20" type="checkbox" name="plan_176838" value="Selected" id="plan_176838" checked="">
+              <input data-ident="20" type="checkbox" name="plan_176838" value="Selected" id="plan_176838">
               <label for="plan_176838">Washwood Heath (January), go live: 10 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="21" type="checkbox" name="plan_176948" value="Selected" id="plan_176948" checked="">
+              <input data-ident="21" type="checkbox" name="plan_176948" value="Selected" id="plan_176948">
               <label for="plan_176948">Yardley (January), go live: 10 January 2018</label>
           </div>
 
           <div class="multiple-choice">
-              <input data-ident="31" type="checkbox" name="plan_195800" value="Selected" id="plan_195800" checked="">
+              <input data-ident="31" type="checkbox" name="plan_195800" value="Selected" id="plan_195800">
               <label for="plan_195800">Peckham (Lewisham postcodes), go live: 20 December 2017</label>
           </div>
 
@@ -174,11 +185,11 @@
     </div>
 
     <p>
-      <a class="button" href="/admin" role="button">Upgrade selected plans</a>
+      <a class="button" href="/admin/sites" role="button">Upgrade selected plans</a>
     </p>
 
     <p>
-      or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan type</span></a>
+      or <a href="/admin/sites">cancel</a>
     </p>
   </div>
 </div>

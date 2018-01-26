@@ -1,17 +1,15 @@
 // Path to assets for use with the file-url function
 // in the govuk frontend toolkit's url-helpers partial
 $path: "/public/images/";
-
 // Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
-
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
 @import 'patterns/check-your-answers';
 @import 'patterns/task-list';
-
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
+
 .govuk-related-items {
   margin-top: $gutter;
   border-top: 10px solid $govuk-blue;
@@ -27,41 +25,42 @@ $path: "/public/images/";
     list-style-type: none;
   }
 }
-
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
 hr {
   margin: 0;
 }
 
 .mt-0 {
-  margin-top: 0px;
+  margin-top: 0;
 }
+
 .mt-10 {
   margin-top: 10px;
 }
+
 .mt-15 {
   margin-top: 15px;
 }
+
 .mt-30 {
   margin-top: 30px;
 }
+
 .mb-0 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
+
 .mb-10 {
   margin-bottom: 10px;
 }
+
 .mb-15 {
   margin-bottom: 15px;
 }
+
 .mb-30 {
   margin-bottom: 30px;
 }
-
-
-
-
 
 .admin-submenu ul {
   border-bottom: 1px solid #999;
@@ -78,9 +77,9 @@ hr {
 }
 
 .admin-submenu li.active {
-  -webkit-box-shadow: inset 0px -3px 0px 0px #30a197;
-  -moz-box-shadow: inset 0px -3px 0px 0px #30a197;
-  box-shadow: inset 0px -3px 0px 0px #30a197;
+  -webkit-box-shadow: inset 0 -3px 0 0 #30a197;
+  -moz-box-shadow: inset 0 -3px 0 0 #30a197;
+  box-shadow: inset 0 -3px 0 0 #30a197;
 }
 
 .admin-submenu a {
@@ -91,75 +90,111 @@ hr {
   margin-bottom: 30px;
 }
 
-
-
-
-
 .form-control-100 {
   width: 100%;
+}
+
+.button-secondary {
+  @include button($grey-3);
+}
+
+.preview {
+  border: 1px solid $border-colour;
+  padding: 15px;
+
+  ul {
+    @extend .list;
+    @extend .list-bullet;
+  }
+
+  ol {
+    @extend .list;
+    @extend .list-number;
+  }
+}
+
+.inline-definition-list {
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.inline-definition-list dt {
+  margin-bottom: 5px;
+}
+
+.inline-definition-list dd {
+  margin-bottom: 10px;
+}
+@media (min-width: 769px) {
+  .inline-definition-list dt {
+    float: left;
+    display: inline-block;
+    clear: both;
+    width: 25%;
+  }
+
+  .inline-definition-list dd {
+    float: left;
+    display: inline-block;
+    padding-left: 2%;
+    width: 55%;
+    margin-bottom: 5px;
+  }
+}
+
+.green {
+  color: #00643D;
 }
 
 
 
 
-.button-secondary {
-   @include button($grey-3);
- }
 
 
+.nav-horizontal {
+  background-color: $grey-3;
+  overflow: hidden;
+}
 
+.nav-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
 
- .preview {
-   border: 1px solid $border-colour;
-   padding: 15px;
+// .nav-inner {
+//   max-width: 960px;
+//   font-size: 16px;
+//   line-height: 22px;
+//   margin: 0 auto;
+// }
 
-   ul {
-     @extend .list;
-     @extend .list-bullet;
-   }
+.nav-pri {
+  width: 500px;
+  float: left;
+  margin: 0;
+}
 
-   ol {
-     @extend .list;
-     @extend .list-number;
-   }
- }
+.nav-pri li {
+  float: left;
+  margin: 0;
+}
 
+.nav-pri li a {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  color: $text-colour;
+  margin-right: none;
+  margin-left: 0;
+}
 
+.nav-pri li a:hover {
+  background-color: $highlight-colour;
+}
 
-
-
- .inline-definition-list {
-   overflow: hidden;
-   margin-bottom: 5px;
- }
-
- .inline-definition-list dt {
-   margin-bottom: 5px;
- }
-
- .inline-definition-list dd {
-   margin-bottom: 10px;
- }
-
- @media (min-width: 769px) {
-   .inline-definition-list dt {
-     float: left;
-     display: inline-block;
-     clear: both;
-     width: 25%;
-   }
-   .inline-definition-list dd {
-     float: left;
-     display: inline-block;
-     padding-left: 2%;
-     width: 55%;
-     margin-bottom: 5px;
-   }
- }
-
-
-
-
- .green {
-   color: #00643D;
- }
+.nav-pri li.active a,
+.nav-pri li.active a:hover {
+  background-color: $govuk-blue;
+  font-weight: bold;
+  color: #fff;
+}
