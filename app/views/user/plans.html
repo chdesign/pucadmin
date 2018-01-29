@@ -8,10 +8,6 @@
       Plans
     </h1>
 
-    <a class="button" href="/admin/plan-types/create" role="button">
-      Create a new plan
-    </a>
-
     <h2 class="heading-medium">
       Summary view
     </h2>
@@ -30,7 +26,7 @@
       <li><a href="#0">Abertillery</a></li>
       <li><a href="#0">Aberystwyth</a></li>
       {% if data['pt-name'] %}
-      <li><a href="#0">{{ data['pt-name'] }}</a></li>
+      <li><a href="/plan">{{ data['pt-name'] }}</a></li>
       {% endif %}
     </ul>
 

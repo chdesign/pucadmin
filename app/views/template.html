@@ -98,7 +98,9 @@
   <!-- <div id="global-header-bar"></div> -->
 
   <main id="content" role="main">
-    {% include "includes/phase_banner_beta.html" %}
+    {% block phasebanner %}
+      {% include "includes/phase_banner_beta.html" %}
+    {% endblock %}
     {% block content %}{% endblock %}
   </main>
 

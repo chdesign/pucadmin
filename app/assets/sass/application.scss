@@ -212,3 +212,23 @@ hr {
 #proposition-links {
   float: right;
 }
+
+
+
+.previewback {
+  background-color: $govuk-blue;
+  color: white;
+  padding: 10px;
+
+
+  a, a:hover, a:visited {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+
+
+.govuk-box-highlight {
+  padding: 30px;
+}

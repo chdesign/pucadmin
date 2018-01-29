@@ -16,7 +16,6 @@
     </h1>
 
     <dl class="govuk-check-your-answers cya-questions-short">
-      {% if data['taskRendered'] %}
       <div>
         <dd class="cya-answer">
           {{ data['taskRendered'] | safe }}
@@ -27,8 +26,7 @@
           </a>
         </dd>
       </div>
-      {% endif %}
-      <div>
+      <!-- <div>
         <dd class="cya-answer">
           Make a list of all of your local partners and stakeholders – your local authorities can help you do this.
         </dd>
@@ -59,14 +57,14 @@
             Edit/delete
           </a>
         </dd>
-      </div>
+      </div> -->
     </dl>
-    <p class="mt-15">
+    <p class="mt-15 mb-30">
       <a href="#0">Add a task</a> or <a href="#0">reorder tasks</a>
     </p>
 
     <p>
-      <a class="button" href="/admin/plan-types/create/todo/stepped/supporting" role="button">Continue</a>
+      <a class="button" href="/admin/plan-types/create/todo/stepped/add-supporting" role="button">Continue</a>
     </p>
 
     <p>

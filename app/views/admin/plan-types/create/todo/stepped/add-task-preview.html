@@ -18,12 +18,11 @@
     <div class="preview">
 
       <p>
-        {{ data['taskRendered'] | safe if data['taskRendered'] else "Example task content" }}
-
+        {{ data['taskRendered'] | safe if data['taskRendered'] }}
       </p>
     </div>
-    <p>
-      <a href="/admin/plan-types/create/todo/main-content">Edit task</a>
+    <p class="mt-15 mb-30">
+      <a href="/admin/plan-types/create/todo/stepped/add-task">Edit task</a>
     </p>
 
     <p>

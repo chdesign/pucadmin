@@ -8,13 +8,9 @@
       Plans
     </h1>
 
-    <a class="button" href="/admin/plan-types/create" role="button">
-      Create a new plan
-    </a>
-
-    <h2 class="heading-medium">
+    <!-- <h2 class="heading-medium">
       Current plans
-    </h2>
+    </h2> -->
     <ul class="list">
       {% if data['pt-name'] %}
       <li>
@@ -109,6 +105,11 @@
       </li>
       <hr class="plan-types-line">
     </ul>
+    <p class="mt-15 mb-30">
+      <a href="/admin/plan-types/create">
+        Create a new plan
+      </a>
+    </p>
   </div>
 </div>
 {% endblock %}

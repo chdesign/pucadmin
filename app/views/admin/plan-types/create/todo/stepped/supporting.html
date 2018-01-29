@@ -18,7 +18,7 @@
     <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dd class="cya-answer">
-          Security advice centre<br>http://intralink/1/corp/sites/security/security-advice-support-centre/index.asp
+          {{ data['link-title'] }}<br>{{ data['link-url'] }}
         </dd>
         <dd class="cya-change">
           <a href="#0">
@@ -26,13 +26,23 @@
           </a>
         </dd>
       </div>
+      <!-- <div>
+        <dd class="cya-answer">
+          Security advice centre<br>http://intralink/1/corp/sites/security/security-advice-support-centre/index.asp
+        </dd>
+        <dd class="cya-change">
+          <a href="#0">
+            Edit/delete
+          </a>
+        </dd>
+      </div> -->
     </dl>
-    <p class="mt-30">
+    <p class="mt-15 mb-30">
       <a href="#0">Add supporting content</a> or <a href="#0">reorder supporting content</a>
     </p>
 
     <p>
-      <a class="button" href="/admin/plan-types/create/todo/stepped/tags" role="button">Continue</a>
+      <a class="button" href="/admin/plan-types/create/todo/stepped/release" role="button">Continue</a>
     </p>
 
     <p>

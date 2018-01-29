@@ -17,16 +17,16 @@
 
     <div class="preview">
       <p class="lede">
-        {{ data['todo-main-lede'] if data['todo-main-lede'] else "Example lead paragraph" }}
+        {{ data['todo-main-lede'] if data['todo-main-lede'] }}
       </p>
 
       <p>
-        {{ data['todoRendered'] | safe if data['todoRendered'] else "Example main content" }}
+        {{ data['todoRendered'] | safe if data['todoRendered'] }}
 
       </p>
     </div>
-    <p>
-      <a href="/admin/plan-types/create/todo/main-content">Edit main content</a>
+    <p class="mt-15 mb-30">
+      <a href="/admin/plan-types/create/todo/stepped/main-content">Edit main content</a>
     </p>
 
     <p>

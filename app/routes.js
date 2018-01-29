@@ -24,8 +24,10 @@ router.get('/deletedraftplan', function (req, res) {
 })
 
 router.get('/canceltodo', function (req, res) {
-  req.session.destroy()
-  res.redirect('/admin/plan-types')
+  // var clear = req.session.data['ref']
+
+  // req.session.destroy()
+  res.redirect('/admin/plan-types/create/draft')
 })
 
 
@@ -56,6 +58,14 @@ router.post('/admin/plan-types/create/todo/stepped/add-task-preview', function (
   req.session.data['taskRendered'] = marked(req.session.data['task-content'])
 
   res.redirect('/admin/plan-types/create/todo/stepped/add-task-preview')
+
+})
+
+router.post('/admin/plan-types/create/todo/stepped/release-preview', function (req, res){
+
+  req.session.data['releaseRendered'] = marked(req.session.data['release-content'])
+
+  res.redirect('/admin/plan-types/create/todo/stepped/release-preview')
 
 })
 

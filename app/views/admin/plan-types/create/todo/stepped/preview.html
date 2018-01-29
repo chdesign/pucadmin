@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block adminnav %}{% endblock %}
+
+{% block phasebanner %}
+  <div class="previewback">You are previewing a to-do. <a href="/admin/plan-types/create/todo/stepped/confirm">Back to editing to-do</a>.</div>
+{% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="#0">Plans</a></li>
+    <li><a href="#0">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-xlarge">
+      {{ data['todo-title'] if data['todo-title'] else "Prototype example" }}
+      <span class="heading-secondary">Complete by 27 February 2018</span>
+    </h1>
+
+    <p class="lede">{{ data['todo-main-lede'] }}</p>
+    <p>{{ data['todoRendered'] | safe }}</p>
+
+    <h2 class="heading-medium">
+      Task list
+    </h2>
+    <div class="form-group">
+      <div class="multiple-choice">
+        <input id="Example" type="checkbox" name="example" value="{{ data['task-content'] }}" >
+        <label for="Example">{{ data['task-content'] }}</label>
+      </div>
+    </div>
+
+
+
+
+
+    <h2 class="heading-medium">
+      Comments
+    </h2>
+    <div class="form-group">
+      <label class="form-label" for="exampletext">
+        Add comment
+        <span class="form-hint font-xsmall">Don't include sensitive information like the personal details of claimants or staff</span>
+      </label>
+      <textarea class="form-control form-control-100" id="exampletext" name="_addcomment" rows="5" autocomplete="off" disabled></textarea>
+    </div>
+    <div class="form-group">
+      <fieldset>
+        <div class="multiple-choice">
+          <input id="exampleblock" type="checkbox" name="examplechecks" value="block" {{ checked('examplechecks','block') }}>
+          <label for="exampleblock">Blocker – something is stopping us completing this</label>
+        </div>
+
+        <div class="multiple-choice">
+          <input id="examplerisk" type="checkbox" name="examplechecks" value="risk" {{ checked('examplechecks','risk') }}>
+          <label for="examplerisk">Risk – tasks unlikely to be done by 27 February 2018</label>
+        </div>
+      </fieldset>
+    </div>
+    <a class="button" href="#0" role="button">Save and continue</a>
+
+
+  </div>
+  <div class="column-one-third">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Supporting content</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall">
+          <li><a href="{{ data['link-url'] }}">{{ data['link-title'] }}</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+{% endblock %}

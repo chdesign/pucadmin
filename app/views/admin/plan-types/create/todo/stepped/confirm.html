@@ -16,13 +16,13 @@
       Check your answers and save to-do
     </h1>
 
-    <h2 class="heading-medium">
+    <h2 class="visuallyhidden">
       To-do information
     </h2>
-    <p class="heading-small">{{ data['todo-title'] if data['todo-title'] else "Example" }}</p>
+    <p class="heading-medium">{{ data['todo-title'] if data['todo-title'] else "Prototype example" }}</p>
     <p>{{ data['pt-desc'] if data['pt-desc'] else "Example description" }}</p>
     <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "undefined" }}/{{ data['pt-level2'] if data['pt-level2'] else "undefined" }}/{{ data['pt-level3'] if data['pt-level3'] else "undefined" }}</p>
-    <p class="mt-30">
+    <p class="mt-15 mb-30">
       <a href="/admin/plan-types/create/stepped/todo/">Edit to-do information</a>
     </p>
 
@@ -37,7 +37,7 @@
       <p class="lede">{{ data['todo-main-lede'] }}</p>
       <p>{{ data['todoRendered'] | safe }}</p>
     </div>
-    <p class="mt-30">
+    <p class="mt-15 mb-30">
       <a href="/admin/plan-types/create/todo/stepped/main-content">Edit main content</a>
     </p>
 
@@ -58,7 +58,7 @@
       <li>Plan an event to tell local partners and stakeholders about UC full service. You might need to host more than one event.</li>
       <li>Send invitations for your event.</li>
     </ul>
-    <p class="mt-30">
+    <p class="mt-15 mb-30">
       <a href="/admin/plan-types/create/todo/stepped/tasks">Edit tasks</a>
     </p>
 
@@ -70,9 +70,9 @@
       Supporting content
     </h2>
     <ul class="list list-bullet">
-      <li>Security advice centre <br>http://intralink/1/corp/sites/security/security-advice-support-centre/index.asp</li>
+      <li>{{ data['link-title'] }}<br>{{ data['link-url'] }}</li>
     </ul>
-    <p class="mt-30">
+    <p class="mt-15 mb-30">
       <a href="/admin/plan-types/create/todo/stepped/supporting">Edit supporting content</a>
     </p>
 
@@ -80,15 +80,15 @@
 
 
 
-    <h2 class="heading-medium">
+    <!-- <h2 class="heading-medium">
       Tags
     </h2>
     <ul class="list list-bullet">
       <li>tag</li>
     </ul>
-    <p class="mt-30">
+    <p class="mt-15 mb-30">
       <a href="/admin/plan-types/create/todo/stepped/tags">Edit tags</a>
-    </p>
+    </p> -->
 
 
 
@@ -97,8 +97,8 @@
     <h2 class="heading-medium">
       Release note
     </h2>
-    <p>Example release note.</p>
-    <p class="mt-30">
+    {{ data['releaseRendered'] | safe if data['releaseRendered'] }}
+    <p class="mt-15 mb-30">
       <a href="/admin/plan-types/create/todo/stepped/release">Edit release note</a>
     </p>
 
@@ -106,6 +106,7 @@
 
     <div class="form-group mt-30">
       <a href="/admin/plan-types/create/draft" class="button">Save to-do</a>
+      <a href="/admin/plan-types/create/todo/stepped/preview" class="button-secondary">Preview to-do</a>
     </div>
 
     <p>
