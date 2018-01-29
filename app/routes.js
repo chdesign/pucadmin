@@ -24,9 +24,7 @@ router.get('/deletedraftplan', function (req, res) {
 })
 
 router.get('/canceltodo', function (req, res) {
-  // var clear = req.session.data['ref']
-
-  // req.session.destroy()
+  delete req.session.data['todo-title']
   res.redirect('/admin/plan-types/create/draft')
 })
 

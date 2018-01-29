@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% set active = "sites" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/sites">Sites</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+        Add a new site
+      </h1>
+
+      <form action="/admin/sites" method="get" class="form">
+        <!-- /admin/plan-types/create/draft -->
+
+        <div class="form-group">
+          <label class="form-label-bold" for="site-name">Site name</label>
+          <input class="form-control" id="site-name" name="site-name" value="{{ data['site-name'] }}" type="text" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend>
+              <span class="form-label-bold">
+                Go live date
+              </span>
+              <span class="form-hint" id="dob-hint">For example, 31 10 2017</span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="site-day">Day</label>
+                <input class="form-control" id="site-day" name="site-day" value="{{ data['site-day'] }}" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="site-month">Month</label>
+                <input class="form-control" id="site-month" name="site-month" value="{{ data['site-month'] }}" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="site-year">Year</label>
+                <input class="form-control" id="site-year" name="site-year" value="{{site-year}}" type="number" pattern="[0-9]*" min="0" autocomplete="off">
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="select-box2">Select a plan</label>
+          <select class="form-control form-control-3-4" id="select-box2" name="upgradeto">
+            <option>- - Select a plan - -</option>
+            {% if data['pt-name'] %}
+            <option>{{ data['pt-name'] }} [version: 1]</option>
+            {% endif %}
+            <option>UC [version: 1]</option>
+            <option>UC JC [version: 1]</option>
+            <option>UC JC [version: 2]</option>
+            <option>UC JC [version: 3]</option>
+            <option>UC JC [version: 4]</option>
+            <option>UC JC [version: 5]</option>
+          </select>
+        </div>
+
+        <input name="siteaddsuccess" value="1" type="hidden">
+
+        <div class="form-group form-group-related">
+          <input type="submit" class="button" value="Add site">
+        </div>
+
+      </form>
+
+      <p>
+        or <a href="/admin/sites">cancel</a>
+      </p>
+  </div>
+</div>
+{% endblock %}

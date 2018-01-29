@@ -3,6 +3,13 @@
 
 {% block content %}
 <div class="grid-row">
+  <div class="column-full">
+    {% if data['siteaddsuccess'] %}
+    <div class="panel panel-border-wide alert-success">
+      <p>The plan &lsquo;{{ data['site-name'] }}&rsquo; was created</p>
+    </div>
+    {% endif %}
+  </div>
   <div class="column-two-thirds">
 
     <h1 class="heading-large">
@@ -10,7 +17,7 @@
     </h1>
 
     <ul class="list">
-      <li><a href="#0">Add a site</a></li>
+      <li><a href="/admin/sites/addsite">Add a site</a></li>
       <li><a href="/admin/sites/upgrade">Upgrade a site to a newer version of their plan</a></li>
       <li><a href="#0">Change a site&rsquo;s name</a></li>
       <li><a href="#0">Change a site&rsquo;s go-live date</a></li>

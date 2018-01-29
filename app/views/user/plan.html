@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block adminnav %}{% endblock %}
+{% set user = "service" %}
+
+{% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-xlarge">
+      {{ data['site-name'] }}
+      <span class="heading-secondary">Going live: 27 June 2018</span>
+    </h1>
+
+    <h2 class="heading-large">
+      Things you can do now
+    </h2>
+
+    <ul class="todo">
+      <li class="">
+        <a href="/user/todo">
+          <span class="heading">{{ data['todo-title'] if data['todo-title'] else "Example plan" }}</span>
+          <span class="small">Complete by 27 February 2018<span class="no-wrap">0 of 1 tasks completed</span></span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

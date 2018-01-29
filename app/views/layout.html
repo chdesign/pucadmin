@@ -26,8 +26,8 @@
         </a>
 
         <ul id="proposition-links">
-          <li><a href="/user/plans">Service view</a></li>
-          <li><a href="/admin">Admin view</a></li>
+          <li><a {% if user == "service" %} class="active" {% endif %} href="/user/plans">Service view</a></li>
+          <li><a {% if user != "service" %} class="active" {% endif %}  href="/admin">Admin view</a></li>
           <li><a href="#0">Sign out</a></li>
         </ul>
 

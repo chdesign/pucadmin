@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block adminnav %}{% endblock %}
+{% set user = "service" %}
 
 {% block content %}
 <div class="grid-row">
@@ -25,8 +26,8 @@
       <li><a href="#0">Abergavenny</a></li>
       <li><a href="#0">Abertillery</a></li>
       <li><a href="#0">Aberystwyth</a></li>
-      {% if data['pt-name'] %}
-      <li><a href="/plan">{{ data['pt-name'] }}</a></li>
+      {% if data['site-name'] %}
+      <li><a href="/user/plan">{{ data['site-name'] }}</a></li>
       {% endif %}
     </ul>
 

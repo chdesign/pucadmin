@@ -232,3 +232,66 @@ hr {
 .govuk-box-highlight {
   padding: 30px;
 }
+
+
+
+
+
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+  margin-top: 30px
+}
+
+
+
+
+
+ul.todo .heading {
+  font-weight: bold;
+}
+
+ul.todo li a,
+ul.todo li.dependencies {
+  margin: 10px 0;
+  padding: 20px 15px;
+  border-left: 5px solid $black;
+  border-bottom: 1px solid $border-colour;
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+  background-color: $highlight-colour;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+}
+
+ul.todo li a:hover {
+  background-color: $white;
+  border-bottom: 1px solid $border-colour;
+  border-top: 1px solid $border-colour;
+  border-right: 1px solid $border-colour;
+  span.heading {
+    text-decoration: underline;
+  }
+}
+
+ul.todo li a span.small,
+ul.todo li.dependencies span.small {
+  @include core-16;
+  color: $black;
+  display: table;
+}
+
+ul.todo li.overdue a {
+  border-left-color: $error-colour;
+  .overdue {
+    color: $error-colour;
+  }
+}
+
+ul.todo li.risk a {
+  border-left-color: $orange;
+  .risk {
+    color: darken($orange, 20%);
+  }
+}
