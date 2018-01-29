@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block adminnav %}{% endblock %}
+
+{% block content %}
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Plans
+    </h1>
+
+    <a class="button" href="/admin/plan-types/create" role="button">
+      Create a new plan
+    </a>
+
+    <h2 class="heading-medium">
+      Summary view
+    </h2>
+    <ul class="list list-bullet">
+      <li><a href="#0">Issues across your plans</a></li>
+      <li><a href="#0">Issues across your plans - view by issue</a></li>
+      <li><a href="#0">Issues across your plans - view by plan</a></li>
+    </ul>
+
+
+    <h2 class="heading-medium">
+      Detail view
+    </h2>
+    <ul class="list list-bullet">
+      <li><a href="#0">Abergavenny</a></li>
+      <li><a href="#0">Abertillery</a></li>
+      <li><a href="#0">Aberystwyth</a></li>
+      {% if data['pt-name'] %}
+      <li><a href="#0">{{ data['pt-name'] }}</a></li>
+      {% endif %}
+    </ul>
+
+
+  </div>
+</div>
+{% endblock %}

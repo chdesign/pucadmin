@@ -71,6 +71,7 @@
       </div>
       {% block proposition_header %}{% endblock %}
     </div>
+    {% block adminnav %}
     <div class="nav-horizontal">
       <div class="nav-wrapper">
         <div class="nav-inner">
@@ -88,6 +89,7 @@
         </div>
       </div>
     </div>
+    {% endblock %}
   </header>
 
 
@@ -96,7 +98,7 @@
   <!-- <div id="global-header-bar"></div> -->
 
   <main id="content" role="main">
-    {% include "includes/phase_banner_beta.html" %} 
+    {% include "includes/phase_banner_beta.html" %}
     {% block content %}{% endblock %}
   </main>
 
