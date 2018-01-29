@@ -14,9 +14,10 @@
         Create a new plan
       </h1>
 
-      <p>This information will be used to organise the plan. It won’t be shown to the user of the plan.</p>
+      <p>This information will be used to organise the plan. It won&rsquo;t be shown to the user of the plan.</p>
 
-      <form action="/admin/plan-types/create/draft" method="get" class="form">
+      <form action="/admin/plan-types/create/todo" method="get" class="form">
+        <!-- /admin/plan-types/create/draft -->
 
         <div class="form-group">
           <label class="form-label-bold" for="pt-name">Plan name</label>
@@ -41,17 +42,17 @@
             <div class="form-date mt-15">
               <div class="form-group form-group-year">
                 <label class="form-label" for="pt-level1">Level 1</label>
-                <input class="form-control" id="pt-level1" name="pt-level1" value="{{ data['pt-level1'] }}" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off">
+                <input class="form-control" id="pt-level1" name="pt-level1" value="{{ data['pt-level1'] }}" type="text" autocomplete="off">
               </div>
 
               <div class="form-group form-group-year">
                 <label class="form-label" for="pt-level2">Level 2</label>
-                <input class="form-control" id="pt-level2" name="pt-level2" value="{{ data['pt-level2'] }}" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
+                <input class="form-control" id="pt-level2" name="pt-level2" value="{{ data['pt-level2'] }}" type="text" autocomplete="off">
               </div>
 
               <div class="form-group form-group-year">
                 <label class="form-label" for="pt-level3">Level 3</label>
-                <input class="form-control" id="pt-level3" name="pt-level3" value="{{pt-level3}}" type="number" pattern="[0-9]*" min="0" autocomplete="off">
+                <input class="form-control" id="pt-level3" name="pt-level3" value="{{ data['pt-level3'] }}" type="text" autocomplete="off">
               </div>
             </div>
 
@@ -65,7 +66,7 @@
       </form>
 
       <p>
-        or <a href="javascript:history.back()">cancel <span class="visuallyhidden">creating a new plan</span></a>
+        or <a href="/admin/plan-types">cancel <span class="visuallyhidden">creating a new plan</span></a>
       </p>
   </div>
 </div>

@@ -14,6 +14,25 @@ router.get('/admin', function (req, res) {
   res.redirect('/admin/plan-types')
 })
 
+
+
+
+
+router.get('/deletedraftplan', function (req, res) {
+  req.session.destroy()
+  res.redirect('/admin/plan-types')
+})
+
+router.get('/canceltodo', function (req, res) {
+  req.session.destroy()
+  res.redirect('/admin/plan-types')
+})
+
+
+
+
+
+
 router.post('/admin/plan-types/create/todo/main-content-preview', function (req, res){
 
   req.session.data['todoRendered'] = marked(req.session.data['todo-main-content'])
