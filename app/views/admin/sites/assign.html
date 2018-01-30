@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% set active = "sites" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/sites">Sites</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Assign a plan to a site
+    </h1>
+
+    <form action="/assign" method="get" class="form">
+
+      <div class="form-group">
+        <fieldset>
+          <legend class="visually-hidden"></legend>
+          <div class="multiple-choice">
+            <input id="asign-new" type="radio" name="assign" value="new" {{ checked('assign','new') }}>
+            <label for="asign-new">Add a new site and assign the plan to it</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="assign-update" type="radio" name="assign" value="update" {{ checked('assign','update') }}>
+            <label for="assign-update">Update a current site&rsquo;s plan</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group form-group-related">
+        <input type="submit" class="button" value="Continue">
+      </div>
+
+    </form>
+
+    <p>
+      or <a href="/admin/sites">cancel</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

@@ -1,8 +1,16 @@
 {% extends "layout.html" %}
 {% block adminnav %}{% endblock %}
 
-{% block phasebanner %}
-  <div class="previewback">You are previewing a to-do. <a href="/admin/plan-types/create/todo/stepped/confirm">Back to editing to-do</a>.</div>
+{% block after_header %}
+  <div class="previewback">
+    <div class="preview_container">
+      <div class="grid-row">
+        <div class="column-full">
+          You are previewing a to-do. <a href="/admin/plan-types/create/todo/stepped/confirm2">Back to editing to-do</a>.
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block content %}
@@ -21,6 +29,12 @@
       <span class="heading-secondary">Complete by 27 February 2018</span>
     </h1>
 
+    <ul>
+    {% for i in data['todo-tags'] %}
+      <li class="tag">{{ i }}</li>
+    {% endfor %}
+    </ul>
+
     <p class="lede">{{ data['todo-main-lede'] }}</p>
     <p>{{ data['todoRendered'] | safe }}</p>
 
@@ -32,13 +46,19 @@
         <input id="Example" type="checkbox" name="example" value="{{ data['task-content'] }}" >
         <label for="Example">{{ data['task-content'] }}</label>
       </div>
+      {% if data['task-content-2'] %}
+      <div class="multiple-choice">
+        <input id="Example2" type="checkbox" name="example2" value="{{ data['task-content-2'] }}" >
+        <label for="Example2">{{ data['task-content-2'] }}</label>
+      </div>
+      {% endif %}
     </div>
 
 
 
 
 
-    <h2 class="heading-medium">
+    <!-- <h2 class="heading-medium">
       Comments
     </h2>
     <div class="form-group">
@@ -61,7 +81,7 @@
         </div>
       </fieldset>
     </div>
-    <a class="button" href="#0" role="button">Save and continue</a>
+    <a class="button" href="#0" role="button">Save and continue</a> -->
 
 
   </div>

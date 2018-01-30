@@ -17,16 +17,18 @@
       {{ data['todo-title'] }}
     </h1>
 
-    <h2 class="heading-medium">
-      To-do information
-    </h2>
-    <dl class="govuk-check-your-answers cya-questions-short">
+    <dl class="govuk-check-your-answers cya-questions-short mt-30">
       <div>
         <dt class="cya-question">
           Title
         </dt>
         <dd class="cya-answer">
           {{ data['todo-title'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/">
+            Change
+          </a>
         </dd>
       </div>
 
@@ -37,6 +39,11 @@
         <dd class="cya-answer">
           {{ data['todo-start'] }}
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/">
+            Change
+          </a>
+        </dd>
       </div>
 
       <div>
@@ -45,6 +52,11 @@
         </dt>
         <dd class="cya-answer">
           {{ data['todo-end'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/">
+            Change
+          </a>
         </dd>
       </div>
 
@@ -55,26 +67,24 @@
         <dd class="cya-answer">
           {{ data['todo-priority'] if data['todo-priority'] else "<span class='grey'>not set</span>" |safe }}
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/">
+            Change
+          </a>
+        </dd>
       </div>
-    </dl>
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create/todo/">Change to-do information</a>
-    </p>
 
-
-
-
-
-    <h2 class="heading-medium">
-      Main content
-    </h2>
-    <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dt class="cya-question">
           Lead paragraph
         </dt>
         <dd class="cya-answer">
           {{ data['todo-main-lede'] if data['todo-main-lede'] else "<span class='grey'>not set</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/main-content">
+            Change
+          </a>
         </dd>
       </div>
 
@@ -85,26 +95,13 @@
         <dd class="cya-answer">
           {{ data['todo-main-content'] }}
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/main-content">
+            Change
+          </a>
+        </dd>
       </div>
-    </dl>
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create/todo/stepped/main-content">Change main content</a>
-    </p>
 
-
-
-
-
-    <h2 class="heading-medium">
-      Tasks
-    </h2>
-    <ul class="list list-bullet">
-      <li>{{ data['task-content'] }}</li>
-      {% if data['task-content-2'] %}
-      <li>{{ data['task-content-2'] }}</li>
-      {% endif %}
-    </ul>
-    <!-- <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dt class="cya-question">
           Tasks
@@ -112,25 +109,18 @@
         <dd class="cya-answer">
           <ul>
             <li>{{ data['task-content'] }}</li>
+            {% if data['task-content-2'] %}
+            <li>{{ data['task-content-2'] }}</li>
+            {% endif %}
           </ul>
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/tasks">
+            Change
+          </a>
+        </dd>
       </div>
-    </dl> -->
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create/todo/stepped/tasks">Change tasks</a>
-    </p>
 
-
-
-
-
-    <h2 class="heading-medium">
-      Supporting content
-    </h2>
-    <ul class="list list-bullet">
-      <li>{{ data['link-title'] }} <span class="grey">({{ data['link-url'] }})</span></li>
-    </ul>
-    <!-- <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dt class="cya-question">
           Supporting content
@@ -140,27 +130,13 @@
             <li>{{ data['link-title'] }} ({{ data['link-url'] }})</li>
           </ul>
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/supporting">
+            Change
+          </a>
+        </dd>
       </div>
-    </dl> -->
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create/todo/stepped/supporting">Change supporting content</a>
-    </p>
 
-
-
-
-
-    <h2 class="heading-medium">
-      Tags
-    </h2>
-    <ul class="list list-bullet">
-      {% for i in data['todo-tags'] %}
-        <li>{{ i }}</li>
-      {% else %}
-        <li><span class='grey'>No tags selected</span></li>
-      {% endfor %}
-    </ul>
-    <!-- <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dt class="cya-question">
           Tags
@@ -174,21 +150,13 @@
             {% endfor %}
           </ul>
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/tags">
+            Change
+          </a>
+        </dd>
       </div>
-    </dl> -->
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create/todo/stepped/tags">Change tags</a>
-    </p>
 
-
-
-
-
-    <h2 class="heading-medium">
-      Release note
-    </h2>
-    <p>{{ data['release-content'] }}</p>
-    <!-- <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dt class="cya-question">
           Release note
@@ -196,11 +164,13 @@
         <dd class="cya-answer">
           {{ data['release-content'] }}
         </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/release">
+            Change
+          </a>
+        </dd>
       </div>
-    </dl> -->
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create/todo/stepped/release">Change release note</a>
-    </p>
+    </dl>
 
 
     <div class="form-group mt-30">
@@ -209,7 +179,7 @@
     </div>
 
     <p>
-      or <a href="/canceltodo">cancel</a>
+      or <a href="/canceltodo">discard to-do</a>
     </p>
 
   </div>

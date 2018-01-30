@@ -18,49 +18,47 @@
     <dl class="govuk-check-your-answers cya-questions-short">
       <div>
         <dd class="cya-answer">
-          {{ data['taskRendered'] | safe }}
+          <!-- {{ data['taskRendered'] | safe }} -->
+          {{ data['task-content'] }}
         </dd>
         <dd class="cya-change">
-          <a href="#0">
-            Edit/delete
+          <a href="/admin/plan-types/create/todo/stepped/add-task">
+            Edit
           </a>
         </dd>
-      </div>
-      <!-- <div>
-        <dd class="cya-answer">
-          Make a list of all of your local partners and stakeholders – your local authorities can help you do this.
-        </dd>
         <dd class="cya-change">
           <a href="#0">
-            Edit/delete
+            Delete
           </a>
         </dd>
       </div>
 
+
+      {% if data['task-content-2'] %}
       <div>
         <dd class="cya-answer">
-          Plan an event to tell local partners and stakeholders about UC full service. You might need to host more than one event.
+          <!-- {{ data['taskRendered'] | safe }} -->
+          {{ data['task-content-2'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/add-task2">
+            Edit
+          </a>
         </dd>
         <dd class="cya-change">
           <a href="#0">
-            Edit/delete
+            Delete
           </a>
         </dd>
       </div>
-
-      <div>
-        <dd class="cya-answer">
-          Send invitations for your event.
-        </dd>
-        <dd class="cya-change">
-          <a href="#0">
-            Edit/delete
-          </a>
-        </dd>
-      </div> -->
+      {% endif %}
     </dl>
     <p class="mt-15 mb-30">
+      {% if data['task-content-2'] %}
       <a href="#0">Add a task</a> or <a href="#0">reorder tasks</a>
+      {% else %}
+      <a href="/admin/plan-types/create/todo/stepped/add-task2">Add a task</a> or <a href="#0">reorder tasks</a>
+      {% endif %}
     </p>
 
     <p>

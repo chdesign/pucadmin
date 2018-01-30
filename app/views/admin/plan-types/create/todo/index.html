@@ -5,7 +5,7 @@
 <div class="breadcrumbs">
   <ol>
     <li><a href="/admin/plan-types">Plans</a></li>
-    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+    <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
   </ol>
 </div>
 
@@ -47,11 +47,11 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label-bold" for="priority">
+          <label class="form-label-bold" for="todo-priority">
             Priority (optional)
-            <span class="form-hint">This is used when more than one to-do has the same start and end week. Enter a number (1 is the highest priority)</span>
+            <span class="form-hint">This is used when more than one to-do has the same start and end week. Enter a number (1 is the highest todo-priority)</span>
           </label>
-          <input class="form-control form-control-1-8" id="priority" name="priority" value="{{ data['priority'] }}" type="text" autocomplete="off">
+          <input class="form-control form-control-1-8" id="todo-priority" name="todo-priority" value="{{ data['todo-priority'] }}" type="text" autocomplete="off">
         </div>
 
         <div class="form-group form-group-related">

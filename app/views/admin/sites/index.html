@@ -6,7 +6,7 @@
   <div class="column-full">
     {% if data['siteaddsuccess'] %}
     <div class="panel panel-border-wide alert-success">
-      <p>The plan &lsquo;{{ data['site-name'] }}&rsquo; was created</p>
+      <p>The site &lsquo;{{ data['site-name'] }}&rsquo; was created</p>
     </div>
     {% endif %}
   </div>
@@ -17,8 +17,9 @@
     </h1>
 
     <ul class="list">
-      <li><a href="/admin/sites/addsite">Add a site</a></li>
-      <li><a href="/admin/sites/upgrade">Upgrade a site to a newer version of their plan</a></li>
+      <li><a href="/admin/sites/assign">Assign a plan to a site</a></li>
+      <!-- <li><a href="/admin/sites/addsite">Add a site</a></li>
+      <li><a href="/admin/sites/upgrade">Upgrade a site to a newer version of their plan</a></li> -->
       <li><a href="#0">Change a site&rsquo;s name</a></li>
       <li><a href="#0">Change a site&rsquo;s go-live date</a></li>
       <li><a href="#0">Remove a site</a></li>

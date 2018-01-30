@@ -99,7 +99,9 @@
 
   <main id="content" role="main">
     {% block phasebanner %}
+      {% if user == "service" %}
       {% include "includes/phase_banner_beta.html" %}
+      {% endif %}
     {% endblock %}
     {% block content %}{% endblock %}
   </main>

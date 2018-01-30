@@ -17,7 +17,7 @@
       </h1>
 
     <p>{{ data['pt-desc'] if data['pt-desc'] else "Example plan description" }}</p>
-    <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "undefined" }}/{{ data['pt-level2'] if data['pt-level2'] else "undefined" }}/{{ data['pt-level3'] if data['pt-level3'] else "undefined" }}</p>
+    <p><strong class="bold">Hierarchy:</strong> {{ data['pt-level1'] if data['pt-level1'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['pt-level2'] if data['pt-level2'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['pt-level3'] if data['pt-level3'] else "<span class='grey'>undefined</span>" |safe }}</p>
 
     <p class="mt-30">
       <a href="/admin/plan-types/create">Edit plan information</a>
@@ -50,9 +50,18 @@
 
     <hr>
 
-    <p>
+    <form action="/admin/plan-types" method="post" class="form">
+
+      <input name="plan_saved" value="1" type="hidden">
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Save version 1 of the plan">
+      </div>
+
+    </form>
+    <!-- <p>
       <a class="button mt-30" href="/admin/plan-types/create/confirmation-page" role="button">Save version 1 of this plan</a>
-    </p>
+    </p> -->
     <p>
       or <a href="/deletedraftplan">delete draft of this plan</a>
     </p>

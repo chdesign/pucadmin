@@ -12,20 +12,19 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-      Add release note
+      Add a task
     </h1>
-    <p>This will let the user know what has changed in this version of the to-do.</p>
 
-    <form action="/admin/plan-types/create/todo/stepped/confirm2" method="post" class="form">
+    <form action="/admin/plan-types/create/todo/stepped/tasks" method="post" class="form">
 
       <div class="form-group">
-        <label class="form-label" for="release-content">
-          Release note content
+        <label class="form-label" for="task-content-2">
+          Task content
           <span class="form-hint">
             Styling with Markdown is supported
           </span>
         </label>
-        <textarea class="form-control form-control-100" id="release-content" name="release-content" rows="10" autocomplete="off">{{ data['release-content'] }}</textarea>
+        <textarea class="form-control form-control-100" id="task-content-2" name="task-content-2" rows="10" autocomplete="off">{{ data['task-content-2'] }}</textarea>
       </div>
 
       <div class="form-group form-group-related">

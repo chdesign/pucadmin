@@ -3,15 +3,38 @@
 
 {% block content %}
 <div class="grid-row">
+  <div class="column-full">
+    {% if data['plan_saved'] %}
+    <div class="panel panel-border-wide alert-success">
+      <p>The plan &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign a site to this plan</a>.</p>
+    </div>
+    {% endif %}
+  </div>
   <div class="column-two-thirds">
     <h1 class="heading-large">
       Plans
     </h1>
 
-    <!-- <h2 class="heading-medium">
-      Current plans
-    </h2> -->
+    <h2 class="heading-medium">
+      Plan administration
+    </h2>
     <ul class="list">
+      <li><a href="/admin/plan-types/create">Create a new plan</a></li>
+      <li><a href="/admin/plan-types/tags">Manage tags</a></li>
+    </ul>
+
+    <h2 class="heading-medium">
+      Current plans
+    </h2>
+    <ul class="list">
+      {% if data['pt-name'] %}
+      <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1 - draft)</a></li>
+      {% endif %}
+      <li><a href="#0">UC JC 50_50 (version 5)</a></li>
+      <li><a href="#0">UC JC (version 1 - draft)</a></li>
+      <li><a href="#0">UC (version 1)</a></li>
+    </ul>
+    <!-- <ul class="list">
       {% if data['pt-name'] %}
       <li>
         <h3 class="heading-small">
@@ -23,7 +46,7 @@
       {% endif %}
       <li>
         <h3 class="heading-small">
-            <a href="/admin/plan-types/draft">UC JC 50_50 (version 1 - draft)</a>
+            <a href="#0">UC JC 50_50 (version 1 - draft)</a>
           </h3>
         <p class="mb-10">Last edited: 14 December 2017 10:46</p>
       </li>
@@ -31,7 +54,7 @@
 
       <li>
         <h3 class="heading-small">
-            <a href="/admin/plan-types/published">UC JC (version 5)</a>
+            <a href="#0">UC JC (version 5)</a>
           </h3>
         <p class="mb-10">Last edited: 14 December 2017 10:39</p>
 
@@ -104,12 +127,8 @@
 
       </li>
       <hr class="plan-types-line">
-    </ul>
-    <p class="mt-15 mb-30">
-      <a href="/admin/plan-types/create">
-        Create a new plan
-      </a>
-    </p>
+    </ul> -->
+
   </div>
 </div>
 {% endblock %}

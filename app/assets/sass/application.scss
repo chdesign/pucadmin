@@ -26,6 +26,8 @@ $path: "/public/images/";
   }
 }
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+table th { font-weight: 700 }
+
 hr {
   margin: 0;
 }
@@ -146,6 +148,10 @@ hr {
   color: #00643D;
 }
 
+.grey {
+  color: $grey-1;
+}
+
 
 
 
@@ -216,15 +222,24 @@ hr {
 
 
 .previewback {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: $govuk-blue;
   color: white;
-  padding: 10px;
-
+  padding: 15px;
+  font-size: 125%;
 
   a, a:hover, a:visited {
     color: white;
     font-weight: bold;
   }
+}
+.preview_container {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 
@@ -294,4 +309,39 @@ ul.todo li.risk a {
   .risk {
     color: darken($orange, 20%);
   }
+}
+
+.cya-change + .cya-change {
+  padding-left: 10px;
+}
+
+
+
+
+
+.tag {
+  vertical-align: middle;
+  max-width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 3.01px;
+  color: #3572b0;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  padding-top: 4px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: -80px 5px 0 0;
+  text-align: left;
+  text-decoration: none;
+
+  color: #fff;
+  background-color: #2b8cc4;
+  border-color: #2b8cc4;
 }
