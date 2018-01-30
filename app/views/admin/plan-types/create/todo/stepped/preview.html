@@ -35,8 +35,13 @@
     {% endfor %}
     </ul>
 
+    <div class="releasenote">
+      <h2 class="heading-medium mt-0">Instructions changed today</h2>
+      {{ data['releaseRendered'] | safe }}
+    </div>
+
     <p class="lede">{{ data['todo-main-lede'] }}</p>
-    <p>{{ data['todoRendered'] | safe }}</p>
+    {{ data['todoRendered'] | safe }}
 
     <h2 class="heading-medium">
       Task list
@@ -44,12 +49,12 @@
     <div class="form-group">
       <div class="multiple-choice">
         <input id="Example" type="checkbox" name="example" value="{{ data['task-content'] }}" >
-        <label for="Example">{{ data['task-content'] }}</label>
+        <label for="Example">{{ data['taskRendered'] | safe }}</label>
       </div>
       {% if data['task-content-2'] %}
       <div class="multiple-choice">
         <input id="Example2" type="checkbox" name="example2" value="{{ data['task-content-2'] }}" >
-        <label for="Example2">{{ data['task-content-2'] }}</label>
+        <label for="Example2">{{ data['task2Rendered'] | safe }}</label>
       </div>
       {% endif %}
     </div>

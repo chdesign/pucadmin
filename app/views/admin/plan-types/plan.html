@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mb-0">
+      Plan:<br>
+      {{ data['plan-name'] }}
+      <span class="heading-secondary">Version {{ data['plan-version'] }}</span>
+    </h1>
+    {% if data['plan-version'] > 1 %}
+    <details class="font-xsmall mb-10" role="group">
+      <summary role="button" aria-expanded="false">
+        <span class="summary">Previous versions</span>
+      </summary>
+      <div class="panel panel-border-narrow" id="details-content-175735" aria-hidden="true">
+        <ul class="list list-bullet">
+          <li><a href="#0">Version 5</a> published: 17 January 2018 11:27</li>
+          <li><a href="#0">Version 4</a> published: 17 January 2018 11:27</li>
+          <li><a href="#0">Version 3</a> published: 17 January 2018 11:27</li>
+          <li><a href="#0">Version 2</a> published: 17 January 2018 11:27</li>
+          <li><a href="#0">Version 1</a> published: 17 January 2018 11:27</li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+    {% if data['plan-version'] != "1 (draft)" %}
+    <div class="archived-message" id="archive-message-box">
+      <h2 class="heading-medium">
+        Version {{ data['plan-version'] }} of this plan type is published and no longer editable
+      </h2>
+      <a href="/admin/plantypes/175741/create-new-version/" class="button">
+        Create version {{ data['plan-version'] + 1 }} as a new draft
+      </a>
+    </div>
+    {% endif %}
+
+    <p>{{ data['plan-desc'] }}</p>
+    <p><strong class="bold">Hierarchy:</strong> UCFS/WSD/IMPL</p>
+
+
+    {% if data['plan-version'] == "1 (draft)" %}
+    <p class="mt-30">
+      <a href="#0">Edit plan information</a>
+    </p>
+    {% endif %}
+
+    <hr>
+
+    <h2 class="heading-medium">
+      To-dos
+    </h2>
+
+    <ol class="list">
+      <li>
+        <h3 class="heading-small">
+          <a href="0">Check staff are booked on your first leadership academy event: base camp</a>
+        </h3>
+        <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
+      </li>
+      <li>
+        <h3 class="heading-small">
+          <a href="0">Check partnership managers and employer engagement staff are getting the training they need</a>
+        </h3>
+        <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
+      </li>
+      <li>
+        <h3 class="heading-small">
+          <a href="0">Add an activity assurance certificate to your shared folder</a>
+        </h3>
+        <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
+      </li>
+    </ol>
+
+    {% if data['plan-version'] == "1 (draft)" %}
+    <hr class="mb-30">
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Save version 1 of the plan">
+    </div>
+
+    <p>
+      or <a href="#0">delete draft of this plan</a>
+    </p>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

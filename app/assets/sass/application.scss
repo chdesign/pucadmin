@@ -345,3 +345,27 @@ ul.todo li.risk a {
   background-color: #2b8cc4;
   border-color: #2b8cc4;
 }
+
+
+
+
+
+.archived-message {
+  border: 5px solid #005ea5;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+  .archived-message h2 {
+    margin-top: 0;
+  }
+
+
+
+
+
+.releasenote {
+  background-color: $govuk-blue;
+  color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+}

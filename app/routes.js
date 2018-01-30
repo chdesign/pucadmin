@@ -89,4 +89,28 @@ router.post('/admin/plan-types/create/todo/stepped/release-preview', function (r
 
 })
 
+
+
+
+router.post('/admin/plan-types/create/todo/stepped/confirm2', function (req, res){
+
+
+  if (req.session.data['todo-main-content']) {
+    req.session.data['todoRendered'] = marked(req.session.data['todo-main-content'])
+  }
+  if (req.session.data['task-content']) {
+    req.session.data['taskRendered'] = marked(req.session.data['task-content'])
+  }
+  if (req.session.data['task-content-2']) {
+    req.session.data['task2Rendered'] = marked(req.session.data['task-content-2'])
+  }
+  if (req.session.data['release-content']) {
+    req.session.data['releaseRendered'] = marked(req.session.data['release-content'])
+  }
+
+
+  res.redirect('/admin/plan-types/create/todo/stepped/confirm2')
+
+})
+
 module.exports = router
