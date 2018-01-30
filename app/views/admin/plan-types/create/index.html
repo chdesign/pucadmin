@@ -1,31 +1,32 @@
 {% extends "layout.html" %}
 {% set active = "plans" %}
+{% block adminnav %}{% endblock %}
 
 {% block content %}
-<div class="breadcrumbs">
+<!-- <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">Plan templates</a></li>
   </ol>
-</div>
+</div> -->
 
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-        Create a new plan
+        Create a new plan template
       </h1>
 
-      <p>This information will be used to organise the plan. It won&rsquo;t be shown to the user of the plan.</p>
+      <p>This information will be used to organise the template. It won&rsquo;t be shown to the user of the plan.</p>
 
       <form action="/admin/plan-types/create/todo" method="get" class="form">
         <!-- /admin/plan-types/create/draft -->
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-name">Plan name</label>
+          <label class="form-label-bold" for="pt-name">Template name</label>
           <input class="form-control" id="pt-name" name="pt-name" value="{{ data['pt-name'] }}" type="text" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-desc">Plan description (optional)</label>
+          <label class="form-label-bold" for="pt-desc">Template description (optional)</label>
           <textarea class="form-control form-control-3-4" id="pt-desc" name="pt-desc" rows="5" autocomplete="off">{{ data['pt-desc'] }}</textarea>
         </div>
 

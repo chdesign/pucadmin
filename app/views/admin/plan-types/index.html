@@ -6,25 +6,25 @@
   <div class="column-full">
     {% if data['plan_saved'] %}
     <div class="panel panel-border-wide alert-success">
-      <p>The plan &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign a site to this plan</a>.</p>
+      <p>The template &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign a plan to this template</a>.</p>
     </div>
     {% endif %}
   </div>
   <div class="column-two-thirds">
     <h1 class="heading-large">
-      Plans
+      Plan templates
     </h1>
 
     <h2 class="heading-medium">
-      Plan administration
+      Template administration
     </h2>
     <ul class="list">
-      <li><a href="/admin/plan-types/create">Create a new plan</a></li>
+      <li><a href="/admin/plan-types/create">Create a new template</a></li>
       <li><a href="/admin/plan-types/tags">Manage tags</a></li>
     </ul>
 
     <h2 class="heading-medium">
-      Current plans
+      Current templates
     </h2>
     <ul class="list">
       {% if data['pt-name'] %}

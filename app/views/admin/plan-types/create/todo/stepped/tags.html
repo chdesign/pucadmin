@@ -1,15 +1,19 @@
 {% extends "layout.html" %}
 {% set active = "plans" %}
+{% block adminnav %}{% endblock %}
 
 {% block content %}
-<div class="breadcrumbs">
+<!-- <div class="breadcrumbs">
   <ol>
     <li><a href="/admin/plan-types">Plans</a></li>
     <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
   </ol>
-</div>
+</div> -->
 
 <div class="grid-row">
+  <div class="column-full">
+    <a href="javascript:history.back()" class="link-back">Back</a>
+  </div>
   <div class="column-two-thirds">
     <h1 class="heading-large">
       Add tags

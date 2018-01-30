@@ -11,7 +11,7 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large mb-0">
-      Plan:<br>
+      Plan template:<br>
       {{ data['plan-name'] }}
       <span class="heading-secondary">Version {{ data['plan-version'] }}</span>
     </h1>
@@ -35,10 +35,10 @@
     {% if data['plan-version'] != "1 (draft)" %}
     <div class="archived-message" id="archive-message-box">
       <h2 class="heading-medium">
-        Version {{ data['plan-version'] }} of this plan type is published and no longer editable
+        Version {{ data['plan-version'] }} of this plan template is published and no longer editable
       </h2>
       <a href="/admin/plantypes/175741/create-new-version/" class="button">
-        Create version {{ data['plan-version'] + 1 }} as a new draft
+        Create a new draft
       </a>
     </div>
     {% endif %}

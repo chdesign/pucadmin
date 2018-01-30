@@ -4,21 +4,21 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/sites">Sites</a></li>
+    <li><a href="/admin/sites">Plans</a></li>
   </ol>
 </div>
 
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-        Add a new site
+        Add a new plan
       </h1>
 
       <form action="/admin/sites" method="get" class="form">
         <!-- /admin/plan-types/create/draft -->
 
         <div class="form-group">
-          <label class="form-label-bold" for="site-name">Site name</label>
+          <label class="form-label-bold" for="site-name">Plan name</label>
           <input class="form-control" id="site-name" name="site-name" value="{{ data['site-name'] }}" type="text" autocomplete="off">
         </div>
 
@@ -53,9 +53,9 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label-bold" for="select-box2">Plan</label>
+          <label class="form-label-bold" for="select-box2">Plan template</label>
           <select class="form-control form-control-3-4" id="select-box2" name="upgradeto">
-            <option>- - Select a plan - -</option>
+            <option>- - Select a template - -</option>
             {% if data['pt-name'] %}
             <option>{{ data['pt-name'] }} [version: 1]</option>
             {% endif %}
