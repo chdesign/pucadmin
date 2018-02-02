@@ -4,14 +4,14 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/plan-types">Plan templates</a></li>
+    <li><a href="/admin/plan-types">Templates</a></li>
   </ol>
 </div>
 
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-        Plan template:<br>
+        Template:<br>
         {{ data['pt-name'] if data['pt-name'] else "Example plan" }}
         <span class="heading-secondary">Version 1{% if not data['plan_saved'] %} - draft{% endif %}</span>
       </h1>
