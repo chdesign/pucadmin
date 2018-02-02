@@ -104,6 +104,9 @@ router.post('/admin/plan-types/create/todo/stepped/confirm2', function (req, res
   if (req.session.data['task-content-2']) {
     req.session.data['task2Rendered'] = marked(req.session.data['task-content-2'])
   }
+  if (req.session.data['task-content-3']) {
+    req.session.data['task3Rendered'] = marked(req.session.data['task-content-3'])
+  }
   if (req.session.data['release-content']) {
     req.session.data['releaseRendered'] = marked(req.session.data['release-content'])
   }

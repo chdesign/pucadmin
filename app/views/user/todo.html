@@ -29,7 +29,20 @@
         <input id="Example" type="checkbox" name="example" value="{{ data['task-content'] }}" >
         <label for="Example">{{ data['task-content'] }}</label>
       </div>
+      {% if data['task-content-2'] %}
+      <div class="multiple-choice">
+        <input id="Example2" type="checkbox" name="example2" value="{{ data['task-content-2'] }}" >
+        <label for="Example2">{{ data['task2Rendered'] | safe }}</label>
+      </div>
+      {% endif %}
+      {% if data['task-content-3'] %}
+      <div class="multiple-choice">
+        <input id="Example3" type="checkbox" name="example3" value="{{ data['task-content-3'] }}" >
+        <label for="Example3">{{ data['task3Rendered'] | safe }}</label>
+      </div>
+      {% endif %}
     </div>
+
 
 
 

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% set active = "plans" %}
+{% block adminnav %}{% endblock %}
+
+{% block content %}
+<!-- <div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div> -->
+
+<div class="grid-row">
+  <div class="column-full">
+    <a href="javascript:history.back()" class="link-back">Back</a>
+  </div>
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Add a task
+    </h1>
+
+    <form action="/admin/plan-types/create/todo/stepped/tasks" method="post" class="form">
+
+      <div class="form-group">
+        <label class="form-label" for="task-content-3">
+          Task content
+          <span class="form-hint">
+            Styling with Markdown is supported
+          </span>
+        </label>
+        <textarea class="form-control form-control-100" id="task-content-3" name="task-content-3" rows="10" autocomplete="off">{{ data['task-content-3'] }}</textarea>
+      </div>
+
+      <div class="form-group form-group-related">
+        <input type="submit" class="button" value="Continue">
+      </div>
+
+    </form>
+
+    <p>
+      or <a href="/canceltodo">cancel</a>
+    </p>
+
+  </div>
+
+  <div class="column-one-third">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Markdown formatting</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall">
+          <li>
+            For a link:
+            <br>
+            <pre><code class="language-markdown">[Link](http://a.com)</code></pre>
+          </li>
+          <li>
+            For a bulleted list:
+            <br>
+            <pre><code class="language-markdown">* List
+* List
+* List</code></pre>
+          </li>
+          <li>
+            For a numbered list:
+            <br>
+            <pre><code class="language-markdown">1. One
+2. Two
+3. Three</code></pre>
+          </li>
+          <li>For more information on using markdown, use the <a href="http://commonmark.org/help/">markdown guide</a>.</li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+{% endblock %}

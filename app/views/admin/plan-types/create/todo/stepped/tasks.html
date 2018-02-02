@@ -56,10 +56,30 @@
         </dd>
       </div>
       {% endif %}
+      {% if data['task-content-3'] %}
+      <div>
+        <dd class="cya-answer">
+          <!-- {{ data['taskRendered'] | safe }} -->
+          {{ data['task-content-3'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/stepped/add-task3">
+            Edit
+          </a>
+        </dd>
+        <dd class="cya-change">
+          <a href="#0">
+            Delete
+          </a>
+        </dd>
+      </div>
+      {% endif %}
     </dl>
     <p class="mt-15 mb-30">
-      {% if data['task-content-2'] %}
+      {% if data['task-content-3'] %}
       <a href="#0">Add a task</a> or <a href="#0">reorder tasks</a>
+      {% elif data['task-content-2'] %}
+      <a href="/admin/plan-types/create/todo/stepped/add-task3">Add a task</a> or <a href="#0">reorder tasks</a>
       {% else %}
       <a href="/admin/plan-types/create/todo/stepped/add-task2">Add a task</a> or <a href="#0">reorder tasks</a>
       {% endif %}
