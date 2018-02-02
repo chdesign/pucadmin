@@ -1,46 +1,91 @@
 {% extends "layout.html" %}
+{% block adminnav %}{% endblock %}
+
 
 {% block content %}
   <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large mt-10 mb-15">
-        Admin
-      </h1>
-    </div>
-  </div>
+    <div class="column-full">
+      <div class="admin-submenu-container">
+        <p class="heading-large">Admin</p>
+        <div class="admin-submenu">
+          <ul>
+            <li><a href="#">Plan templates</a></li>
+            <li><a href="#">Manage plans</a></li>
+            <li><a href="#">Manage users</a></li>
+          </ul>
+        </div>
 
-  <div class="grid-row">
-    <div class="column-one-third">
-      <h2 class="heading-medium">Plan information</h2>
-      <ul class="list">
-        <li><a href="#0">View Plans</a></li>
-        <li><a href="#0">Recent activity report</a></li>
-      </ul>
-    </div>
+        <div class="admin-panes">
+          <div class="admin-pane">
 
-    <div class="column-one-third">
-      <h2 class="heading-medium">Plan administration</h2>
-      <ul class="list">
-        <li><a href="/admin/plan-types/create">Create plan type</a></li>
-        <li><a href="/admin/plan-types">Manage existing plan types</a></li>
-        <li><a href="#0">Create plan</a></li>
-        <li><a href="/admin/upgrade">Upgrade plans</a></li>
-        <li><a href="#0">Change a plan's name</a></li>
-        <li><a href="#0">Change a go-live date</a></li>
-        <li><a href="#0">Remove a plan</a></li>
-        <li><a href="#0">Restore a plan</a></li>
-      </ul>
-    </div>
+            <h2 class="heading-large visuallyhidden">
+              Plan templates
+            </h2>
 
-    <div class="column-one-third">
-      <h2 class="heading-medium">User administration</h2>
-      <ul class="list">
-        <li><a href="#0">Add a new user</a></li>
-        <li><a href="/admin/manage-users">Manage existing users</a></li>
-        <li><a href="#0">Re-issue user password</a></li>
-        <li><a href="#0">Create and assign multiple users to a plan</a></li>
-        <li><a href="#0">Send an email to all users</a></li>
-      </ul>
+            <h3 class="heading-medium">
+              Template administration
+            </h3>
+            <ul class="list">
+              <li><a href="/admin/plan-types/create">Create a new template</a></li>
+              <li><a href="/admin/plan-types/tags">Manage tags</a></li>
+            </ul>
+
+            <h3 class="heading-medium">
+              Current templates
+            </h3>
+            <ul class="list">
+              {% if data['pt-name'] %}
+              <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1 - draft)</a></li>
+              {% endif %}
+              <li><a href="/admin/plan-types/plan?plan-name=UC JC 50_50&plan-version=5&plan-desc=Plan templates used by sites with a 50/50 go live split, by postcode. For the 2nd go live date, sites to use this plan template, with a reduced number of to-dos Corresponds to content change 14/12/2017 - Support local partners and stakeholders and discuss your site readiness">UC JC 50_50 (version 5)</a></li>
+              <li><a href="/admin/plan-types/plan?plan-name=UC JC&plan-version=1 (draft)&plan-desc=">UC JC (version 1 - draft)</a></li>
+              <li><a href="/admin/plan-types/plan?plan-name=UC&plan-version=1&plan-desc=">UC (version 1)</a></li>
+            </ul>
+
+          </div>
+
+          <div class="admin-pane">
+
+            <h2 class="heading-large visuallyhidden">
+              Plans
+            </h2>
+
+            <ul class="list">
+              <li><a href="/admin/sites/assign">Assign a template to a plan</a></li>
+              <!-- <li><a href="/admin/sites/addsite">Add a site</a></li>
+              <li><a href="/admin/sites/upgrade">Upgrade a site to a newer version of their plan</a></li> -->
+              <li><a href="#0">Change a plan&rsquo;s name</a></li>
+              <li><a href="#0">Change a plan&rsquo;s go-live date</a></li>
+              <li><a href="#0">Remove a plan</a></li>
+              <li><a href="#0">Restore a plan</a></li>
+            </ul>
+
+          </div>
+
+          <div class="admin-pane">
+
+            <h2 class="heading-large visuallyhidden">
+              Users
+            </h2>
+
+            <h3 class="heading-medium">New users</h3>
+            <ul class="list">
+              <li><a href="#0">Add a new user</a></li>
+              <li><a href="#0">Add multiple users and assign to a plan</a></li>
+            </ul>
+
+            <h3 class="heading-medium">Existing users</h3>
+            <ul class="list">
+              <li><a href="/admin/users/manage-users">Manage existing users</a></li>
+              <li><a href="#0">Re-issue user password</a></li>
+              <li><a href="#0">Send an email to all users</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 {% endblock %}

@@ -4,7 +4,7 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">Plan templates</a></li>
   </ol>
 </div>
 
@@ -13,7 +13,7 @@
     <h1 class="heading-large">
         Plan template:<br>
         {{ data['pt-name'] if data['pt-name'] else "Example plan" }}
-        <span class="heading-secondary">Version 1 (draft)</span>
+        <span class="heading-secondary">Version 1{% if not data['plan_saved'] %} - draft{% endif %}</span>
       </h1>
 
     <p>{{ data['pt-desc'] if data['pt-desc'] else "Example plan description" }}</p>

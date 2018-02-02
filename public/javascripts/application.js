@@ -23,17 +23,17 @@ $(document).ready(function () {
 
 
 
-$(document).on('click', '.admin-submenu a', function(e) {
-  e.preventDefault();
-
-  var nth = $(this).parent().index() + 1;
-  var target = $(this).parents('.admin-submenu-container').find('.admin-pane:nth-child(' + nth + ')');
-
-  $(this).parents('.admin-submenu-container').find('.active').removeClass('active');
-  $(this).parent().addClass('active');
-
-  $(this).parents('.admin-submenu-container').find('.admin-panes').children().hide();
-  $(this).parents('.admin-submenu-container').find('h1').text($(this).text());
-  target.show();
-});
-$('.admin-submenu a').first().click();
+// $(document).on('click', '.admin-submenu a', function(e) {
+//   e.preventDefault();
+//
+//   var nth = $(this).parent().index() + 1;
+//   var target = $(this).parents('.admin-submenu-container').find('.admin-pane:nth-child(' + nth + ')');
+//
+//   $(this).parents('.admin-submenu-container').find('.active').removeClass('active');
+//   $(this).parent().addClass('active');
+//
+//   $(this).parents('.admin-submenu-container').find('.admin-panes').children().hide();
+//   $(this).parents('.admin-submenu-container').find('h1').text($(this).text());
+//   target.show();
+// });
+// $('.admin-submenu a').first().click();

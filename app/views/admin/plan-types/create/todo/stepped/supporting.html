@@ -21,6 +21,8 @@
 
     <dl class="govuk-check-your-answers cya-questions-short">
       <div>
+
+        {% if data['link-title'] %}
         <dd class="cya-answer">
           {{ data['link-title'] }} <span class="grey">({{ data['link-url'] }})</span>
         </dd>
@@ -29,6 +31,11 @@
             Edit/delete
           </a>
         </dd>
+        {% else %}
+        <p class='grey'>No supporting content</p>
+        {% endif %}
+
+
       </div>
       <!-- <div>
         <dd class="cya-answer">

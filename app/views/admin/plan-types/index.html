@@ -6,14 +6,20 @@
   <div class="column-full">
     {% if data['plan_saved'] %}
     <div class="panel panel-border-wide alert-success">
-      <p>The template &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign a plan to this template</a>.</p>
+      <p>The template &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign the template to a plan</a>.</p>
     </div>
     {% endif %}
   </div>
   <div class="column-two-thirds">
-    <h1 class="heading-large">
-      Plan templates
-    </h1>
+
+    <h1 class="heading-large"><span class="visuallyhidden">Plan Templates </span>Admin</h1>
+    <div class="admin-submenu">
+      <ul>
+        <li class="active"><a href="#0">Plan templates</a></li>
+        <li><a href="/admin/sites">Manage plans</a></li>
+        <li><a href="/admin/users">Manage users</a></li>
+      </ul>
+    </div>
 
     <h2 class="heading-medium">
       Template administration
@@ -28,7 +34,7 @@
     </h2>
     <ul class="list">
       {% if data['pt-name'] %}
-      <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1 - draft)</a></li>
+      <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1{% if not data['plan_saved'] %} - draft{% endif %})</a></li>
       {% endif %}
       <li><a href="/admin/plan-types/plan?plan-name=UC JC 50_50&plan-version=5&plan-desc=Plan templates used by sites with a 50/50 go live split, by postcode. For the 2nd go live date, sites to use this plan template, with a reduced number of to-dos Corresponds to content change 14/12/2017 - Support local partners and stakeholders and discuss your site readiness">UC JC 50_50 (version 5)</a></li>
       <li><a href="/admin/plan-types/plan?plan-name=UC JC&plan-version=1 (draft)&plan-desc=">UC JC (version 1 - draft)</a></li>

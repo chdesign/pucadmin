@@ -64,41 +64,83 @@ hr {
   margin-bottom: 30px;
 }
 
+
+
+
+
+
 .admin-submenu ul {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid $grey-2;
   margin-bottom: 30px;
 }
 
 .admin-submenu li {
   display: inline-block;
-  padding: 20px 10px;
+  padding: 15px 20px 10px;
+  border: 1px solid $grey-2;
+  background: $grey-3;
+
+  a {
+    font-weight: 700;
+    color: $link-colour;
+  }
 }
 
-.admin-submenu li:first-child {
-  padding-left: 0;
-}
+// .admin-submenu li:first-child {
+//   padding-left: 0;
+// }
 
 .admin-submenu li.active {
-  -webkit-box-shadow: inset 0 -3px 0 0 #30a197;
-  -moz-box-shadow: inset 0 -3px 0 0 #30a197;
-  box-shadow: inset 0 -3px 0 0 #30a197;
+  // -webkit-box-shadow: inset 0 -6px 0 0 $govuk-blue;
+  // -moz-box-shadow: inset 0 -6px 0 0 $govuk-blue;
+  // box-shadow: inset 0 -6px 0 0 $govuk-blue;
+
+  display: inline-block;
+  padding: 15px 20px;
+  border: 1px solid $grey-2;
+  border-bottom: 1px solid white;
+  margin-bottom: -1px;
+  background: white;
+
+  a {
+    color: $text-colour;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 .admin-submenu a {
-  font-size: 16px;
+  // font-size: 16px;
 }
 
 .admin-pane {
   margin-bottom: 30px;
 }
 
+
+
+
+
+
+
 .form-control-100 {
   width: 100%;
 }
 
+
+
+
+
+
 .button-secondary {
   @include button($grey-3);
 }
+
+
+
+
+
 
 .preview {
   border: 1px solid $border-colour;

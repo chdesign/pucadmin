@@ -27,7 +27,7 @@
           Title
         </dt>
         <dd class="cya-answer">
-          {{ data['todo-title'] }}
+          {{ data['todo-title'] if data['todo-title'] else "<span class='grey'>Title not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/">
@@ -41,7 +41,7 @@
           Start week
         </dt>
         <dd class="cya-answer">
-          {{ data['todo-start'] }}
+          {{ data['todo-start'] if data['todo-start'] else "<span class='grey'>Start week not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/">
@@ -55,7 +55,7 @@
           End week
         </dt>
         <dd class="cya-answer">
-          {{ data['todo-end'] }}
+          {{ data['todo-end'] if data['todo-end'] else "<span class='grey'>End week not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/">
@@ -69,7 +69,7 @@
           Priority
         </dt>
         <dd class="cya-answer">
-          {{ data['todo-priority'] if data['todo-priority'] else "<span class='grey'>not set</span>" |safe }}
+          {{ data['todo-priority'] if data['todo-priority'] else "<span class='grey'>Priority not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/">
@@ -83,7 +83,7 @@
           Lead paragraph
         </dt>
         <dd class="cya-answer">
-          {{ data['todo-main-lede'] if data['todo-main-lede'] else "<span class='grey'>not set</span>" |safe }}
+          {{ data['todo-main-lede'] if data['todo-main-lede'] else "<span class='grey'>Lead paragraph not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/stepped/main-content">
@@ -97,7 +97,7 @@
           Content
         </dt>
         <dd class="cya-answer">
-          {{ data['todo-main-content'] }}
+          {{ data['todo-main-content'] if data['todo-main-content'] else "<span class='grey'>Main content not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/stepped/main-content">
@@ -112,7 +112,7 @@
         </dt>
         <dd class="cya-answer">
           <ul>
-            <li>{{ data['task-content'] }}</li>
+            <li>{{ data['task-content'] if data['task-content'] else "<span class='grey'>Tasks not added</span>" |safe }}</li>
             {% if data['task-content-2'] %}
             <li>{{ data['task-content-2'] }}</li>
             {% endif %}
@@ -130,9 +130,13 @@
           Supporting content
         </dt>
         <dd class="cya-answer">
+          {% if data['link-title'] %}
           <ul>
             <li>{{ data['link-title'] }} ({{ data['link-url'] }})</li>
           </ul>
+          {% else %}
+          <span class='grey'>Supporting content not added</span>
+          {% endif %}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/stepped/supporting">
@@ -150,7 +154,7 @@
             {% for i in data['todo-tags'] %}
               <li>{{ i }}</li>
             {% else %}
-              <li><span class='grey'>No tags selected</span></li>
+              <li><span class='grey'>Tags not added</span></li>
             {% endfor %}
           </ul>
         </dd>
@@ -166,7 +170,11 @@
           Release note
         </dt>
         <dd class="cya-answer">
+          {% if data['release-content'] %}
           {{ data['release-content'] }}
+          {% else %}
+          <span class='grey'>Release note not added</span>
+          {% endif %}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/stepped/release">

@@ -72,7 +72,7 @@
       {% block proposition_header %}{% endblock %}
     </div>
     {% block adminnav %}
-    <div class="nav-horizontal">
+    <!-- <div class="nav-horizontal">
       <div class="nav-wrapper">
         <div class="nav-inner">
           <ul class="nav-pri">
@@ -88,7 +88,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
     {% endblock %}
   </header>
 
@@ -99,9 +99,7 @@
 
   <main id="content" role="main">
     {% block phasebanner %}
-      {% if user == "service" %}
       {% include "includes/phase_banner_beta.html" %}
-      {% endif %}
     {% endblock %}
     {% block content %}{% endblock %}
   </main>
