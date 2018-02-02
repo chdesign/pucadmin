@@ -5,11 +5,11 @@
 {% block content %}
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-large">
+    <h1 class="heading-xlarge">
       Plans
     </h1>
 
-    <h2 class="heading-medium">
+    <h2 class="heading-large">
       Summary view
     </h2>
     <ul class="list list-bullet">
@@ -19,15 +19,15 @@
     </ul>
 
 
-    <h2 class="heading-medium">
+    <h2 class="heading-large">
       Detail view
     </h2>
     <ul class="list list-bullet">
-      <li><a href="#0">Abergavenny</a></li>
-      <li><a href="#0">Abertillery</a></li>
-      <li><a href="#0">Aberystwyth</a></li>
+      <li><a href="/user/plan?plan=Abergavenny">Abergavenny</a></li>
+      <li><a href="/user/plan?plan=Abertillery">Abertillery</a></li>
+      <li><a href="/user/plan?plan=Aberystwyth">Aberystwyth</a></li>
       {% if data['site-name'] %}
-      <li><a href="/user/plan">{{ data['site-name'] }}</a></li>
+      <li><a href="/user/plan?plan={{ data['site-name'] }}">{{ data['site-name'] }}</a></li>
       {% endif %}
     </ul>
 

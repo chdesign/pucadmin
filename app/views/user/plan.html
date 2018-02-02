@@ -3,20 +3,41 @@
 {% set user = "service" %}
 
 {% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/user/plans">Plans</a></li>
+  </ol>
+</div>
 <div class="grid-row">
   <div class="column-two-thirds">
-
     <h1 class="heading-xlarge">
-      {{ data['site-name'] }}
+      {{ data['plan'] }}
       <span class="heading-secondary">Going live: 27 June 2018</span>
     </h1>
+  </div>
+</div>
+<div class="grid-row">
+  <div class="column-full">
+    <div class="admin-submenu">
+      <ul>
+        <li class="active"><a href="#0">Things you need to do</a></li>
+        <li><a href="#0">Completed</a></li>
+        <li><a href="#0">Progress summary</a></li>
+        <li><a href="#0">Archived</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <p class="font-xsmall">Show: <span class="bold mr-10">All</span> <a href="#0" class="mr-10">People</a> <a href="#0" class="mr-10">Training</a> <a href="#0" class="mr-10">Partnerships</a> <a href="#0" class="mr-10">Access</a> <a href="#0" class="mr-10">Estates</a> <a href="#0" class="mr-10">Technology</a> <a href="#0" class="mr-10">Assurance</a></p>
 
     <h2 class="heading-large">
-      Things you can do now
+      Things you need to do now
     </h2>
 
     <ul class="todo">
-      <li class="">
+      <li>
         <a href="/user/todo">
           <span class="heading">{{ data['todo-title'] if data['todo-title'] else "Example plan" }}</span>
           <span class="small">Complete by 27 February 2018<span class="no-wrap">0 of 1 tasks completed</span></span>
