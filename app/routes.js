@@ -43,6 +43,8 @@ router.get('/canceltodo', function (req, res) {
   delete req.session.data['todo-main-lede']
   delete req.session.data['todo-main-content']
   delete req.session.data['task-content']
+  delete req.session.data['task-content-2']
+  delete req.session.data['task-content-3']
   delete req.session.data['link-title']
   delete req.session.data['link-url']
   delete req.session.data['todo-tags']

@@ -6,7 +6,7 @@
   <div class="column-full">
     {% if data['siteaddsuccess'] %}
     <div class="panel panel-border-wide alert-success">
-      <p>The plan &lsquo;{{ data['site-name'] }}&rsquo; was created</p>
+      <p>The site &lsquo;{{ data['site-name'] }}&rsquo; was created</p>
     </div>
     {% endif %}
   </div>
@@ -15,18 +15,23 @@
     <h1 class="heading-xlarge"><span class="visuallyhidden">Manage plans  </span>Admin</h1>
     <div class="admin-submenu">
       <ul>
-        <li><a href="/admin/plan-types">Templates</a></li>
-        <li class="active"><a href="#0">Manage plans</a></li>
-        <li><a href="/admin/users">Manage users</a></li>
+        <li><a href="/admin/plan-types">Plans</a></li>
+        <li class="active"><a href="#0">Sites</a></li>
+        <li><a href="/admin/users">Users</a></li>
       </ul>
     </div>
 
+
+    <h2 class="heading-medium">Assign a plan to a site</h2>
     <ul class="list">
-      <li><a href="/admin/sites/assign">Assign a template to a plan</a></li>
-      <!-- <li><a href="/admin/sites/addsite">Add a site</a></li>
-      <li><a href="/admin/sites/upgrade">Upgrade a site to a newer version of their plan</a></li> -->
-      <li><a href="#0">Change a plan&rsquo;s name</a></li>
-      <li><a href="#0">Change a plan&rsquo;s go-live date</a></li>
+      <li><a href="/admin/sites/addsite">Add a new site</a></li>
+      <li><a href="/admin/sites/upgrade">Update a site&rsquo;s plan </a></li>
+    </ul>
+
+    <h2 class="heading-medium">Manage a site&rsquo;s details</h2>
+    <ul class="list">
+      <li><a href="#0">Change a site&rsquo;s name</a></li>
+      <li><a href="#0">Change a site&rsquo;s go-live date</a></li>
       <li><a href="#0">Remove a plan</a></li>
       <li><a href="#0">Restore a plan</a></li>
     </ul>

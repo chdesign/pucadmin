@@ -4,14 +4,14 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/plan-types">Plan templates</a></li>
+    <li><a href="/admin/plan-types">Plans</a></li>
   </ol>
 </div>
 
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large mb-0">
-      Plan template:<br>
+      Plan:<br>
       {{ data['plan-name'] }}
       <span class="heading-secondary">Version {{ data['plan-version'] }}</span>
     </h1>
@@ -35,7 +35,7 @@
     {% if data['plan-version'] != "1 (draft)" %}
     <div class="archived-message" id="archive-message-box">
       <h2 class="heading-medium">
-        Version {{ data['plan-version'] }} of this plan template is published and no longer editable
+        Version {{ data['plan-version'] }} of this plan is published and no longer editable
       </h2>
       <a href="#0" class="button">
         Create a new draft

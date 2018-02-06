@@ -12,21 +12,21 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-        Create a new template
+        Create a new plan
       </h1>
 
-      <p>This information will be used to organise the template. It won&rsquo;t be shown to the user of the plan.</p>
+      <p>This information will be used to organise the plan. It won&rsquo;t be shown to the user of the plan.</p>
 
       <form action="/admin/plan-types/create/todo" method="get" class="form">
         <!-- /admin/plan-types/create/draft -->
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-name">Template name</label>
+          <label class="form-label-bold" for="pt-name">Plan name</label>
           <input class="form-control" id="pt-name" name="pt-name" value="{{ data['pt-name'] }}" type="text" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-desc">Template description (optional)</label>
+          <label class="form-label-bold" for="pt-desc">Plan description (optional)</label>
           <textarea class="form-control form-control-3-4" id="pt-desc" name="pt-desc" rows="5" autocomplete="off">{{ data['pt-desc'] }}</textarea>
         </div>
 
@@ -38,7 +38,7 @@
                 Hierarchy
               </span>
               <span class="form-hint">
-                The following fields are used in the plan’s URL and in Google Analytics
+                The following fields are used in the plan&rsquo;s URL and in Google Analytics
                 <ul class="list list-bullet"><li>Level 1 should be UCFS</li>
                   <li>Level 2 should be ‘WSD’ for job centres and ‘SC’ for service centres</li>
                   <li>Level 3 should be unique to the template, it should be 4 letters or less with no special characters or spaces</li>

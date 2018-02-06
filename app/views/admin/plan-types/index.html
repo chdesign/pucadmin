@@ -6,7 +6,7 @@
   <div class="column-full">
     {% if data['plan_saved'] %}
     <div class="panel panel-border-wide alert-success">
-      <p>The template &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign the template to a plan</a>.</p>
+      <p>The plan &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign the plan to a site</a>.</p>
     </div>
     {% endif %}
   </div>
@@ -15,22 +15,22 @@
     <h1 class="heading-xlarge"><span class="visuallyhidden">Plan Templates </span>Admin</h1>
     <div class="admin-submenu">
       <ul>
-        <li class="active"><a href="#0">Templates</a></li>
-        <li><a href="/admin/sites">Manage plans</a></li>
-        <li><a href="/admin/users">Manage users</a></li>
+        <li class="active"><a href="#0">Plans</a></li>
+        <li><a href="/admin/sites">Sites</a></li>
+        <li><a href="/admin/users">Users</a></li>
       </ul>
     </div>
 
     <h2 class="heading-medium">
-      Template administration
+      Plan administration
     </h2>
     <ul class="list">
-      <li><a href="/admin/plan-types/create">Create a new template</a></li>
+      <li><a href="/admin/plan-types/create">Create a new plan</a></li>
       <li><a href="/admin/plan-types/tags">Manage tags</a></li>
     </ul>
 
     <h2 class="heading-medium">
-      Current templates
+      Current plans
     </h2>
     <ul class="list">
       {% if data['pt-name'] %}

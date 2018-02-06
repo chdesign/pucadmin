@@ -16,6 +16,15 @@
   </div>
   <div class="column-two-thirds">
 
+    <div class="error-summary" id="error-summary-box" role="alert" aria-labelledby="error-summary-heading">
+      <p class="bold-medium error-summary-heading" id="error-summary-heading">
+        Are you sure you want to delete this to-do?
+      </p>
+      <p><a class="button" href="/canceltodo">
+        Yes, delete
+      </a></p>
+    </div>
+
     <h1 class="heading-large">
       Check and confirm to-do:<br>
       {{ data['todo-title'] }}
@@ -194,7 +203,7 @@
     </div>
 
     <p>
-      or <a href="/admin/plan-types/create/todo/stepped/confirm-delete">delete to-do</a>
+      or <a href="/canceltodo">delete to-do</a>
     </p>
 
   </div>
