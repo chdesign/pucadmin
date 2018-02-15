@@ -11,6 +11,7 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
+      Plan:<br>
       {{ data['pt-name'] if data['pt-name'] else "Example plan" }}
       <span class="heading-secondary">Version 1{% if not data['plan_saved'] %} - draft{% endif %}</span>
     </h1>
@@ -28,7 +29,7 @@
           {{ data['pt-name'] if data['pt-name'] else "Example plan" }}
         </dd>
         <dd class="cya-change">
-          <a href="#">
+          <a href="/admin/plan-types/create">
             Edit<span class="visually-hidden"> plan name</span>
           </a>
         </dd>
@@ -42,7 +43,7 @@
           {{ data['pt-level1'] if data['pt-level1'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['pt-level2'] if data['pt-level2'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['pt-level3'] if data['pt-level3'] else "<span class='grey'>undefined</span>" |safe }}
         </dd>
         <dd class="cya-change">
-          <a href="#">
+          <a href="/admin/plan-types/create">
             Edit<span class="visually-hidden"> hierarchy</span>
           </a>
         </dd>

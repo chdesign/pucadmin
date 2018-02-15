@@ -36,12 +36,26 @@
         </dd>
       </div>
 
-      <div>
+      <!-- <div>
         <dt class="cya-question">
           Start week
         </dt>
         <dd class="cya-answer">
           {{ data['todo-start'] if data['todo-start'] else "<span class='grey'>Start week not added</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="/admin/plan-types/create/todo/">
+            Edit
+          </a>
+        </dd>
+      </div> -->
+
+      <div>
+        <dt class="cya-question">
+          Weeks to complete
+        </dt>
+        <dd class="cya-answer">
+          {{ data['plan-length'] if data['plan-length'] else "<span class='grey'>Start week not added</span>" |safe }}
         </dd>
         <dd class="cya-change">
           <a href="/admin/plan-types/create/todo/">
