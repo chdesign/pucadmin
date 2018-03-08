@@ -5,8 +5,9 @@
 <div class="grid-row">
   <div class="column-full">
     {% if data['plan_saved'] %}
-    <div class="panel panel-border-wide alert-success">
-      <p>The plan &lsquo;{{ data['pt-name'] }}&rsquo; was saved. You can now <a href="/admin/sites/assign">assign the plan to a site</a>.</p>
+    <div class="panel panel-border-wide alert-success" role="alert" aria-labelledby="alert-summary-heading" tabindex="-1">
+      <h2 class="heading-medium alert-summary-heading">The plan &lsquo;{{ data['pt-name'] }}&rsquo; was saved.</h2>
+      <p>You can now <a href="/admin/sites/assign">assign the plan to a site</a>.</p>
     </div>
     {% endif %}
   </div>
