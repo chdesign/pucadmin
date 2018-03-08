@@ -3,22 +3,20 @@
 {% set user = "service" %}
 
 {% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/plans" class="active">Plans</a></li>
+  </ol>
+</div>
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-xlarge">
-      Active plans
+      Plans
     </h1>
 
-    <nav class="admin-submenu">
-      <ul>
-        <li class="active"><a href="#0">Active plans</a></li>
-        <li><a href="/user/archived-plans">Archived plans</a></li>
-        <li><a href="#0">Removed plans</a></li>
-      </ul>
-    </nav>
-
-    <h2 class="heading-medium">
-      Issues summary
+    <h2 class="heading-large">
+      Summary view
     </h2>
     <ul class="list list-bullet">
       <li><a href="#0">Issues across your plans</a></li>
@@ -26,10 +24,17 @@
       <li><a href="#0">Issues across your plans - view by plan</a></li>
     </ul>
 
-
-    <h2 class="heading-medium">
-      3 active plans
+    <h2 class="heading-large">
+      Detail view
     </h2>
+    <nav class="admin-submenu">
+      <ul>
+        <li class="active"><a href="#0">Active plans {% if data['site-name'] %}(4){% else %}(3){% endif %}</a></li>
+        <li><a href="/user/archived-plans">Archived plans (3)</a></li>
+        <li><a href="#0">Removed plans (6)</a></li>
+      </ul>
+    </nav>
+
     <ul class="list list-bullet">
       <li><a href="/user/plan?plan=Abergavenny">Abergavenny</a></li>
       <li><a href="/user/plan?plan=Abertillery">Abertillery</a></li>

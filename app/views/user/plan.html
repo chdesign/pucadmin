@@ -5,7 +5,9 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
+    <li><a href="/admin">Admin</a></li>
     <li><a href="/user/plans">Plans</a></li>
+    <li><a href="/user/plan" class="active">{{ data['plan'] }}</a></li>
   </ol>
 </div>
 <div class="grid-row">

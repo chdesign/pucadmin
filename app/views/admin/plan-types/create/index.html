@@ -12,37 +12,32 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-        Create a new plan
+        Create a new {{ data['template'] | lower if data['template'] else "template" }}
       </h1>
 
-      <p>This information will be used to organise the plan. It won&rsquo;t be shown to the user of the plan.</p>
+      <p>This information will be used to organise the {{ data['template'] | lower if data['template'] else "template" }}. It won&rsquo;t be shown to the user of the {{ data['template'] | lower if data['template'] else "template" }}.</p>
 
       <form action="/admin/plan-types/create/todo" method="get" class="form">
-        <!-- /admin/plan-types/create/draft -->
 
         <div class="form-group">
-          <label class="form-label-bold" for="pt-name">Plan name</label>
+          <label class="form-label" for="pt-name">{{ data['template'] if data['template'] else "Template" }} name</label>
           <input class="form-control form-control-3-4" id="pt-name" name="pt-name" value="{{ data['pt-name'] }}" type="text" autocomplete="off">
         </div>
 
-        <!-- <div class="form-group">
-          <label class="form-label-bold" for="pt-desc">Plan description (optional)</label>
+        <div class="form-group">
+          <label class="form-label" for="pt-desc">{{ data['template'] if data['template'] else "Template" }} description (optional)</label>
           <textarea class="form-control form-control-3-4" id="pt-desc" name="pt-desc" rows="5" autocomplete="off">{{ data['pt-desc'] }}</textarea>
-        </div> -->
+        </div>
 
         <div class="form-group">
           <fieldset>
 
             <legend>
               <span class="form-label-bold">
-                Hierarchy
+                Analytics tags
               </span>
               <span class="form-hint">
-                The following fields are used in the plan&rsquo;s URL and in Google Analytics
-                <ul class="list list-bullet"><li>Level 1 should be UCFS</li>
-                  <li>Level 2 should be ‘WSD’ for job centres and ‘SC’ for service centres</li>
-                  <li>Level 3 should be unique to the template, it should be 4 letters or less with no special characters or spaces</li>
-                </ul>
+                Ask your performance analyst for these
               </span>
             </legend>
 
@@ -73,7 +68,7 @@
       </form>
 
       <p>
-        or <a href="/admin/plan-types">cancel <span class="visuallyhidden">creating a new plan</span></a>
+        or <a href="/admin/">cancel</a>
       </p>
   </div>
 </div>

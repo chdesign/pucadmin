@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 
 
 router.get('/admin', function (req, res) {
-  res.redirect('/admin/plan-types')
+  res.redirect('/admin/1')
 })
 
 

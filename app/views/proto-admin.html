@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block header_links %}{% endblock %}
+
+{% block content %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge mb-30">
+        <span class="heading-secondary">Prepare for Universal Credit</span>
+         Prototype administration
+      </h1>
+      <p class="lede">
+        Update the options for the protype to test variations
+      </p>
+
+
+
+
+      <form action="/admin" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="form-label">The name of the locations</legend>
+            <div class="multiple-choice">
+              <input id="plan" type="radio" name="location" value="Plan" {{ checked('location','Plan') }}>
+              <label for="plan">Plan</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="site" type="radio" name="location" value="Site" {{ checked('location','Site') }}>
+              <label for="site">Site</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend>The name of the thing with the to-dos</legend>
+            <div class="multiple-choice">
+              <input id="template" type="radio" name="template" value="Template" {{ checked('template','Template') }}>
+              <label for="template">Template</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="plan" type="radio" name="template" value="Plan" {{ checked('template','Plan') }}>
+              <label for="plan">Plan</label>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+
+
+        <input name="data_is_set" value="true" type="hidden">
+
+        <div class="form-group">
+          <input type="submit" class="button" value="View admin page">
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}

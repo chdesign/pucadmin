@@ -417,3 +417,13 @@ ul.todo li.risk a {
   padding: 20px;
   margin-bottom: 15px;
 }
+
+
+
+
+
+.breadcrumbs .active {
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
