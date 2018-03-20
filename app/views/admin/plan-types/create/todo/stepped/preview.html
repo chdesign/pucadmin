@@ -3,7 +3,7 @@
 {% block body_classes %}preview-open{% endblock %}
 
 {% block after_header %}
-  <div class="previewback">
+  <!-- <div class="previewback">
     <div class="preview_container">
       <div class="grid-row">
         <div class="column-full">
@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 {% endblock %}
 
 {% block content %}
@@ -36,10 +36,10 @@
     {% endfor %}
     </ul>
 
-    <div class="releasenote">
+    <!-- <div class="releasenote">
       <h2 class="heading-medium mt-0">Instructions changed today</h2>
       {{ data['releaseRendered'] | safe }}
-    </div>
+    </div> -->
 
     <p class="lede">{{ data['todo-main-lede'] }}</p>
     {{ data['todoRendered'] | safe }}
@@ -64,6 +64,11 @@
         <label for="Example3">{{ data['task3Rendered'] | safe }}</label>
       </div>
       {% endif %}
+    </div>
+
+    <div class="form-group mt-30">
+      <a href="/admin/plan-types/create/draft" class="button">Save to-do</a>
+      <a href="/admin/plan-types/create/todo/stepped/confirm2" class="button-link">Back to editing</a>
     </div>
 
 

@@ -20,11 +20,11 @@
     </h1>
     <p>Tags allow the user to filter to-dos</p>
 
-    <form action="/admin/plan-types/create/todo/stepped/release" method="post" class="form">
+    <form action="/admin/plan-types/create/todo/stepped/confirm2" method="post" class="form">
 
       <div class="form-group">
         <fieldset>
-          <legend class="form-label-bold mb-10">Select tags to add</legend>
+          <legend class="form-label mb-10">Select tags to add</legend>
 
           <div class="multiple-choice">
             <input id="people" type="checkbox" name="todo-tags" value="People" {{ checked('todo-tags','People') }}>
@@ -67,13 +67,10 @@
 
       <div class="form-group form-group-related">
         <input type="submit" class="button" value="Continue">
+        <a class="button-link" href="/admin/plan-types/create/todo/stepped/confirm2">Save progress and review</a>
       </div>
 
     </form>
-
-    <p>
-      or <a href="/admin/plan-types/create/todo/stepped/confirm2">save progress and review</a>
-    </p>
 
   </div>
 </div>

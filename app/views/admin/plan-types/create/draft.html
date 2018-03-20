@@ -11,7 +11,7 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large">
-      Plan:<br>
+      Template:<br>
       {{ data['pt-name'] if data['pt-name'] else "Example plan" }}
       <span class="heading-secondary">Version 1{% if not data['plan_saved'] %} - draft{% endif %}</span>
     </h1>
@@ -90,21 +90,16 @@
 
     <hr class="mb-30">
 
-    <form action="/admin/plan-types" method="post" class="form">
+    <form action="/admin/" method="post" class="form">
 
       <input name="plan_saved" value="1" type="hidden">
 
       <div class="form-group">
-        <input type="submit" class="button" value="Save version 1 of the plan">
+        <input type="submit" class="button" value="Publish template">
+        <a class="button-link" href="/admin/plan-types/create/delete">Delete template</a>
       </div>
 
     </form>
-    <!-- <p>
-      <a class="button mt-30" href="/admin/plan-types/create/confirmation-page" role="button">Save version 1 of this plan</a>
-    </p> -->
-    <p>
-      <a href="/admin/plan-types/create/delete">Delete draft of this plan</a>
-    </p>
 
   </div>
 </div>

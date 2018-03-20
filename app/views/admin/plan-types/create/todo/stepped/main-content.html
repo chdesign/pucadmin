@@ -15,20 +15,14 @@
     <a href="javascript:history.back()" class="link-back">Back</a>
   </div>
   <div class="column-two-thirds">
-    <h1 class="heading-large">
-      Add introduction
-    </h1>
 
     <form action="/admin/plan-types/create/todo/stepped/add-task" method="post" class="form">
 
-      <!-- <div class="form-group">
-        <label class="form-label" for="todo-main-lede">Lead paragraph <small>(optional)</small></label>
-        <textarea class="form-control form-control-100" id="todo-main-lede" name="todo-main-lede" rows="3" autocomplete="off">{{ data['todo-main-lede'] }}</textarea>
-      </div> -->
-
       <div class="form-group">
-        <label class="form-label-bold" for="todo-main-content">
-          Introduction content
+        <label for="todo-main-content">
+          <h1 class="heading-large">
+            Add introduction
+          </h1>
           <span class="form-hint">
             Styling with Markdown is supported
           </span>
@@ -38,13 +32,10 @@
 
       <div class="form-group form-group-related">
         <input type="submit" class="button" value="Continue">
+        <a class="button-link" href="/admin/plan-types/create/todo/stepped/confirm2">Save progress and review</a>
       </div>
 
     </form>
-
-    <p>
-      or <a href="/admin/plan-types/create/todo/stepped/confirm2">save progress and review</a>
-    </p>
 
   </div>
 
@@ -53,6 +44,11 @@
       <h2 class="heading-medium" id="subsection-title">Markdown formatting</h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="font-xsmall">
+          <li>
+            For a lead paragraph:
+            <br>
+            <pre><code class="language-markdown">### Lead paragraph</code></pre>
+          </li>
           <li>
             For a link:
             <br>

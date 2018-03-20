@@ -23,15 +23,15 @@
     <form action="/admin/plan-types/create/todo/stepped/main-content" method="get" class="form">
 
       <div class="form-group">
-        <label class="form-label-bold" for="todo-title">Title</label>
-        <input class="form-control" id="todo-title" name="todo-title" value="{{ data['todo-title'] }}" type="text" autocomplete="off">
+        <label class="form-label" for="todo-title">Title</label>
+        <input class="form-control form-control-3-4" id="todo-title" name="todo-title" value="{{ data['todo-title'] }}" type="text" autocomplete="off">
       </div>
 
       <!-- <div class="form-group">
         <fieldset>
 
           <legend>
-            <span class="form-label-bold">
+            <span class="form-label">
               Number of weeks before the ‘go live’ date
             </span>
           </legend>
@@ -51,12 +51,12 @@
       </div> -->
 
       <div class="form-group">
-        <label class="form-label-bold" for="plan-length">How many weeks will the to-do take to complete?</label>
+        <label class="form-label" for="plan-length">How many weeks will the to-do take to complete?</label>
         <input class="form-control form-control-1-8" id="plan-length" name="plan-length" value="{{ data['plan-length'] }}" type="text" autocomplete="off">
       </div>
 
       <div class="form-group">
-        <label class="form-label-bold" for="plan-finish">
+        <label class="form-label" for="plan-finish">
           Which week should the to-do be finsihed?
           <span class="form-hint">e.g. 1 is the final week</span>
         </label>
@@ -64,7 +64,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label-bold" for="todo-priority">
+        <label class="form-label" for="todo-priority">
           Priority <small>(optional)</small>
           <span class="form-hint">This is used when more than one to-do has the same start and end week. Enter a number (1 is the highest todo-priority)</span>
         </label>
@@ -73,13 +73,10 @@
 
       <div class="form-group form-group-related">
         <input type="submit" class="button" value="Continue">
+        <a class="button-link" href="/canceltodo">Cancel</a>
       </div>
 
     </form>
-
-    <p>
-      or <a href="/canceltodo">cancel</a>
-    </p>
 
   </div>
 </div>

@@ -17,11 +17,10 @@
   <div class="column-two-thirds">
 
     <h1 class="heading-large">
-      Check and confirm to-do:<br>
-      {{ data['todo-title'] }}
+      Check and confirm to-do
     </h1>
 
-    <dl class="govuk-check-your-answers cya-questions-short mt-30">
+    <dl class="govuk-check-your-answers cya-questions-short mb-30">
       <div>
         <dt class="cya-question">
           Title
@@ -182,7 +181,7 @@
         </dd>
       </div>
 
-      <div>
+      <!-- <div>
         <dt class="cya-question">
           Release note
         </dt>
@@ -198,18 +197,18 @@
             Edit
           </a>
         </dd>
-      </div>
+      </div> -->
     </dl>
 
 
-    <div class="form-group mt-30">
-      <a href="/admin/plan-types/create/draft" class="button">Save to-do</a>
+    <div class="form-group form-group-related">
       <a href="/admin/plan-types/create/todo/stepped/preview" class="button-secondary">Preview to-do</a>
     </div>
 
-    <p>
-      or <a href="/admin/plan-types/create/todo/stepped/confirm-delete">delete to-do</a>
-    </p>
+    <div class="form-group">
+      <a href="/admin/plan-types/create/draft" class="button">Save to-do</a>
+      <a class="button-link" href="/admin/plan-types/create/todo/stepped/confirm-delete">Delete to-do</a>
+    </div>
 
   </div>
 </div>

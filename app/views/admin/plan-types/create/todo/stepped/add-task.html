@@ -15,15 +15,14 @@
     <a href="javascript:history.back()" class="link-back">Back</a>
   </div>
   <div class="column-two-thirds">
-    <h1 class="heading-large">
-      Add a task
-    </h1>
 
     <form action="/admin/plan-types/create/todo/stepped/tasks" method="post" class="form">
 
       <div class="form-group">
-        <label class="form-label-bold" for="task-content">
-          Task content
+        <label for="task-content">
+          <h1 class="heading-large">
+            Add first task
+          </h1>
           <span class="form-hint">
             Styling with Markdown is supported
           </span>
@@ -33,13 +32,10 @@
 
       <div class="form-group form-group-related">
         <input type="submit" class="button" value="Continue">
+        <a class="button-link" href="/admin/plan-types/create/todo/stepped/confirm2">Save progress and review</a>
       </div>
 
     </form>
-
-    <p>
-      or <a href="/admin/plan-types/create/todo/stepped/confirm2">save progress and review</a>
-    </p>
 
   </div>
 

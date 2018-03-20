@@ -10,9 +10,9 @@ router.get('/', function (req, res) {
 // Add your routes here - above the module.exports line
 
 
-router.get('/admin', function (req, res) {
-  res.redirect('/admin/1')
-})
+// router.get('/admin', function (req, res) {
+//   res.redirect('/admin/1')
+// })
 
 
 
@@ -32,7 +32,7 @@ router.get('/assign', function (req, res) {
 
 router.get('/deletedraftplan', function (req, res) {
   req.session.destroy()
-  res.redirect('/admin/plan-types')
+  res.redirect('/admin/')
 })
 
 router.get('/canceltodo', function (req, res) {

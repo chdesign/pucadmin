@@ -140,6 +140,10 @@ hr {
 .button-secondary {
   @include button($grey-3);
 }
+.button-link {
+  display: inline-block;
+  padding: .526315em .789473em .263157em;
+}
 
 
 
@@ -267,7 +271,20 @@ hr {
 
 
 .preview-open {
-  margin-top: 60px;
+  // margin-top: 60px;
+
+  // extend some classes to make the preview look more realistic
+  h3 {
+    @extend .lede;
+  }
+  ul {
+    @extend .list;
+    @extend .list-bullet;
+  }
+}
+.multiple-choice label p {
+  // the markdown formatter is adding in a p to the label, remove margin to hide
+  margin: 0;
 }
 .previewback {
   position: fixed;
