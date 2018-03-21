@@ -4,7 +4,9 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/plan-types">Templates</a></li>
+    <li><a href="/admin" class="active">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
   </ol>
 </div>
 
@@ -37,7 +39,7 @@
 
       <div>
         <dt class="cya-question">
-          Hierarchy
+          Analytics tags
         </dt>
         <dd class="cya-answer">
           {{ data['pt-level1'] if data['pt-level1'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['pt-level2'] if data['pt-level2'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['pt-level3'] if data['pt-level3'] else "<span class='grey'>undefined</span>" |safe }}

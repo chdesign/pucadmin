@@ -4,14 +4,16 @@
 {% block content %}
 <div class="breadcrumbs">
   <ol>
-    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/plan-types">Templates</a></li>
+    <li><a href="/admin" class="active">{{ data['plan-name'] }}</a></li>
   </ol>
 </div>
 
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large mb-0">
-      Plan:<br>
+      Template:<br>
       {{ data['plan-name'] }}
       <span class="heading-secondary">Version {{ data['plan-version'] }}</span>
     </h1>
@@ -44,7 +46,7 @@
     {% endif %}
 
     <p>{{ data['plan-desc'] }}</p>
-    <p><strong class="bold">Hierarchy:</strong> UCFS/WSD/IMPL</p>
+    <p><strong class="bold">Analytics tags:</strong> UCFS/WSD/IMPL</p>
 
 
     {% if data['plan-version'] == "1 (draft)" %}

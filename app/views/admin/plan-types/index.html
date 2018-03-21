@@ -2,142 +2,31 @@
 {% set active = "plans" %}
 
 {% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin" class="active">Templates</a></li>
+  </ol>
+</div>
 <div class="grid-row">
-  <div class="column-full">
-    {% if data['plan_saved'] %}
-    <div class="panel panel-border-wide alert-success" role="alert" aria-labelledby="alert-summary-heading" tabindex="-1">
-      <h2 class="heading-medium alert-summary-heading">The plan &lsquo;{{ data['pt-name'] }}&rsquo; was saved.</h2>
-      <p>You can now <a href="/admin/sites/assign">assign the plan to a site</a>.</p>
-    </div>
-    {% endif %}
-  </div>
   <div class="column-two-thirds">
 
     <h1 class="heading-xlarge">
-      <span class="heading-secondary">Admin:</span>
-      Plans
+      Manage existing templates
     </h1>
-    <nav class="admin-submenu">
-      <ul>
-        <li class="active"><a href="#0"><span class="visuallyhidden">Manage </span>Plans</a></li>
-        <li><a href="/admin/sites"><span class="visuallyhidden">Manage </span>Sites</a></li>
-        <li><a href="/admin/users"><span class="visuallyhidden">Manage </span>Users</a></li>
-      </ul>
-    </nav>
 
-    <h2 class="heading-medium">
-      Plan administration
-    </h2>
-    <ul class="list">
-      <li><a href="/admin/plan-types/create">Create a new plan</a></li>
-      <li><a href="/admin/plan-types/tags">Manage tags</a></li>
-    </ul>
-
-    <h2 class="heading-medium">
-      Current plans
-    </h2>
-    <ul class="list">
+    <ul class="list list-bullet">
       {% if data['pt-name'] %}
-      <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1{% if not data['plan_saved'] %} - draft{% endif %})</a></li>
+        {% if data['plan_saved'] %}
+          <li><a href="/admin/plan-types/plan?plan-name={{ data['pt-name'] }}&plan-version=1&plan-desc={{ data['pt-desc'] }}">{{ data['pt-name'] }}</a></li>
+        {% else %}
+          <li><a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} - draft</a></li>
+        {% endif %}
       {% endif %}
-      <li><a href="/admin/plan-types/plan?plan-name=UC JC 50_50&plan-version=5&plan-desc=Plan templates used by sites with a 50/50 go live split, by postcode. For the 2nd go live date, sites to use this plan template, with a reduced number of to-dos Corresponds to content change 14/12/2017 - Support local partners and stakeholders and discuss your site readiness">UC JC 50_50 (version 5)</a></li>
-      <li><a href="/admin/plan-types/plan?plan-name=UC JC&plan-version=1 (draft)&plan-desc=">UC JC (version 1 - draft)</a></li>
-      <li><a href="/admin/plan-types/plan?plan-name=UC&plan-version=1&plan-desc=">UC (version 1)</a></li>
+      <li><a href="/admin/plan-types/plan?plan-name=UC&plan-version=1&plan-desc=">UC</a></li>
+      <li><a href="/admin/plan-types/plan?plan-name=UC JC 50_50&plan-version=5&plan-desc=Plan templates used by sites with a 50/50 go live split, by postcode. For the 2nd go live date, sites to use this plan template, with a reduced number of to-dos Corresponds to content change 14/12/2017 - Support local partners and stakeholders and discuss your site readiness">UC JC 50_50</a></li>
+      <li><a href="/admin/plan-types/plan?plan-name=UC JC&plan-version=1 (draft)&plan-desc=">UC JC</a></li>
     </ul>
-    <!-- <ul class="list">
-      {% if data['pt-name'] %}
-      <li>
-        <h3 class="heading-small">
-            <a href="/admin/plan-types/create/draft">{{ data['pt-name'] }} (version 1 - draft)</a>
-          </h3>
-        <p class="mb-10">Last edited: 26 January 2018 13:21</p>
-      </li>
-      <hr class="plan-types-line">
-      {% endif %}
-      <li>
-        <h3 class="heading-small">
-            <a href="#0">UC JC 50_50 (version 1 - draft)</a>
-          </h3>
-        <p class="mb-10">Last edited: 14 December 2017 10:46</p>
-      </li>
-      <hr class="plan-types-line">
-
-      <li>
-        <h3 class="heading-small">
-            <a href="#0">UC JC (version 5)</a>
-          </h3>
-        <p class="mb-10">Last edited: 14 December 2017 10:39</p>
-
-        <details class="font-xsmall mb-10" role="group">
-          <summary role="button" aria-expanded="false">
-            <span class="summary">Previous versions</span>
-          </summary>
-          <div class="panel panel-border-narrow" id="details-content-175735" aria-hidden="true">
-            <ul class="list list-bullet">
-
-              <li>
-                <a href="#0">Version 5</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 4</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 3</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 2</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 1</a> published: 17 January 2018 11:27
-              </li>
-
-            </ul>
-          </div>
-        </details>
-
-      </li>
-      <hr class="plan-types-line">
-
-      <li>
-        <h3 class="heading-small">
-            <a href="#0">UC (version 1)</a>
-          </h3>
-        <p class="mb-10">Published: 17 January 2018 11:27</p>
-
-        <details class="font-xsmall mb-10" role="group">
-          <summary role="button" aria-expanded="false">
-            <span class="summary">Previous versions</span>
-          </summary>
-          <div class="panel panel-border-narrow" id="details-content-2" aria-hidden="true">
-            <ul class="list list-bullet">
-
-              <li>
-                <a href="#0">Version 1</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 1</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 1</a> published: 17 January 2018 11:27
-              </li>
-
-              <li>
-                <a href="#0">Version 1</a> published: 17 January 2018 11:27
-              </li>
-
-            </ul>
-          </div>
-        </details>
-
-      </li>
-      <hr class="plan-types-line">
-    </ul> -->
 
   </div>
 </div>
