@@ -35,20 +35,17 @@
     {% endif %}
 
     {% if data['plan-version'] != "1 (draft)" %}
-    <div class="archived-message" id="archive-message-box">
-      <h2 class="heading-medium">
-        Version {{ data['plan-version'] }} of this plan is published and no longer editable
-      </h2>
+
       {% if data['pt-name'] == data['plan-name'] %}
       <a href="/admin/plan-types/create/draft" class="button">
-        Create a new draft
+        Edit template
       </a>
       {% else %}
       <a href="#0" class="button">
-        Create a new draft
+        Edit template
       </a>
       {% endif %}
-    </div>
+
     {% endif %}
 
     <p>{{ data['plan-desc'] }}</p>
