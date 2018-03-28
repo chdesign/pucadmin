@@ -14,7 +14,7 @@
         Add a new {{ data['location'] | lower if data['location'] else "plan" }}
       </h1>
 
-      <form action="/admin/sites" method="get" class="form">
+      <form action="/siteadded" method="get" class="form">
         <!-- /admin/plan-types/create/draft -->
 
         <div class="form-group">
@@ -57,14 +57,14 @@
           <select class="form-control form-control-3-4" id="select-box2" name="upgradeto">
             <option>- - Select a {{ data['template'] | lower if data['template'] else "template" }} - -</option>
             {% if data['pt-name'] %}
-            <option>{{ data['pt-name'] }} [version: 1]</option>
+            <option>{{ data['pt-name'] }}</option>
             {% endif %}
-            <option>UC [version: 1]</option>
-            <option>UC JC [version: 1]</option>
-            <option>UC JC [version: 2]</option>
+            <option>UC</option>
+            <option>UC JC</option>
+            <!-- <option>UC JC [version: 2]</option>
             <option>UC JC [version: 3]</option>
             <option>UC JC [version: 4]</option>
-            <option>UC JC [version: 5]</option>
+            <option>UC JC [version: 5]</option> -->
           </select>
         </div>
 
@@ -77,7 +77,7 @@
       </form>
 
       <p>
-        or <a href="/admin/sites">cancel</a>
+        or <a href="/admin/">cancel</a>
       </p>
   </div>
 </div>

@@ -58,30 +58,20 @@
 
     {% if data['todo-title'] %}
     <ul class="list list-bullet">
-      <li><a href="/admin/plan-types/create/todo/stepped/confirm2">{{ data['todo-title'] }}</a></li>
+      <li><a href="#0">{{ data['todo-title-2'] }}</a></li>
+      <li><a href="#0">{{ data['todo-title'] }}</a></li>
     </ul>
-    <!-- <dl class="govuk-check-your-answers cya-questions-short">
-      <div>
-        <dt class="cya-question">
-          {{ data['todo-title'] }}
-        </dt>
-        <dd class="cya-change">
-          <a href="/admin/plan-types/create/todo/stepped/confirm2">
-            Edit<span class="visually-hidden"> {{ data['todo-title'] }}</span>
-          </a>
-        </dd>
-      </div>
-    </dl> -->
-    <!-- <ol class="list">
-      <li>
-        <h3 class="heading-small">
-          <a href="/admin/plan-types/create/todo/stepped/confirm2">{{ data['todo-title'] }}</a>
-        </h3>
-        <p>From week {{ data['todo-start'] if data['todo-start'] else "3" }} to week {{ data['todo-end'] if data['todo-end'] else "1" }} · Version 1 · draft</p>
-      </li>
-    </ol> -->
+
     <p class="mt-30">
       <a href="#0">Add a to-do</a>
+    </p>
+    {% elif data['todo-title-2'] %}
+    <ul class="list list-bullet">
+      <li><a href="#0">{{ data['todo-title-2'] }}</a></li>
+    </ul>
+
+    <p class="mt-30">
+      <a href="/admin/plan-types/create/todo">Add a to-do</a>
     </p>
     {% else %}
     <p>No to-dos yet</p>
@@ -92,9 +82,13 @@
 
     <hr class="mb-30">
 
-    <form action="/admin/" method="post" class="form">
+    <form action="/plansaved" method="post" class="form">
 
       <input name="plan_saved" value="1" type="hidden">
+
+      <div class="form-group form-group-related">
+        <a href="/admin/plan-types/create/preview" class="button-secondary">Preview template</a>
+      </div>
 
       <div class="form-group">
         <input type="submit" class="button" value="Publish template">

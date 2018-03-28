@@ -9,10 +9,16 @@
 </div>
 <div class="grid-row">
   <div class="column-full">
-    {% if data['plan_saved'] %}
+    {% if plansaved %}
     <div class="panel panel-border-wide alert-success" role="alert" aria-labelledby="alert-summary-heading" tabindex="-1">
       <h2 class="alert-summary-heading">Published &lsquo;{{ data['pt-name'] }}&rsquo;</h2>
       <!-- <p>You can now <a href="/admin/sites/assign">assign the plan to a site</a>.</p> -->
+    </div>
+    {% endif %}
+
+    {% if siteadded %}
+    <div class="panel panel-border-wide alert-success" role="alert" aria-labelledby="alert-summary-heading" tabindex="-1">
+      <h2 class="alert-summary-heading">The plan &lsquo;{{ data['site-name'] }}&rsquo; was added</h2>
     </div>
     {% endif %}
   </div>
