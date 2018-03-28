@@ -39,9 +39,15 @@
       <h2 class="heading-medium">
         Version {{ data['plan-version'] }} of this plan is published and no longer editable
       </h2>
+      {% if data['pt-name'] == data['plan-name'] %}
+      <a href="/admin/plan-types/create/draft" class="button">
+        Create a new draft
+      </a>
+      {% else %}
       <a href="#0" class="button">
         Create a new draft
       </a>
+      {% endif %}
     </div>
     {% endif %}
 
@@ -62,6 +68,24 @@
     </h2>
 
     <ol class="list">
+    {% if data['pt-name'] == data['plan-name'] %}
+      {% if data['todo-title-2'] %}
+      <li>
+        <h3 class="heading-small">
+          <a href="#0">{{ data['todo-title-2'] }}</a>
+        </h3>
+        <p>From week 26 to week 25 · Priority 1 · Version 1 · published</p>
+      </li>
+      {% endif %}
+      {% if data['todo-title'] %}
+      <li>
+        <h3 class="heading-small">
+          <a href="#0">{{ data['todo-title'] }}</a>
+        </h3>
+        <p>From week 26 to week 25 · Priority 1 · Version 1 · published</p>
+      </li>
+      {% endif %}
+    {% else %}
       <li>
         <h3 class="heading-small">
           <a href="#0">Check staff are booked on your first leadership academy event: base camp</a>
@@ -80,6 +104,7 @@
         </h3>
         <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
       </li>
+    {% endif %}
     </ol>
 
     {% if data['plan-version'] == "1 (draft)" %}

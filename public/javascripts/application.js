@@ -37,3 +37,15 @@ $(document).ready(function () {
 //   target.show();
 // });
 // $('.admin-submenu a').first().click();
+
+$('.js-complete').hide();
+
+$('.js-atw-button').click(function(){
+    $('.js-current').hide();
+    $('.js-complete').show();
+});
+
+$('.js-cancel').click(function(){
+    $('.js-current').show();
+    $('.js-complete').hide();
+});

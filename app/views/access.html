@@ -1,0 +1,216 @@
+{% extends "layout.html" %}
+{% block header_links %}
+<ul id="proposition-links">
+  <li><a href="#0">John Goldsmith</a></li>
+</ul>
+{% endblock %}
+
+{% block phasebanner %}
+{% endblock %}
+
+{% block service_name %}
+  Access to work
+{% endblock %}
+
+{% block after_header %}
+<style media="screen">
+.staff__heading {
+  background-color: #005ea5;
+  padding: 15px 10px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+#global-header-bar {
+  display: none;
+}
+
+.action {
+  border-bottom: 1px solid lightgrey;
+}
+</style>
+
+<div class="staff__heading">
+  <div id="content" style="padding-bottom: 0">
+    <div class="grid-row">
+      <div class="column-three-quarters">
+        <h1 class="heading-large mt-0 mb-10" style="font-size: 30px">
+          Oliver Reed
+          <span class="heading-secondary" style="color: white; display: inline">&ndash; Trainee Manager, McDonalds (3 cases in total)</span>
+        </h1>
+      </div>
+      <!-- <div class="column-one-quarter">
+        <span class="font-xsmall">Adviser</span><br>
+          <span class="bold-small">John Goldsmith</span> (<a href="#0" style="color: white">Edit</a>)
+      </div> -->
+    </div>
+    <div class="grid-row">
+      <div class="column-one-quarter">
+        <span class="font-xsmall">National Insurance number</span><br>
+          <span class="bold-small">QQ123456C</span>
+      </div>
+      <div class="column-one-quarter">
+        <span class="font-xsmall">Date of birth</span><br>
+          <span class="bold-small">19 June 1987</span>
+      </div>
+      <div class="column-one-quarter">
+        <span class="font-xsmall">Condition</span><br>
+          <span class="bold-small">Autism and dispraxia with arthritis</span>
+      </div>
+      <div class="column-one-quarter">
+        <span class="font-xsmall">Specialism</span><br>
+          <span class="bold-small">Hidden</span> (<a href="#0" style="color: white">Edit</a>)
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      <nav class="admin-submenu">
+        <ul>
+          <li class="active"><a href="#0">Actions</a></li>
+          <li><a href="#0">Details</a></li>
+          <li><a href="#0">Case</a></li>
+          <li><a href="#0">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="js-current">
+        <div class="panel" style="background: #F8F8F8; border: 1px solid #BFC1C3;">
+          <h2 class="heading-large" style="font-size: 30px">
+            <span class="heading-secondary" style="font-size: 20px">Current action: </span>
+            First contact attempted
+          </h2>
+          <p class="font-xsmall mb-0">Due date: 1 July 2018</p>
+          <p class="font-xsmall">Set by: <a href="#0">John Goldsmith</a></p>
+          <a class="button js-atw-button" href="#0">Complete action</a>
+        </div>
+
+
+        {% for i in range(0, 5) -%}
+        <div class="action">
+          <h2 class="heading-small">Cost share agreed</h2>
+          <p class="font-xsmall">
+            <a href="#0">John Goldsmith</a>
+            <span class="grey"> &ndash; 03:37pm, 6th June 2017</span>
+          </p>
+          <p>Olivers employer have agreed to the cost share</p>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="js-complete">
+        <h2 class="heading-large" style="font-size: 30px">
+          <span class="heading-secondary" style="font-size: 20px">Complete action: </span>
+          First contact attempted
+        </h2>
+
+        <div class="form-group">
+          <label class="form-label" for="text">Comment</label>
+          <textarea class="form-control form-control-3-4" id="text" name="text" rows="3" autocomplete="off">{{ data['text'] }}</textarea>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="form-label">Next action</legend>
+            <div class="multiple-choice">
+              <input id="1" type="radio" name="next" value="Attempt second action" {{ checked('next','Attempt second action') }}>
+              <label for="1">Attempt second action</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="2" type="radio" name="next" value="Set gather appointment" {{ checked('next','Set gather appointment') }}>
+              <label for="2">Set gather appointment</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="3" type="radio" name="next" value="Call employer" {{ checked('next','Call employer') }}>
+              <label for="3">Call employer</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="4" type="radio" name="next" value="Set cost share" {{ checked('next','Set cost share') }}>
+              <label for="4">Set cost share</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="5" type="radio" name="next" value="Request assessment" {{ checked('next','Request assessment') }}>
+              <label for="5">Request assessment</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="6" type="radio" name="next" value="Submit for approval" {{ checked('next','Submit for approval') }}>
+              <label for="6">Submit for approval</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="7" type="radio" name="next" value="Send to QAF" {{ checked('next','Send to QAF') }}>
+              <label for="7">Send to QAF</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="8" type="radio" name="next" value="Request medical evidence" {{ checked('next','Request medical evidence') }}>
+              <label for="8">Request medical evidence</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="9" type="radio" name="next" value="Send offer" {{ checked('next','Send offer') }}>
+              <label for="9">Send offer</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend>
+              <span class="form-label-bold">
+                Due date
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="day">Day</label>
+                <input class="form-control" id="day" name="day" value="{{ data['day'] }}" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="month">Month</label>
+                <input class="form-control" id="month" name="month" value="{{ data['month'] }}" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="year">Year</label>
+                <input class="form-control" id="year" name="year" value="{{ data['year'] }}" type="number" pattern="[0-9]*" min="0" autocomplete="off">
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group-related">
+          <a class="button" href="#0" role="button">Save</a>
+        </div>
+        <p>or <a href="#0" class="js-cancel">cancel</a></p>
+
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items mt-0" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Manage case</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+            <li><a href="">Reassign</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
