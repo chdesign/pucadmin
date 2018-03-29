@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/templates">Manage existing templates</a></li>
+    <li><a href="/admin" class="active">{{ data['template'] }}</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mb-0">
+      Template:<br>
+      {{ data['template'] }}
+      <span class="heading-secondary">Version {{ data['template-version'] }}</span>
+    </h1>
+    {% if data['template-version'] != "1 (draft)" %}
+
+      {% if data['template-name'] == data['template'] %}
+      <a href="create/draft" class="button">
+        Edit template
+      </a>
+      {% else %}
+      <a href="#0" class="button">
+        Edit template
+      </a>
+      {% endif %}
+
+    {% endif %}
+    <div class="accordion">
+      {% if data['template-version'] > 1 %}
+        <div class="accordion-section">
+          <div class="accordion-section-header">
+            <h2 class="heading-small">Previous versions</h2>
+          </div>
+          <div class="accordion-section-body">
+            <ul class="list">
+              <li><a href="#0">Version 5</a> published: 17 January 2018 11:27</li>
+              <li><a href="#0">Version 4</a> published: 17 January 2018 11:27</li>
+              <li><a href="#0">Version 3</a> published: 17 January 2018 11:27</li>
+              <li><a href="#0">Version 2</a> published: 17 January 2018 11:27</li>
+              <li><a href="#0">Version 1</a> published: 17 January 2018 11:27</li>
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+      <div class="accordion-section">
+        <div class="accordion-section-header">
+          <h2 class="heading-small">Template details</h2>
+        </div>
+        <div class="accordion-section-body">
+          <p>{{ data['templatedesc'] }}</p>
+          <p><strong class="bold">Analytics tags:</strong> UCFS/WSD/IMPL</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-section-header">
+          <h2 class="heading-small">To-dos</h2>
+        </div>
+        <div class="accordion-section-body">
+          <ol class="list">
+          {% if data['template-name'] == data['template'] %}
+            {% if data['todo-title-2'] %}
+            <li>
+              <h3 class="heading-small">
+                <a href="#0">{{ data['todo-title-2'] }}</a>
+              </h3>
+              <p>From week 26 to week 25 · Priority 1 · Version 1 · published</p>
+            </li>
+            {% endif %}
+            {% if data['todo-title'] %}
+            <li>
+              <h3 class="heading-small">
+                <a href="#0">{{ data['todo-title'] }}</a>
+              </h3>
+              <p>From week 26 to week 25 · Priority 1 · Version 1 · published</p>
+            </li>
+            {% endif %}
+          {% else %}
+            <li>
+              <h3 class="heading-small">
+                <a href="#0">Check staff are booked on your first leadership academy event: base camp</a>
+              </h3>
+              <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
+            </li>
+            <li>
+              <h3 class="heading-small">
+                <a href="#0">Check partnership managers and employer engagement staff are getting the training they need</a>
+              </h3>
+              <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
+            </li>
+            <li>
+              <h3 class="heading-small">
+                <a href="#0">Add an activity assurance certificate to your shared folder</a>
+              </h3>
+              <p>From week 26 to week 25 · Priority 1 · Version 4 · published</p>
+            </li>
+          {% endif %}
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

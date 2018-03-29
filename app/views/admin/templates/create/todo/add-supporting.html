@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="javascript:history.back()" class="link-back">Back</a>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      {% if data['editsupporting'] %}
+      Edit supporting content <small class="font-medium">(optional)</small>
+      {% else %}
+      Add first supporting content <small class="font-medium">(optional)</small>
+      {% endif %}
+    </h1>
+
+    <p class="form-hint">Add any links you&rsquo;ve used in tasks as well as any other supporting content</p>
+
+    <form action="supporting?editsupporting" method="post" class="form">
+
+      <div class="form-group">
+        <label class="form-label" for="link-title">Link title</label>
+        <input class="form-control form-control-3-4" id="link-title" name="link-title" value="{{ data['link-title'] }}" type="text" autocomplete="off">
+      </div>
+
+
+      <div class="form-group">
+        <label class="form-label" for="link-url">
+          URL
+          <span class="form-hint">You&rsquo;ll need to include either &ldquo;http://&rdquo; or &ldquo;https://&rdquo;</span>
+        </label>
+        <input class="form-control form-control-3-4" id="link-url" name="link-url" value="{{ data['link-url'] }}" type="text" autocomplete="off">
+      </div>
+
+      <div class="form-group form-group-related">
+        {% if data['editsupporting'] %}
+        <input type="submit" class="button" value="Save and continue">
+        <a class="button-link" href="supporting?editsupporting">Cancel</a>
+        {% else %}
+        <input type="submit" class="button" value="Save and continue">
+        <a class="button-link js-saveForLater" href="confirm">Save for later</a>
+        {% endif %}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

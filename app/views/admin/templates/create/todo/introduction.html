@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="javascript:history.back()" class="link-back">Back</a>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    {% if data['edit'] %}
+    <form action="confirm" method="post" class="form">
+    {% else %}
+    <form action="add-task" method="post" class="form">
+    {% endif %}
+
+      <div class="form-group">
+        <label for="todo-introduction">
+          <h1 class="heading-large">
+            {% if data['edit'] %}
+            Edit introduction
+            {% else %}
+            Add introduction
+            {% endif %}
+          </h1>
+          <span class="form-hint">
+            Styling with Markdown is supported
+          </span>
+        </label>
+        <textarea class="form-control form-control-100" id="todo-introduction" name="todo-introduction" rows="5" autocomplete="off">{{ data['todo-introduction'] }}</textarea>
+      </div>
+
+      <div class="form-group form-group-related">
+        {% if data['edit'] %}
+        <input type="submit" class="button" value="Save">
+        <a class="button-link" href="confirm">Cancel</a>
+        {% else %}
+        <input type="submit" class="button" value="Save and continue">
+        <a class="button-link js-saveForLater" href="confirm">Save for later</a>
+        {% endif %}
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="column-one-third">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Markdown formatting</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall">
+          <li>
+            For a lead paragraph:
+            <br>
+            <pre><code class="language-markdown">### Lead paragraph</code></pre>
+          </li>
+          <li>
+            For a link:
+            <br>
+            <pre><code class="language-markdown">[Link text](http://a.com)</code></pre>
+          </li>
+          <li>
+            For a bulleted list:
+            <br>
+            <pre><code class="language-markdown">* List
+* List
+* List</code></pre>
+          </li>
+          <li>For more information on using markdown, use the <a href="http://commonmark.org/help/">markdown guide</a>.</li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+{% endblock %}

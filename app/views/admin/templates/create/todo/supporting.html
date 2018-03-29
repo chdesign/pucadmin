@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="javascript:history.back()" class="link-back">Back</a>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Review supporting content
+    </h1>
+
+    <dl class="govuk-check-your-answers cya-questions-short">
+      <div>
+
+        {% if data['link-title'] %}
+        <dd class="cya-answer">
+          {{ data['link-title'] }} <span class="grey">({{ data['link-url'] }})</span>
+        </dd>
+        <dd class="cya-change">
+          <a href="add-supporting?editsupporting=1">
+            Edit
+          </a>
+        </dd>
+        <dd class="cya-change">
+          <a href="#0">
+            Delete
+          </a>
+        </dd>
+        {% else %}
+        <p class='grey'>No supporting content</p>
+        {% endif %}
+
+
+      </div>
+    </dl>
+    <p class="mt-15 mb-30">
+      {% if data['link-title'] %}
+      <a href="#0">Add supporting content</a> or <a href="#0">reorder supporting content</a>
+      {% else %}
+      <a href="add-supporting">Add supporting content</a> or <a href="#0">reorder supporting content</a>
+      {% endif %}
+    </p>
+
+    <p>
+      {% if data['edit'] %}
+      <a class="button" href="confirm" role="button">Save</a>
+      <a class="button-link" href="confirm">Cancel</a>
+      {% else %}
+      <a class="button" href="tags" role="button">Save and continue</a>
+      <a class="button-link" href="confirm">Save for later</a>
+      {% endif %}
+    </p>
+
+  </div>
+</div>
+{% endblock %}

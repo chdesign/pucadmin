@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+{% set active = "plans" %}
+{% block adminnav %}{% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/templates">Manage existing templates</a></li>
+    <li><a href="#0" class="active">{{ data['template-name'] if data['template-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-large">
+      Check and confirm to-do
+    </h1>
+
+    <dl class="govuk-check-your-answers cya-questions-short mb-30">
+      <div>
+        <dt class="cya-question">
+          Title
+        </dt>
+        <dd class="cya-answer">
+          {{ data['todo-title'] if data['todo-title'] else "<span class='grey'>Title not added</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Weeks to complete
+        </dt>
+        <dd class="cya-answer">
+          {{ data['todo-length'] if data['todo-length'] else "<span class='grey'>Weeks to complete not added</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          End week
+        </dt>
+        <dd class="cya-answer">
+          {{ data['todo-end'] if data['todo-end'] else "<span class='grey'>End week not added</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Priority
+        </dt>
+        <dd class="cya-answer">
+          {{ data['todo-priority'] if data['todo-priority'] else "<span class='grey'>Priority not added</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Introduction content
+        </dt>
+        <dd class="cya-answer">
+          {{ data['todo-introduction'] if data['todo-introduction'] else "<span class='grey'>Introduction content not added</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="introduction?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Tasks
+        </dt>
+        <dd class="cya-answer">
+          {% if data['task-content'] or data['task-content2'] or data['task-content3'] %}
+          <ul>
+            <li>{{ data['task-content'] if data['task-content'] else "<span class='grey'>Tasks not added</span>" |safe }}</li>
+            {% if data['task-content2'] %}
+            <li>{{ data['task-content2'] }}</li>
+            {% endif %}
+            {% if data['task-content3'] %}
+            <li>{{ data['task-content3'] }}</li>
+            {% endif %}
+          </ul>
+          {% else %}
+          <p class='grey'>Tasks not added</p>
+          {% endif %}
+        </dd>
+        <dd class="cya-change">
+          {% if data['task-content'] %}
+          <a href="tasks?edit=1">
+            Edit
+          </a>
+          {% else %}
+          <a href="add-task">
+            Edit
+          </a>
+          {% endif %}
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Supporting content
+        </dt>
+        <dd class="cya-answer">
+          {% if data['link-title'] %}
+          <ul>
+            <li>{{ data['link-title'] }} ({{ data['link-url'] }})</li>
+          </ul>
+          {% else %}
+          <span class='grey'>Supporting content not added</span>
+          {% endif %}
+        </dd>
+        <dd class="cya-change">
+          <a href="supporting?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Tags
+        </dt>
+        <dd class="cya-answer">
+          <ul>
+            {% if data['todo-tags'] %}
+              {% for i in data['todo-tags'] %}
+                <li>{{ i }}</li>
+              {% else %}
+                <li><span class='grey'>Tags not added</span></li>
+              {% endfor %}
+            {% else %}
+            <span class='grey'>Tags not added</span>
+            {% endif %}
+          </ul>
+        </dd>
+        <dd class="cya-change">
+          <a href="tags?edit=1">
+            Edit
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+    <div class="form-group form-group-related">
+      <a href="preview" class="button-secondary">Preview to-do</a>
+    </div>
+
+    <div class="form-group">
+      {% if data['todo-title-2'] %}
+      <a href="../draft" class="button">Save to-do</a>
+      {% else %}
+      <a href="/todosave" class="button">Save to-do</a>
+      {% endif %}
+
+      <a class="button-link" href="confirm-delete">Delete to-do</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

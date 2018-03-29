@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/templates">Manage existing templates</a></li>
+    <li><a href="/admin" class="active">{{ data['template-name'] if data['template-name'] else "Example plan" }}</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Template:<br>
+      {{ data['template-name'] if data['template-name'] else "Example plan" }}{% if not data['templatesaved'] %} &ndash; draft{% endif %}
+      <span class="heading-secondary">Version 1</span>
+    </h1>
+
+    <h2 class="heading-medium">
+      Template details
+    </h2>
+
+    <dl class="govuk-check-your-answers cya-questions-short">
+      <div>
+        <dt class="cya-question">
+          Template name
+        </dt>
+        <dd class="cya-answer">
+          {{ data['template-name'] if data['template-name'] else "Example plan" }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edittemplate=1">
+            Edit<span class="visually-hidden"> template name</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['template-desc'] %}
+      <div>
+        <dt class="cya-question">
+          Template description
+        </dt>
+        <dd class="cya-answer">
+          {{ data['template-desc'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edittemplate=1">
+            Edit<span class="visually-hidden"> template description</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div>
+        <dt class="cya-question">
+          Analytics tags
+        </dt>
+        <dd class="cya-answer">
+          {{ data['template-level1'] if data['template-level1'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['template-level2'] if data['template-level2'] else "<span class='grey'>undefined</span>" |safe }}/{{ data['template-level3'] if data['template-level3'] else "<span class='grey'>undefined</span>" |safe }}
+        </dd>
+        <dd class="cya-change">
+          <a href="./?edittemplate=1">
+            Edit<span class="visually-hidden"> hierarchy</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="heading-medium">
+      To-dos
+    </h2>
+
+    {% if data['todo-title'] %}
+    <ul class="list list-bullet">
+      <li><a href="#0">{{ data['todo-title-2'] }}</a></li>
+      <li><a href="todo/confirm">{{ data['todo-title'] }}</a></li>
+    </ul>
+
+    <p class="mt-30">
+      <a href="#0">Add a to-do</a>
+    </p>
+    {% elif data['todo-title-2'] %}
+    <ul class="list list-bullet">
+      <li><a href="#0">{{ data['todo-title-2'] }}</a></li>
+    </ul>
+
+    <p class="mt-30">
+      <a href="todo/">Add a to-do</a>
+    </p>
+    {% else %}
+    <p><span class='grey'>To-do not added</span></p>
+    <p>
+      <a href="todo/">Add a to-do</a>
+    </p>
+    {% endif %}
+
+    <hr class="mb-30">
+
+    <form action="/templatesaved" method="post" class="form">
+
+      <input name="templatesaved" value="1" type="hidden">
+
+      <div class="form-group form-group-related">
+        <a href="preview/">Preview template</a>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Publish template">
+        <a class="button-link" href="delete">Delete template</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

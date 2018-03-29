@@ -7,31 +7,21 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.get('/admin', function (req, res) {
+  res.redirect('/admin/index')
+})
+
+
 // Add your routes here - above the module.exports line
 
 
-router.get('/plansaved', function (req, res) {
-  res.render('admin/index', {plansaved: 'true'})
+router.get('/templatesaved', function (req, res) {
+  res.render('admin/index', {templatesaved: 'true'})
 })
 
-router.get('/siteadded', function (req, res) {
-  res.render('admin/index', {siteadded: 'true'})
+router.get('/planadded', function (req, res) {
+  res.render('admin/index', {planadded: 'true'})
 })
-
-
-
-router.get('/assign', function (req, res) {
-  var assign = req.session.data['assign']
-
-  if ( assign == 'new' ) {
-    res.redirect('/admin/sites/addsite')
-  } else {
-    res.redirect('/admin/sites/upgrade')
-  }
-})
-
-
-
 
 
 router.get('/deletedraftplan', function (req, res) {
@@ -39,73 +29,81 @@ router.get('/deletedraftplan', function (req, res) {
   res.redirect('/admin/')
 })
 
+router.all('/admin/templates/create/todo/confirm', function (req, res){
+  if (req.session.data['todo-introduction']) {
+    req.session.data['todo-introduction-rendered'] = marked(req.session.data['todo-introduction'])
+  }
+  if (req.session.data['task-content']) {
+    req.session.data['task-content-rendered'] = marked(req.session.data['task-content'])
+  }
+  if (req.session.data['task-content2']) {
+    req.session.data['task-content2-rendered'] = marked(req.session.data['task-content2'])
+  }
+  if (req.session.data['task-content3']) {
+    req.session.data['task-content3-rendered'] = marked(req.session.data['taskcontent-3'])
+  }
+
+  delete req.session.data['edit']
+
+  res.render('admin/templates/create/todo/confirm')
+})
+
 router.get('/canceltodo', function (req, res) {
   delete req.session.data['todo-title']
-  delete req.session.data['todo-start']
   delete req.session.data['todo-end']
-  delete req.session.data['plan-length']
+  delete req.session.data['todo-length']
   delete req.session.data['todo-priority']
-  delete req.session.data['todo-main-lede']
-  delete req.session.data['todo-main-content']
+  delete req.session.data['todo-introduction']
+  delete req.session.data['todo-introduction-rendered']
   delete req.session.data['task-content']
-  delete req.session.data['task-content-2']
-  delete req.session.data['task-content-3']
+  delete req.session.data['task-content-rendered']
+  delete req.session.data['task-content2']
+  delete req.session.data['task-content2-rendered']
+  delete req.session.data['task-content3']
+  delete req.session.data['task-content3-rendered']
   delete req.session.data['link-title']
   delete req.session.data['link-url']
   delete req.session.data['todo-tags']
-  delete req.session.data['release-content']
-  delete req.session.data['todoRendered']
-  delete req.session.data['taskRendered']
-  delete req.session.data['task2Rendered']
-  delete req.session.data['task3Rendered']
-  delete req.session.data['releaseRendered']
 
-  res.redirect('/admin/plan-types/create/draft')
+  res.redirect('/admin/templates/create/draft')
 })
 
 router.get('/todosave', function (req, res) {
   req.session.data['firsttodosaved'] = "true"
   req.session.data['todo-title-2'] = req.session.data['todo-title']
-  req.session.data['todo-start-2'] = req.session.data['todo-start']
   req.session.data['todo-end-2'] = req.session.data['todo-end']
-  req.session.data['plan-length-2'] =  req.session.data['plan-length']
+  req.session.data['todo-length-2'] =  req.session.data['todo-length']
   req.session.data['todo-priority-2'] = req.session.data['todo-priority']
-  req.session.data['todo-main-lede-2'] = req.session.data['todo-main-lede']
-  req.session.data['todo-main-content-2'] = req.session.data['todo-main-content']
+  req.session.data['todo-introduction-2'] = req.session.data['todo-introduction']
+  req.session.data['todo-introduction-rendered-2'] = req.session.data['todo-introduction-rendered']
   req.session.data['task-content-2'] = req.session.data['task-content']
-  req.session.data['task-content-2-2'] = req.session.data['task-content-2']
-  req.session.data['task-content-3-2'] = req.session.data['task-content-3']
+  req.session.data['task-content-rendered-2'] = req.session.data['task-content-rendered']
+  req.session.data['task-content2-2'] = req.session.data['task-content2']
+  req.session.data['task-content2-rendered-2'] = req.session.data['task-content-2-rendered']
+  req.session.data['task-content3-2'] = req.session.data['task-content3']
+  req.session.data['task-content3-rendered-2'] = req.session.data['task-content3-rendered']
   req.session.data['link-title-2'] = req.session.data['link-title']
   req.session.data['link-url-2'] = req.session.data['link-url']
   req.session.data['todo-tags-2'] = req.session.data['todo-tags']
-  req.session.data['release-content-2'] = req.session.data['release-content']
-  req.session.data['todoRendered-2'] = req.session.data['todoRendered']
-  req.session.data['taskRendered-2'] = req.session.data['taskRendered']
-  req.session.data['task2Rendered-2'] = req.session.data['task2Rendered']
-  req.session.data['task3Rendered-2'] = req.session.data['task3Rendered']
-  req.session.data['releaseRendered-2'] = req.session.data['releaseRendered']
+
 
   delete req.session.data['todo-title']
-  delete req.session.data['todo-start']
   delete req.session.data['todo-end']
-  delete req.session.data['plan-length']
+  delete req.session.data['todo-length']
   delete req.session.data['todo-priority']
-  delete req.session.data['todo-main-lede']
-  delete req.session.data['todo-main-content']
+  delete req.session.data['todo-introduction']
+  delete req.session.data['todo-introduction-rendered']
   delete req.session.data['task-content']
-  delete req.session.data['task-content-2']
-  delete req.session.data['task-content-3']
+  delete req.session.data['task-content-rendered']
+  delete req.session.data['task-content2']
+  delete req.session.data['task-content2-rendered']
+  delete req.session.data['task-content3']
+  delete req.session.data['task-content3-rendered']
   delete req.session.data['link-title']
   delete req.session.data['link-url']
   delete req.session.data['todo-tags']
-  delete req.session.data['release-content']
-  delete req.session.data['todoRendered']
-  delete req.session.data['taskRendered']
-  delete req.session.data['task2Rendered']
-  delete req.session.data['task3Rendered']
-  delete req.session.data['releaseRendered']
 
-  res.redirect('/admin/plan-types/create/draft')
+  res.redirect('/admin/templates/create/draft')
 })
 
 
@@ -113,65 +111,11 @@ router.get('/todosave', function (req, res) {
 
 
 
-router.post('/admin/plan-types/create/todo/main-content-preview', function (req, res){
-
-  req.session.data['todoRendered'] = marked(req.session.data['todo-main-content'])
-
-  res.redirect('/admin/plan-types/create/todo/main-content-preview')
-
-})
-
-
-router.post('/admin/plan-types/create/todo/stepped/main-content-preview', function (req, res){
-
-  req.session.data['todoRendered'] = marked(req.session.data['todo-main-content'])
-
-  res.redirect('/admin/plan-types/create/todo/stepped/main-content-preview')
-
-})
-
-
-router.post('/admin/plan-types/create/todo/stepped/add-task-preview', function (req, res){
-
-  req.session.data['taskRendered'] = marked(req.session.data['task-content'])
-
-  res.redirect('/admin/plan-types/create/todo/stepped/add-task-preview')
-
-})
-
-router.post('/admin/plan-types/create/todo/stepped/release-preview', function (req, res){
-
-  req.session.data['releaseRendered'] = marked(req.session.data['release-content'])
-
-  res.redirect('/admin/plan-types/create/todo/stepped/release-preview')
-
-})
 
 
 
 
-router.post('/admin/plan-types/create/todo/stepped/confirm2', function (req, res){
 
 
-  if (req.session.data['todo-main-content']) {
-    req.session.data['todoRendered'] = marked(req.session.data['todo-main-content'])
-  }
-  if (req.session.data['task-content']) {
-    req.session.data['taskRendered'] = marked(req.session.data['task-content'])
-  }
-  if (req.session.data['task-content-2']) {
-    req.session.data['task2Rendered'] = marked(req.session.data['task-content-2'])
-  }
-  if (req.session.data['task-content-3']) {
-    req.session.data['task3Rendered'] = marked(req.session.data['task-content-3'])
-  }
-  if (req.session.data['release-content']) {
-    req.session.data['releaseRendered'] = marked(req.session.data['release-content'])
-  }
-
-
-  res.redirect('/admin/plan-types/create/todo/stepped/confirm2')
-
-})
 
 module.exports = router

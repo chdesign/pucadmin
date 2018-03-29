@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="#" class="active">Manage tags</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+      Manage tags
+    </h1>
+
+    <a class="button" href="/admin/templates/tags/add">Add a new tag</a>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Display position</th>
+          <th scope="col">Filter position</th>
+          <th scope="col">Colour</th>
+          <th scope="col"><span class="visuallyhidden">Edit</span></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Access</th>
+          <td>Active</td>
+          <td>4</td>
+          <td>4</td>
+          <td>Purple</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=Access&tag_status=Active&tag_display=4&tag_filter=4&colour=Purple">Edit<span class="visuallyhidden"> Access tag</span></a></td>
+        </tr>
+        <tr>
+          <th scope="row">Assurance</th>
+          <td>Active</td>
+          <td>7</td>
+          <td>7</td>
+          <td>White</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=Assurance&tag_status=Active&tag_display=7&tag_filter=7&colour=White">Edit<span class="visuallyhidden"> Assurance tag</span></a></td>
+        </tr>
+        <tr>
+          <th scope="row">Estates</th>
+          <td>Active</td>
+          <td>5</td>
+          <td>5</td>
+          <td>Green</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=Estates&tag_status=Active&tag_display=5&tag_filter=5&colour=Green">Edit<span class="visuallyhidden"> Estates tag</span></a></td>
+        </tr>
+        <tr>
+          <th scope="row">Partnerships</th>
+          <td>Active</td>
+          <td>3</td>
+          <td>3</td>
+          <td>Light blue</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=Partnerships&tag_status=Active&tag_display=3&tag_filter=3&colour=Ligh blue">Edit<span class="visuallyhidden"> Partnerships tag</span></a></td>
+        </tr>
+        <tr>
+          <th scope="row">People</th>
+          <td>Active</td>
+          <td>1</td>
+          <td>1</td>
+          <td>Pink</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=People&tag_status=Active&tag_display=1&tag_filter=1&colour=Pink">Edit<span class="visuallyhidden"> People tag</span></a></td>
+        </tr>
+        <tr>
+          <th scope="row">Technology</th>
+          <td>Disabled</td>
+          <td>6</td>
+          <td>6</td>
+          <td>Dark blue</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=Technology&tag_status=Disabled&tag_display=6&tag_filter=6&colour=Dark blue">Edit<span class="visuallyhidden"> Technology tag</span></a></td>
+        </tr>
+        <tr>
+          <th scope="row">Training</th>
+          <td>Active</td>
+          <td>2</td>
+          <td>2</td>
+          <td>Magenta</td>
+          <td><a href="/admin/templates/tags/edit?tag_name=Training&tag_status=Active&tag_display=2&tag_filter=2&colour=Magenta">Edit<span class="visuallyhidden"> Training tag</span></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

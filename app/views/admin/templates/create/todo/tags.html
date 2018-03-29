@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="javascript:history.back()" class="link-back">Back</a>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <form action="confirm" method="post" class="form">
+
+      <div class="form-group">
+        <fieldset>
+          <legend class="form-label">
+            <h1 class="heading-large">
+              {% if data['edit'] %}
+              Edit tags
+              {% else %}
+              Add tags
+              {% endif %}
+            </h1>
+            <span class="form-hint mb-10">Tags allow the user to filter to-dos</span>
+          </legend>
+
+          <div class="multiple-choice">
+            <input id="people" type="checkbox" name="todo-tags" value="People" {{ checked('todo-tags','People') }}>
+            <label for="people">People</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="training" type="checkbox" name="todo-tags" value="Training" {{ checked('todo-tags','Training') }}>
+            <label for="training">Training</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="partnerships" type="checkbox" name="todo-tags" value="Partnerships" {{ checked('todo-tags','Partnerships') }}>
+            <label for="partnerships">Partnerships</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="access" type="checkbox" name="todo-tags" value="Access" {{ checked('todo-tags','Access') }}>
+            <label for="access">Access</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="estates" type="checkbox" name="todo-tags" value="Estates" {{ checked('todo-tags','Estates') }}>
+            <label for="estates">Estates</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="technology" type="checkbox" name="todo-tags" value="Technology" {{ checked('todo-tags','Technology') }}>
+            <label for="technology">Technology</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="assurance" type="checkbox" name="todo-tags" value="Assurance" {{ checked('todo-tags','Assurance') }}>
+            <label for="assurance">Assurance</label>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <div class="form-group form-group-related">
+        {% if data['edit'] %}
+        <input type="submit" class="button" value="Save">
+        <a class="button-link" href="confirm">Cancel</a>
+        {% else %}
+        <input type="submit" class="button" value="Save and continue">
+        <a class="button-link js-saveForLater" href="confirm">Save for later</a>
+        {% endif %}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

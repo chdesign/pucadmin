@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% set active = "plans" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="#" class="active">Manage existing templates</a></li>
+  </ol>
+</div>
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-large">
+      Manage existing templates
+    </h1>
+
+    <ul class="list list-bullet">
+      {% if data['template-name'] %}
+        {% if data['templatesaved'] %}
+          <li><a href="/admin/templates/template?template={{ data['template-name'] }}&template-version=1&templatedesc={{ data['template-desc'] }}">{{ data['template-name'] }}</a></li>
+        {% else %}
+          <li><a href="/admin/templates/create/draft">{{ data['template-name'] }} &ndash; draft</a></li>
+        {% endif %}
+      {% endif %}
+      <li><a href="/admin/templates/template?template=UC&template-version=1&templatedesc=">UC</a></li>
+      <li><a href="/admin/templates/template?template=UC JC 50_50&template-version=5&templatedesc=Plan templates used by sites with a 50/50 go live split, by postcode. For the 2nd go live date, sites to use this plan template, with a reduced number of to-dos Corresponds to content change 14/12/2017 - Support local partners and stakeholders and discuss your site readiness">UC JC 50_50</a></li>
+      <li><a href="/admin/templates/template?template=UC JC&template-version=1 (draft)&templatedesc=">UC JC</a></li>
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block adminnav %}{% endblock %}
+{% block body_classes %}preview-open{% endblock %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/templates">Manage existing templates</a></li>
+    <li><a href="../draft">{{ data['template-name'] if data['template-name'] else "Example plan" }}</a></li>
+    <li><a href="./">Preview template</a></li>
+    <li><a href="#0" class="active">{{ data['todo-title'] if data['todo-title'] else "To-do example" }} preview</a></li>
+  </ol>
+</div>
+
+<div class="grid-row preview-open">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-xlarge">
+      {{ data['todo-title-2'] if data['todo-title-2'] else "<span class='grey'>Title not added</span>" |safe }}
+      {% if data['todo-length'] %}
+      <span class="heading-secondary">Complete {{ data['todo-end-2'] }} weeks before the end of the plan</span>
+      {% else %}
+      <span class='heading-secondary'>Weeks to complete not added</span>
+      {% endif %}
+    </h1>
+
+    <ul style="padding-left: 0">
+      {% if data['todo-tags-2'] %}
+        {% for i in data['todo-tags-2'] %}
+          <li class="tag">{{ i }}</li>
+        {% else %}
+          <li><span class='grey'>Tags not added</span></li>
+        {% endfor %}
+      {% else %}
+      <span class='grey'>Tags not added</span>
+      {% endif %}
+    </ul>
+
+    {{ data['todo-introduction-rendered-2'] | safe if data['todo-introduction-rendered-2'] else "<span class='grey'>Introduction not added</span>" |safe }}
+
+    <h2 class="heading-medium">
+      Task list
+    </h2>
+    {% if data['task-content-2'] or data['task-content2-2'] or data['task-content3-2'] %}
+    <div class="form-group">
+      <div class="multiple-choice">
+        <input id="Example" type="checkbox" name="example" value="{{ data['task-content-2'] }}" >
+        <label for="Example">{{ data['task-content-rendered-2'] | safe }}</label>
+      </div>
+      {% if data['task-content2-2'] %}
+      <div class="multiple-choice">
+        <input id="Example2" type="checkbox" name="example2" value="{{ data['task-content2-2'] }}" >
+        <label for="Example2">{{ data['task-content2-rendered-2'] | safe }}</label>
+      </div>
+      {% endif %}
+      {% if data['task-content3-2'] %}
+      <div class="multiple-choice">
+        <input id="Example3" type="checkbox" name="example3" value="{{ data['task-content3-2'] }}" >
+        <label for="Example3">{{ data['task-content3-rendered-2'] | safe }}</label>
+      </div>
+      {% endif %}
+    </div>
+    {% else %}
+    <p class='grey'>Tasks not added</p>
+    {% endif %}
+
+    <div class="form-group mt-30">
+      <a href="./" class="button">Back to template preview</a>
+    </div>
+
+  </div>
+
+
+  <div class="column-one-third">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Supporting content</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall" style="padding-left: 0;">
+          {% if data['link-title-2'] %}
+          <li><a href="{{ data['link-url-2'] }}">{{ data['link-titleV'] }}</a></li>
+          {% else %}
+          <p class='grey'>Supporting content not added</p>
+          {% endif %}
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+</div>
+{% endblock %}

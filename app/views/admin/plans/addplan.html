@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <ol>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/admin" class="active">Add a new plan</a></li>
+    </ol>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Add a new plan
+    </h1>
+
+    <form action="/planadded" method="get" class="form">
+
+      <div class="form-group">
+        <label class="form-label" for="plan-name">Plan name</label>
+        <input class="form-control" id="plan-name" name="plan-name" value="{{ data['plan-name'] }}" type="text" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="select-box2">Template</label>
+        <select class="form-control form-control-3-4" id="select-box2" name="upgradeto">
+          <option>- - Select a template - -</option>
+          {% if data['templatesaved'] %}
+          <option>{{ data['template-name'] }}</option>
+          {% endif %}
+          <option>UC</option>
+          <option>UC JC 50_50</option>
+          <option>UC JC</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+
+          <legend>
+            <span class="form-label-bold">
+              Go live date
+            </span>
+            <span class="form-hint" id="dob-hint">For example, 31 10 2017</span>
+          </legend>
+
+          <div class="form-date">
+            <div class="form-group form-group-day">
+              <label class="form-label" for="plan-day">Day</label>
+              <input class="form-control" id="plan-day" name="plan-day" value="{{ data['plan-day'] }}" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label class="form-label" for="plan-month">Month</label>
+              <input class="form-control" id="plan-month" name="plan-month" value="{{ data['plan-month'] }}" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label class="form-label" for="plan-year">Year</label>
+              <input class="form-control" id="plan-year" name="plan-year" value="{{plan-year}}" type="number" pattern="[0-9]*" min="0" autocomplete="off">
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <input name="plansaved" value="1" type="hidden">
+
+      <div class="form-group form-group-related">
+        <input type="submit" class="button" value="Add plan">
+        <a class="button-link" href="/admin/">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

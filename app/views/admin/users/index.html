@@ -1,33 +1,31 @@
 {% extends "layout.html" %}
-{% set active = "users" %}
 
 {% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="#0" class="active">Manage existing users</a></li>
+  </ol>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-xlarge">
-      <span class="heading-secondary">Admin:</span>
-      Users
+    <h1 class="heading-large">
+      Manage existing users
     </h1>
-    <div class="admin-submenu">
-      <ul>
-        <li><a href="/admin/plan-types"><span class="visuallyhidden">Manage </span>Plans</a></li>
-        <li><a href="/admin/sites"><span class="visuallyhidden">Manage </span>Sites</a></li>
-        <li class="active"><a href="#0"><span class="visuallyhidden">Manage </span>Users</a></li>
-      </ul>
-    </div>
 
-    <h2 class="heading-medium">New users</h2>
-    <ul class="list">
-      <li><a href="#0">Add a new user</a></li>
-      <li><a href="#0">Add multiple users and assign to a plan</a></li>
-    </ul>
+    <form action="user" method="get" class="form">
 
-    <h2 class="heading-medium">Existing users</h2>
-    <ul class="list">
-      <li><a href="/admin/users/manage-users">Manage existing users</a></li>
-      <li><a href="#0">Re-issue user password</a></li>
-      <li><a href="#0">Send an email to all users</a></li>
-    </ul>
+      <div class="form-group">
+        <label class="form-label" for="email">Enter the user’s email address to identify them</label>
+        <input class="form-control" id="email" name="manage-email" value="{{ data['manage-email'] }}" type="text" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div>
+
+    </form>
   </div>
 </div>
 {% endblock %}

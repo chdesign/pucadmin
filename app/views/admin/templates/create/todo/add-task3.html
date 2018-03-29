@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- <div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin/plan-types">Plans</a></li>
+    <li><a href="/admin/plan-types">{{ data['pt-name'] if data['pt-name'] else "Example plan" }}</a></li>
+  </ol>
+</div> -->
+<a href="javascript:history.back()" class="link-back">Back</a>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <form action="tasks?edittask" method="post" class="form">
+
+      <div class="form-group">
+        <label for="task-content3">
+          <h1 class="heading-large">
+            {% if data['edittask'] %}
+            Edit task
+            {% else %}
+            Add a task
+            {% endif %}
+          </h1>
+          <span class="form-hint">
+            For a link:
+            <pre><code class="language-markdown">[Link text](http://a.com)</code></pre>
+          </span>
+        </label>
+        <textarea class="form-control form-control-100" id="task-content3" name="task-content3" rows="4" autocomplete="off">{{ data['task-content3'] }}</textarea>
+      </div>
+
+      <div class="form-group form-group-related">
+        <input type="submit" class="button" value="Save and continue">
+        <a class="button-link" href="tasks?edittask">Cancel</a>
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- <div class="column-one-third">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Markdown formatting</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall">
+          <li>
+            For a link:
+            <br>
+            <pre><code class="language-markdown">[Link text](http://a.com)</code></pre>
+          </li>
+          <li>
+            For a bulleted list:
+            <br>
+            <pre><code class="language-markdown">* List
+* List
+* List</code></pre>
+          </li>
+          <li>For more information on using markdown, use the <a href="http://commonmark.org/help/">markdown guide</a>.</li>
+        </ul>
+      </nav>
+    </aside>
+  </div> -->
+</div>
+{% endblock %}

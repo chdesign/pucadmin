@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- <div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/templates">Manage existing templates</a></li>
+    <li><a href="/admin" class="active">{{ data['template-name'] if data['template-name'] else "Example plan" }}</a></li>
+  </ol>
+</div> -->
+<!-- <a href="javascript:history.back()" class="link-back">Back</a> -->
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      {% if data['edit'] %}
+      Edit to-do
+      {% else %}
+      Add a new to-do
+      {% endif %}
+    </h1>
+
+    {% if data['edit'] %}
+    <form action="confirm" method="post" class="form">
+    {% else %}
+    <form action="introduction" method="post" class="form">
+    {% endif %}
+
+
+      <div class="form-group">
+        <label class="form-label" for="todo-title">Title</label>
+        <input class="form-control form-control-3-4" id="todo-title" name="todo-title" value="{{ data['todo-title'] }}" type="text" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="todo-length">How many weeks will the to-do take to complete?</label>
+        <input class="form-control form-control-1-8" id="todo-length" name="todo-length" value="{{ data['todo-length'] }}" type="number" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="plan-finish">
+          How many weeks before the end of the plan should this to-do be completed?
+          <span class="form-hint">0 is the final week</span>
+        </label>
+        <input class="form-control form-control-1-8" id="todo-end" name="todo-end" value="{{ data['todo-end'] }}" type="number" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="todo-priority">
+          Priority <small>(optional)</small>
+          <span class="form-hint">This is used when more than one to-do has the same start and end week. Enter a number (1 is the highest todo-priority)</span>
+        </label>
+        <input class="form-control form-control-1-8" id="todo-priority" name="todo-priority" value="{{ data['todo-priority'] }}" type="text" autocomplete="off">
+      </div>
+
+      <div class="form-group form-group-related">
+        {% if data['edit'] %}
+        <input type="submit" class="button" value="Save">
+        <a class="button-link" href="confirm">Cancel</a>
+        {% else %}
+        <input type="submit" class="button" value="Save and continue">
+        <a class="button-link" href="/canceltodo">Cancel adding to-do</a>
+        {% endif %}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

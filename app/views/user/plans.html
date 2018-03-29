@@ -39,8 +39,8 @@
       <li><a href="/user/plan?plan=Abergavenny">Abergavenny</a></li>
       <li><a href="/user/plan?plan=Abertillery">Abertillery</a></li>
       <li><a href="/user/plan?plan=Aberystwyth">Aberystwyth</a></li>
-      {% if data['site-name'] %}
-      <li><a href="/user/plan?plan={{ data['site-name'] }}">{{ data['site-name'] }}</a></li>
+      {% if data['plan-name'] %}
+      <li><a href="/user/plan?plan={{ data['plan-name'] }}">{{ data['plan-name'] }}</a></li>
       {% endif %}
     </ul>
 

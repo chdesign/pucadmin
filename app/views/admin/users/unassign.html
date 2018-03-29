@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="./">Manage existing users</a></li>
+    <li><a href="#0" class="active">Example user</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large mt-10 mb-15">
+      Unassign user from a plan
+    </h1>
+
+    <form action="user" method="post" class="form">
+
+      <div class="form-group">
+        <fieldset>
+          <legend class="form-label">Select the plans you want to unassign the user from</legend>
+
+          <p><a href="0">Select all</a></p>
+
+          <div class="multiple-choice">
+            <input id="plan1" type="checkbox" name="unassign-plan" value="Abergavenny" {{ checked('unassign-plan','Abergavenny') }}>
+            <label for="plan1">Abergavenny</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="plan2" type="checkbox" name="unassign-plan" value="Abertillery" {{ checked('unassign-plan','Abertillery') }}>
+            <label for="plan2">Abertillery</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="plan3" type="checkbox" name="unassign-plan" value="Aberystwyth" {{ checked('unassign-plan','Aberystwyth') }}>
+            <label for="plan3">Aberystwyth</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Save and continue">
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

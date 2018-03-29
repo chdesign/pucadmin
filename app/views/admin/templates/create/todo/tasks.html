@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="javascript:history.back()" class="link-back">Back</a>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Review tasks
+    </h1>
+
+    <dl class="govuk-check-your-answers cya-questions-short">
+
+      <div>
+        <dd class="cya-answer">
+          {{ data['task-content'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="add-task?edittask=1">
+            Edit
+          </a>
+        </dd>
+        <dd class="cya-change">
+          <a href="#0">
+            Delete
+          </a>
+        </dd>
+      </div>
+
+
+      {% if data['task-content2'] %}
+      <div>
+        <dd class="cya-answer">
+          {{ data['task-content2'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="add-task2?edittask=1">
+            Edit
+          </a>
+        </dd>
+        <dd class="cya-change">
+          <a href="#0">
+            Delete
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data['task-content3'] %}
+      <div>
+        <dd class="cya-answer">
+          {{ data['task-content3'] }}
+        </dd>
+        <dd class="cya-change">
+          <a href="add-task3?edittask=1">
+            Edit
+          </a>
+        </dd>
+        <dd class="cya-change">
+          <a href="#0">
+            Delete
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+    </dl>
+    <p class="mt-15 mb-30">
+      {% if data['task-content3'] %}
+      <a href="#0">Add a task</a> or <a href="#0">reorder tasks</a>
+      {% elif data['task-content2'] %}
+      <a href="add-task3?edittask">Add a task</a> or <a href="#0">reorder tasks</a>
+      {% else %}
+      <a href="add-task2?edittask">Add a task</a> or <a href="#0">reorder tasks</a>
+      {% endif %}
+    </p>
+
+    <p>
+      {% if data['edit'] %}
+      <a class="button" href="confirm" role="button">Save</a>
+      <a class="button-link" href="confirm">Cancel</a>
+      {% else %}
+      <a class="button" href="add-supporting" role="button">Save and continue</a>
+      <a class="button-link" href="confirm">Save for later</a>
+      {% endif %}
+    </p>
+
+  </div>
+</div>
+{% endblock %}
