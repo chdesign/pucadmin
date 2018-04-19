@@ -97,7 +97,11 @@
 
     <hr class="mb-30">
 
+    {% if data['templateedit'] %}
+    <form action="update-plans" method="post" class="form">
+    {% else %}
     <form action="publish" method="post" class="form">
+    {% endif %}
 
       <input name="templatesaved" value="1" type="hidden">
 

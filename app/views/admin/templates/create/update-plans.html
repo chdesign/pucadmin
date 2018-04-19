@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="breadcrumbs">
+  <ol>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin/templates">Manage existing templates</a></li>
+    <li><a href="draft">{{ data['template-name'] if data['template-name'] else "Example plan" }}</a></li>
+    <li><a href="#0" class="active">Publish template</a></li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-large">
+      Publish the draft of &lsquo;{{ data['template-name'] if data['template-name'] else "Example plan" }}&rsquo;
+    </h1>
+    <p>This will update plans currently using this template.</p>
+
+    <div class="form-group">
+      <fieldset>
+        <legend class="heading-medium">Which plans do you want to update?</legend>
+
+        <p><a href="#0">Select all</a></p>
+
+          <div class="multiple-choice">
+              <input data-ident="4" type="checkbox" name="plan_195973" value="Selected" id="plan_195973">
+              <label for="plan_195973">Kennington Park, go live: 28 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="15" type="checkbox" name="plan_195975" value="Selected" id="plan_195975">
+              <label for="plan_195975">Stockwell (September), go live: 28 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="14" type="checkbox" name="plan_195974" value="Selected" id="plan_195974">
+              <label for="plan_195974">Streatham (September), go live: 28 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="0" type="checkbox" name="plan_178050" value="Selected" id="plan_178050">
+              <label for="plan_178050">Erdington (September), go live: 14 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="7" type="checkbox" name="plan_178160" value="Selected" id="plan_178160">
+              <label for="plan_178160">Handsworth (September), go live: 14 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="2" type="checkbox" name="plan_178270" value="Selected" id="plan_178270">
+              <label for="plan_178270">Kings Heath (September), go live: 14 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="8" type="checkbox" name="plan_178380" value="Selected" id="plan_178380">
+              <label for="plan_178380">Perry Barr (September), go live: 14 September 2018</label>
+          </div>
+
+          <div class="multiple-choice">
+              <input data-ident="9" type="checkbox" name="plan_178490" value="Selected" id="plan_178490">
+              <label for="plan_178490">Selly Oak (September), go live: 14 September 2018</label>
+          </div>
+
+      </fieldset>
+    </div>
+
+    <p>
+      <a class="button" href="/templatesaved">Publish and update</a>
+
+      <a class="button-link" href="draft" >Cancel</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

@@ -10,93 +10,15 @@
   </ol>
 </div>
 
-
 <div class="grid-row">
   <div class="column-two-thirds">
 
     <h1 class="heading-large">
       Are you sure you want to publish the draft of &lsquo;{{ data['template-name'] if data['template-name'] else "Example plan" }}&rsquo;?
     </h1>
-    <p>Once published the template will be available to use with new plans. You can&rsquo;t undo this.</p>
+    <p>Once published the template will be available to use with new plans.</p>
     <p>
       <a class="button" href="/templatesaved">Yes, publish</a>
-
-      <a class="button-link" href="draft" >Cancel</a>
-    </p>
-
-  </div>
-</div>
-
-<hr>
-
-<div class="grid-row">
-  <div class="column-two-thirds">
-
-    <h1 class="heading-large">
-      Are you sure you want to publish the draft of &lsquo;{{ data['template-name'] if data['template-name'] else "Example plan" }}&rsquo;?
-    </h1>
-    <p>This will update all plans using this template, except those two weeks from their live date. You can&rsquo;t undo this.</p>
-    <p>
-      <a class="button" href="/templatesaved">Yes, publish</a>
-
-      <a class="button-link" href="draft" >Cancel</a>
-    </p>
-
-  </div>
-</div>
-
-<hr>
-
-<div class="grid-row">
-  <div class="column-two-thirds">
-
-    <h1 class="heading-large">
-      Are you sure you want to publish the draft of &lsquo;{{ data['template-name'] if data['template-name'] else "Example plan" }}&rsquo;?
-    </h1>
-    <p>This will update all plans using this template. You can&rsquo;t undo this.</p>
-
-    <div class="form-group">
-      <div class="multiple-choice">
-        <input id="exclude" type="checkbox" name="exclude" value="Exclude plans two weeks or closer to their live date" {{ checked('exclude','Exclude plans two weeks or closer to their live date') }}>
-        <label for="exclude">Exclude plans two weeks or closer to their live date</label>
-      </div>
-    </div>
-
-    <p>
-      <a class="button" href="/templatesaved">Yes, publish</a>
-
-      <a class="button-link" href="draft" >Cancel</a>
-    </p>
-
-  </div>
-</div>
-
-<hr>
-
-<div class="grid-row">
-  <div class="column-two-thirds">
-
-    <h1 class="heading-large">
-      Publish the draft of &lsquo;{{ data['template-name'] if data['template-name'] else "Example plan" }}&rsquo;
-    </h1>
-    <p>This will update plans currently using this template. You can&rsquo;t undo this.</p>
-
-    <div class="form-group">
-      <fieldset>
-        <legend class="heading-small">Which plans do you want to update</legend>
-        <div class="multiple-choice">
-          <input id="all" type="radio" name="publish-option" value="All" {{ checked('publish-option','All') }}>
-          <label for="all">Update all plans</label>
-        </div>
-
-        <div class="multiple-choice">
-          <input id="select" type="radio" name="publish-option" value="Select which plans to update" {{ checked('publish-option','Select which plans to update') }}>
-          <label for="select">Select which plans to update</label>
-        </div>
-      </fieldset>
-    </div>
-    <p>
-      <a class="button" href="/templatesaved">Continue</a>
 
       <a class="button-link" href="draft" >Cancel</a>
     </p>
